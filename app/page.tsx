@@ -40,7 +40,7 @@ export default function HomePage() {
                 alt="무인편의점 내부와 무인 결제 시스템"
                 width={1200}
                 height={900}
-                className="aspect-[2/3] w-full object-cover"
+                className="aspect-video w-full object-cover"
               />
             </div>
 
