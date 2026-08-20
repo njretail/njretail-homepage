@@ -105,13 +105,6 @@ export default function ShopClient() {
               }`}
             >
               {sub.name}
-              <span
-                className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
-                  activeSubCategory === sub.name ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
-                }`}
-              >
-                {sub.count}
-              </span>
             </button>
           ))}
         </div>
