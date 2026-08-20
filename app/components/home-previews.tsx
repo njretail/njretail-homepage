@@ -34,9 +34,8 @@ export function HomePreviews() {
               </div>
             ))}
           </div>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <CTAButton href="/contact" text="창업 상담 신청" />
-            <CTAButton href="/service" text="창업지원 보기" variant="secondary" />
+          <div className="mt-8 text-center">
+            <CTAButton href="/contact#inquiry-form" text="창업 상담 신청" />
           </div>
         </div>
       </section>

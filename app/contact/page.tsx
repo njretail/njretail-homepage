@@ -40,7 +40,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="mt-20 rounded-[30px] bg-[#FAFAFA] p-8 sm:p-12">
+        <section id="inquiry-form" className="mt-20 rounded-[30px] bg-[#FAFAFA] p-8 sm:p-12 scroll-mt-24">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 text-center">문의하기</h2>
           <form className="mx-auto mt-8 max-w-3xl space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
