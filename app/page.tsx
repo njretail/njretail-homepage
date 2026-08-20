@@ -139,7 +139,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
           <div className="rounded-[30px] bg-[#3B82F6] px-8 py-12 text-center text-white shadow-sm sm:px-12">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-100">Start your store</p>
-            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">지금 무료 상담을 신청하세요</h2>
+            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">지금 무료 상담을<br className="sm:hidden" /> 신청하세요</h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-sky-100">
               무인매장 창업을 고민하고 있다면, 전문 컨설턴트가 상권 분석부터 매장 설계, 운영 전략까지 함께 설계해드립니다.
             </p>
