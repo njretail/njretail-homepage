@@ -7,7 +7,7 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Contact</p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">오시는 길</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">문의하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장 창업 및 운영에 대한 궁금한 점이 있으시면 언제든 편하게 문의해 주세요.
           </p>
@@ -41,7 +41,7 @@ export default function ContactPage() {
         </section>
 
         <section id="inquiry-form" className="mt-20 rounded-[30px] bg-[#FAFAFA] p-8 sm:p-12 scroll-mt-24">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 text-center">문의하기</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 text-center">문의 남기기</h2>
           <form className="mx-auto mt-8 max-w-3xl space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
               <div>

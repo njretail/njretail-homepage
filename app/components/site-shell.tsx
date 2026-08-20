@@ -9,7 +9,6 @@ export const navItems = [
   { href: "/board", label: "게시판" },
   { href: "/agency", label: "대행 신청" },
   { href: "/shop", label: "쇼핑하기" },
-  { href: "/contact", label: "오시는 길" },
 ];
 
 export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" }) {
