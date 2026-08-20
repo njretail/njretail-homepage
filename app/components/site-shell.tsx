@@ -113,12 +113,12 @@ export function Footer() {
           </div>
         </div>
 
-        <ul className="mt-5 space-y-1.5 text-sm text-slate-600">
+        <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-slate-600">
           <li>대표자: 이수영</li>
           <li>사업자등록번호: 571-81-03959</li>
-          <li>주소: 서울시 성북구 장월로1길 80 1층</li>
           <li>전화: 010-7650-9600</li>
           <li>이메일: njretail@njgroup.kr</li>
+          <li className="col-span-2">주소: 서울시 성북구 장월로1길 80 1층</li>
         </ul>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
