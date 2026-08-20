@@ -1,18 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton, Footer, Header, SectionTitle } from "./components/site-shell";
-import { AboutSection, CasesSection, RecruitSection, ShopSection } from "./components/home-previews";
+import { AboutSection, CasesSection, ShopSection } from "./components/home-previews";
+import { ServiceAgency, ServiceCost, ServiceSteps, ServiceWhyUs } from "./components/service-content";
 import { KakaoChatWidget } from "./components/kakao-chat-widget";
-
-const serviceHighlights = [
-  { title: "인테리어 설계", description: "매장 특성에 맞춘 공간 구성과 상품 배치 전략을 설계합니다.", icon: "▣" },
-  { title: "상품구성", description: "고객층과 상권에 맞는 SKU 구성과 수익성 기반 진열을 제안합니다.", icon: "◫" },
-  { title: "운영시스템", description: "POS, 키오스크, CCTV까지 한 번에 연결해 안정적인 운영 환경을 구축합니다.", icon: "◎" },
-  { title: "입고관리", description: "입고 기준과 검수 절차를 세우고 수량과 재고 흐름을 체계적으로 관리합니다.", icon: "□" },
-  { title: "매장 청결 관리", description: "청소 주기와 점검 항목을 정해 고객이 안심하는 매장 환경을 유지합니다.", icon: "✦" },
-  { title: "판매운영", description: "오픈 전·후 운영 매뉴얼과 판매 전략으로 매출을 빠르게 안정화합니다.", icon: "◍" },
-  { title: "사후관리", description: "재고, 매출, 비용 데이터 기반으로 지속적인 운영 개선을 지원합니다.", icon: "◇" },
-];
 
 const metrics = [
   { value: 320, unit: "개", label: "누적 컨설팅 매장" },
@@ -67,22 +58,18 @@ export default function HomePage() {
         <section className="border-t border-slate-200 bg-slate-50">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionTitle
-              eyebrow="Service"
-              title={<>무인매장 창업의 전 과정을<br className="sm:hidden" /> 한 번에</>}
-              description="오픈 준비부터 매장 운영, 사후관리까지 필요한 항목을 체계적으로 설계해 맞춤형 무인 매장으로 도약할 수 있습니다."
+              eyebrow="창업지원"
+              title="무인매장 창업의 6단계 프로세스"
+              description="단순한 설치를 넘어, 점주가 실제로 운영하는 데 필요한 전략과 시스템을 연결해 안정적인 무인매장 생태계를 만들어갑니다."
             />
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-              {serviceHighlights.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#3B82F6]/10 text-xl font-bold text-[#3B82F6]">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                </div>
-              ))}
+            <div className="mt-12">
+              <ServiceSteps />
             </div>
+
+            <ServiceWhyUs />
+            <ServiceCost />
+            <ServiceAgency />
           </div>
         </section>
 
@@ -131,8 +118,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <RecruitSection />
 
         <ShopSection />
 

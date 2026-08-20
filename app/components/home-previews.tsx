@@ -26,27 +26,6 @@ export function AboutSection() {
   );
 }
 
-export function RecruitSection() {
-  return (
-    <section className="border-t border-slate-200 bg-slate-50" id="service-preview">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <SectionTitle eyebrow="창업지원" title="지금, 예비 창업자를 모집합니다" description="상담과 상권분석부터 인테리어, 상품 구성, 운영시스템, 사후관리까지 창업의 전 과정을 엔제이리테일이 함께합니다." />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {["상담 & 상권분석", "매장 인테리어 설계", "상품 구성 & 진열", "운영 시스템 셋팅", "입고 및 청결 관리", "판매 운영 & 사후관리"].map((step, index) => (
-            <div key={step} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="text-sm font-bold text-[#3B82F6]">0{index + 1}</div>
-              <h3 className="mt-3 font-bold text-slate-900">{step}</h3>
-            </div>
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <CTAButton href="/contact#inquiry-form" text="창업 상담 신청" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function CasesSection() {
   return (
     <section className="border-t border-slate-200 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" id="cases-preview">
