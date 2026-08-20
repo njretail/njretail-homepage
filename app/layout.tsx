@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://njretail-homepage.vercel.app"),
   title: {
     default: "엔제이리테일 | 무인매장 창업 컨설팅",
     template: "%s | 엔제이리테일",
@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: "엔제이리테일 | 무인매장 창업 컨설팅",
     description: "무인매장 창업, 운영, 시스템 구축을 한 번에 설계하는 전문 컨설팅 기업입니다.",
     type: "website",
+    images: [
+      {
+        url: "/store-dashboard.png",
+        width: 1536,
+        height: 1024,
+        alt: "엔제이리테일 매장 운영 대시보드",
+      },
+    ],
   },
 };
 
