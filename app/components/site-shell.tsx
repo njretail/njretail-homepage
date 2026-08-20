@@ -4,7 +4,7 @@ import Link from "next/link";
 export const navItems = [
   { href: "/", label: "메인" },
   { href: "/about", label: "기업소개" },
-  { href: "/service", label: "서비스 안내" },
+  { href: "/service", label: "창업지원" },
   { href: "/cases", label: "오픈사례" },
   { href: "/board", label: "게시판" },
   { href: "/agency", label: "대행 신청" },
@@ -124,7 +124,7 @@ export function Footer() {
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">회사</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-600 md:mt-4 md:space-y-3">
                 <li><Link href="/about">기업소개</Link></li>
-                <li><Link href="/service">서비스 안내</Link></li>
+                <li><Link href="/service">창업지원</Link></li>
                 <li><Link href="/cases">오픈사례</Link></li>
               </ul>
             </div>

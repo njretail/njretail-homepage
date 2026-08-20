@@ -83,7 +83,7 @@ export default function AgencyPage() {
         </section>
 
         <div className="mt-10 flex justify-center">
-          <CTAButton href="/service" text="서비스 안내로 돌아가기" variant="secondary" />
+          <CTAButton href="/service" text="창업지원으로 돌아가기" variant="secondary" />
         </div>
       </main>
       <Footer />
