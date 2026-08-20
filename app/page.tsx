@@ -59,7 +59,7 @@ export default function HomePage() {
                   alt="무인편의점 내부와 무인 결제 시스템"
                   width={1200}
                   height={900}
-                  className="aspect-[2/3] w-full rounded-[22px] object-cover sm:aspect-auto sm:h-[540px]"
+                  className="aspect-[2/3] w-full rounded-[22px] object-cover"
                 />
               </div>
             </div>
