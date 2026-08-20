@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CTAButton, Footer, Header, SectionTitle } from "./components/site-shell";
-import { HomePreviews } from "./components/home-previews";
+import { AboutSection, CasesSection, RecruitSection, ShopSection } from "./components/home-previews";
 import { KakaoChatWidget } from "./components/kakao-chat-widget";
 
 const serviceHighlights = [
@@ -62,9 +62,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        <HomePreviews />
+        <AboutSection />
 
-        <section className="bg-slate-50">
+        <section className="border-t border-slate-200 bg-slate-50">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionTitle
               eyebrow="Service"
@@ -108,7 +108,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-white">
+        <CasesSection />
+
+        <section className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionTitle
               eyebrow="Review"
@@ -129,6 +131,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <RecruitSection />
+
+        <ShopSection />
 
         <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
           <div className="rounded-[30px] bg-[#3B82F6] px-8 py-12 text-center text-white shadow-sm sm:px-12">
