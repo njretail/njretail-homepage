@@ -61,11 +61,6 @@ export default function HomePage() {
                   height={900}
                   className="h-[540px] w-full rounded-[22px] object-cover"
                 />
-                <div className="absolute bottom-8 left-8 rounded-2xl border border-white/50 bg-white/80 p-4 shadow-sm backdrop-blur-sm">
-                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">실적</div>
-                  <div className="mt-2 text-3xl font-bold text-slate-900">월 매출 150%↑</div>
-                  <div className="text-sm text-slate-600">오픈 직후 성과 기반 최적화</div>
-                </div>
               </div>
             </div>
           </div>
