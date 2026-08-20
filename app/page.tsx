@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionTitle
               eyebrow="Service"
-              title="무인매장 창업의 전 과정을 한 번에"
+              title={<>무인매장 창업의 전 과정을<br className="sm:hidden" /> 한 번에</>}
               description="오픈 준비부터 매장 운영, 사후관리까지 필요한 항목을 체계적으로 설계해 맞춤형 무인 매장으로 도약할 수 있습니다."
             />
 

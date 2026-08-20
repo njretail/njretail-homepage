@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 export const navItems = [
@@ -31,7 +32,7 @@ export function SectionTitle({
   description,
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description: string;
 }) {
   return (
