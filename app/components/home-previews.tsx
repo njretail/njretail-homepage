@@ -18,8 +18,8 @@ export function HomePreviews() {
           <p className="mt-5 text-base leading-8 text-slate-600">엔제이리테일은 데이터 기반 운영 최적화와 24시간 안정적인 시스템 관리로 점주님이 안심할 수 있는 무인매장을 설계합니다.</p>
           <div className="mt-7"><CTAButton href="/about" text="기업소개 자세히 보기" variant="secondary" /></div>
         </div>
-        <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50 p-2">
-          <Image src="/store-dashboard.png" alt="엔제이리테일 컨설팅 팀" width={1000} height={650} className="h-64 w-full rounded-[18px] object-cover sm:h-80" />
+        <div className="overflow-hidden -mx-4 sm:-mx-6 lg:mx-0 lg:rounded-[24px] lg:border lg:border-slate-200 lg:bg-slate-50 lg:p-2">
+          <Image src="/store-dashboard.png" alt="엔제이리테일 컨설팅 팀" width={1000} height={650} className="h-64 w-full object-cover sm:h-80 lg:rounded-[18px]" />
         </div>
       </section>
 
