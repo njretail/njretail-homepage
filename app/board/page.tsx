@@ -59,7 +59,23 @@ export default function BoardPage() {
             </button>
           </div>
 
-          <div className="overflow-x-auto">
+          {/* Mobile: card list */}
+          <div className="divide-y divide-slate-200 sm:hidden">
+            {rows.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setSelected(item)}
+                className="flex w-full flex-col gap-1.5 px-4 py-4 text-left hover:bg-slate-50"
+              >
+                <span className="font-medium text-slate-900">{item.title}</span>
+                <span className="text-xs text-slate-500">{item.author} · {item.date} · 조회 {item.views}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Tablet and up: table */}
+          <div className="hidden overflow-x-auto sm:block">
             <table className="min-w-full text-left text-sm text-slate-700">
               <thead className="bg-slate-50 text-xs uppercase tracking-[0.16em] text-slate-500">
                 <tr>
