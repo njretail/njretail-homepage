@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ProductCard from '../components/product-card';
 import CartWidget from '../components/cart-widget';
 
-const filters = ["전체", "장비", "소모품", "패키지", "매장상품"];
+const filters = ["전체", "매장상품", "장비", "소모품", "패키지"];
 
 const storeSubCategories = [
   { name: "아이스크림/빙과", count: 0 },
