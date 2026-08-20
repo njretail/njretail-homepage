@@ -19,7 +19,7 @@ export function HomePreviews() {
           <div className="mt-7"><CTAButton href="/about" text="기업소개 자세히 보기" variant="secondary" /></div>
         </div>
         <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50 p-2">
-          <Image src="/main-2.png" alt="엔제이리테일 컨설팅 팀" width={1000} height={650} className="h-64 w-full rounded-[18px] object-cover sm:h-80" />
+          <Image src="/main-1.png" alt="엔제이리테일 컨설팅 팀" width={1000} height={650} className="h-64 w-full rounded-[18px] object-cover sm:h-80" />
         </div>
       </section>
 

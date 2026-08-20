@@ -55,7 +55,7 @@ export default function HomePage() {
               <div className="absolute -right-5 bottom-6 h-24 w-24 rounded-full bg-[#3B82F6]/15 blur-3xl" />
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm">
                 <Image
-                  src="/main-1.png"
+                  src="/main-2.png"
                   alt="무인편의점 내부와 무인 결제 시스템"
                   width={1200}
                   height={900}
