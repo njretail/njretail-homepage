@@ -103,55 +103,25 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] md:gap-10">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3B82F6] text-sm font-bold text-white">
-                NJ
-              </div>
-              <div>
-                <div className="text-lg font-bold text-slate-900">엔제이리테일</div>
-                <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">NJ RETAIL</div>
-              </div>
-            </div>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600">
-              무인매장 창업부터 운영시스템 구축, 판매운영까지 한 번에 지원하는 맞춤형 무인리테일 컨설팅 기업입니다.
-            </p>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3B82F6] text-sm font-bold text-white">
+            NJ
           </div>
-
-          <div className="grid grid-cols-2 gap-6 md:contents">
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">회사</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600 md:mt-4 md:space-y-3">
-                <li><Link href="/about">기업소개</Link></li>
-                <li><Link href="/service">창업지원</Link></li>
-                <li><Link href="/cases">오픈사례</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">지원</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600 md:mt-4 md:space-y-3">
-                <li><Link href="/board">게시판</Link></li>
-                <li><Link href="/shop">쇼핑하기</Link></li>
-                <li><Link href="/contact">오시는 길</Link></li>
-              </ul>
-            </div>
-
-            <div className="col-span-2 md:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">연락처</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600 md:mt-4 md:space-y-3">
-                <li>대표자: 이수영</li>
-                <li>사업자등록번호: 571-81-03959</li>
-                <li>주소: 서울시 성북구 장월로1길 80 1층</li>
-                <li>전화: 010-7650-9600</li>
-                <li>이메일: njretail@njgroup.kr</li>
-              </ul>
-            </div>
+          <div>
+            <div className="text-lg font-bold text-slate-900">엔제이리테일</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">NJ RETAIL</div>
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
+        <ul className="mt-5 space-y-1.5 text-sm text-slate-600">
+          <li>대표자: 이수영</li>
+          <li>사업자등록번호: 571-81-03959</li>
+          <li>주소: 서울시 성북구 장월로1길 80 1층</li>
+          <li>전화: 010-7650-9600</li>
+          <li>이메일: njretail@njgroup.kr</li>
+        </ul>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 엔제이리테일. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-slate-700">개인정보처리방침</Link>
