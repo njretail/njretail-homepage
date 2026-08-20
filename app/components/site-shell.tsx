@@ -57,7 +57,7 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -69,11 +69,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <CTAButton href="/contact" text="무료 상담 신청" />
         </div>
 
-        <details className="group relative md:hidden">
+        <details className="group relative lg:hidden">
           <summary className="flex cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700">
             <span className="sr-only">메뉴 열기</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
