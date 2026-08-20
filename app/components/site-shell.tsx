@@ -33,7 +33,7 @@ export function SectionTitle({
 }: {
   eyebrow: string;
   title: ReactNode;
-  description: string;
+  description: ReactNode;
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">

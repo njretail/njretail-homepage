@@ -115,7 +115,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="Review"
               title="점주님들의 생생한 후기"
-              description="오픈 전 고민부터 오픈 후 운영까지, 엔제이리테일과 함께 한 경험을 들려드립니다."
+              description={<>오픈 전 고민부터 오픈 후 운영까지,<br className="sm:hidden" /> 엔제이리테일과 함께 한 경험을 들려드립니다.</>}
             />
 
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
