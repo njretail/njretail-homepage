@@ -34,7 +34,7 @@ export default function HomePage() {
       <main>
         <section className="bg-[#FAFAFA]">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
-            <div className="flex flex-col justify-center">
+            <div className="order-2 flex flex-col justify-center lg:order-1">
               <span className="mb-4 inline-flex w-fit rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[#3B82F6]">
                 무인매장 컨설팅 전문
               </span>
@@ -50,7 +50,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="order-1 relative lg:order-2">
               <div className="absolute -left-4 top-10 h-28 w-28 rounded-full bg-[#F97316]/15 blur-3xl" />
               <div className="absolute -right-5 bottom-6 h-24 w-24 rounded-full bg-[#3B82F6]/15 blur-3xl" />
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm">
