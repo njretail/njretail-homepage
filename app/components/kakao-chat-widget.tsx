@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export function KakaoChatWidget() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   if (!isOpen) {
     return (
