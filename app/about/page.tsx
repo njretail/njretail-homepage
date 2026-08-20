@@ -48,7 +48,7 @@ export default function AboutPage() {
 
           <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm">
             <Image
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+              src="/about-hero.png"
               alt="엔제이리테일 대표와 컨설팅 팀"
               width={1200}
               height={900}
