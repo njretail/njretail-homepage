@@ -36,11 +36,11 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
             <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
               <Image
-                src="/onestop-infographic.png"
+                src="/onestop-infographic-wide.png"
                 alt="무인편의점 내부와 무인 결제 시스템"
-                width={1200}
-                height={900}
-                className="aspect-video w-full object-cover"
+                width={1538}
+                height={1023}
+                className="aspect-[3/2] w-full object-cover"
               />
             </div>
 
