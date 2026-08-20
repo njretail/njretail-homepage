@@ -8,10 +8,8 @@ const visionPoints = [
 ];
 
 const timeline = [
-  { year: "2021", title: "무인매장 컨설팅 시작", text: "초기 무인매장 구축 및 운영 노하우를 축적하며 시장 진입" },
-  { year: "2022", title: "시스템 통합 고도화", text: "POS, CCTV, 키오스크 연동 솔루션까지 확장" },
-  { year: "2024", title: "상권 분석 기반 성과 최적화", text: "데이터 기반 의사결정으로 매장 운영 효율성 강화" },
-  { year: "2026", title: "무인리테일 선도 기업 도약", text: "운영 효율과 안정성을 기준으로 시장 확장" },
+  { year: "2026.01", title: "엔제이리테일 법인 설립", text: "무인매장 창업 컨설팅 전문 기업으로 공식 출범했습니다." },
+  { year: "2026.07", title: "6개월 만에 5개 매장 오픈", text: "법인 설립 이후 6개월 만에 5개 매장을 오픈하며 빠른 성장세를 이어가고 있습니다." },
 ];
 
 const strengths = [
@@ -81,7 +79,7 @@ export default function AboutPage() {
           <SectionTitle
             eyebrow="Timeline"
             title="엔제이리테일의 성장 역사"
-            description="현장 경험과 기술력을 기반으로 무인리테일 분야의 신뢰를 쌓아왔습니다."
+            description="법인 설립 이후 짧은 기간에도 빠른 속도로 매장을 확장하고 있습니다."
           />
 
           <div className="mt-12 space-y-8">
