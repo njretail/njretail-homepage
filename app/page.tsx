@@ -33,8 +33,18 @@ export default function HomePage() {
       <Header />
       <main>
         <section className="bg-[#FAFAFA]">
-          <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
-            <div className="order-2 flex flex-col justify-center lg:order-1">
+          <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+            <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+              <Image
+                src="/onestop-infographic.png"
+                alt="무인편의점 내부와 무인 결제 시스템"
+                width={1200}
+                height={900}
+                className="aspect-[2/3] w-full object-cover"
+              />
+            </div>
+
+            <div className="flex flex-col justify-center">
               <span className="mb-4 inline-flex w-fit rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[#3B82F6]">
                 무인매장 컨설팅 전문
               </span>
@@ -47,20 +57,6 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <CTAButton href="/contact" text="무료 상담 신청" />
                 <CTAButton href="/service" text="서비스 살펴보기" variant="secondary" />
-              </div>
-            </div>
-
-            <div className="order-1 relative lg:order-2">
-              <div className="hidden lg:block absolute -left-4 top-10 h-28 w-28 rounded-full bg-[#F97316]/15 blur-3xl" />
-              <div className="hidden lg:block absolute -right-5 bottom-6 h-24 w-24 rounded-full bg-[#3B82F6]/15 blur-3xl" />
-              <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:mx-0 lg:rounded-[28px] lg:border lg:border-slate-200 lg:bg-white lg:p-3 lg:shadow-sm">
-                <Image
-                  src="/onestop-infographic.png"
-                  alt="무인편의점 내부와 무인 결제 시스템"
-                  width={1200}
-                  height={900}
-                  className="aspect-[2/3] w-full object-cover lg:rounded-[22px]"
-                />
               </div>
             </div>
           </div>
