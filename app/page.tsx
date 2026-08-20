@@ -51,15 +51,15 @@ export default function HomePage() {
             </div>
 
             <div className="order-1 relative lg:order-2">
-              <div className="absolute -left-4 top-10 h-28 w-28 rounded-full bg-[#F97316]/15 blur-3xl" />
-              <div className="absolute -right-5 bottom-6 h-24 w-24 rounded-full bg-[#3B82F6]/15 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm">
+              <div className="hidden lg:block absolute -left-4 top-10 h-28 w-28 rounded-full bg-[#F97316]/15 blur-3xl" />
+              <div className="hidden lg:block absolute -right-5 bottom-6 h-24 w-24 rounded-full bg-[#3B82F6]/15 blur-3xl" />
+              <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:mx-0 lg:rounded-[28px] lg:border lg:border-slate-200 lg:bg-white lg:p-3 lg:shadow-sm">
                 <Image
                   src="/onestop-infographic.png"
                   alt="무인편의점 내부와 무인 결제 시스템"
                   width={1200}
                   height={900}
-                  className="aspect-[2/3] w-full rounded-[22px] object-cover"
+                  className="aspect-[2/3] w-full object-cover lg:rounded-[22px]"
                 />
               </div>
             </div>
