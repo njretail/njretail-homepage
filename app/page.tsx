@@ -48,16 +48,6 @@ export default function HomePage() {
                 <CTAButton href="/contact" text="무료 상담 신청" />
                 <CTAButton href="/service" text="서비스 살펴보기" variant="secondary" />
               </div>
-              <div className="mt-10 flex items-center gap-10 text-sm text-slate-600">
-                <div>
-                  <div className="text-2xl font-bold text-slate-900">1,200+</div>
-                  <div>운영 분석 데이터</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-slate-900">24/7</div>
-                  <div>모니터링 지원</div>
-                </div>
-              </div>
             </div>
 
             <div className="relative">
