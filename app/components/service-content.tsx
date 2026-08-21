@@ -89,7 +89,22 @@ export function ServiceCost() {
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">1호점 실제 발생 비용을 기준으로 정리한 예상 금액입니다. 매장 위치와 상태, 장비 선택에 따라 달라질 수 있습니다.</p>
       </div>
 
-      <div className="mt-10 overflow-x-auto rounded-2xl border border-slate-200">
+      {/* Mobile: card list */}
+      <div className="mt-10 divide-y divide-slate-200 rounded-2xl border border-slate-200 sm:hidden">
+        {startupCosts.map((cost) => (
+          <div key={cost.category} className="p-5">
+            <div className="flex items-center justify-between gap-3">
+              <span className="font-semibold text-slate-900">{cost.category}</span>
+              <span className="font-semibold text-[#2563EB]">{cost.amount}</span>
+            </div>
+            <p className="mt-1.5 text-sm text-slate-600">{cost.item}</p>
+            {cost.note && <p className="mt-1 text-xs text-slate-500">{cost.note}</p>}
+          </div>
+        ))}
+      </div>
+
+      {/* Tablet and up: table */}
+      <div className="mt-10 hidden overflow-x-auto rounded-2xl border border-slate-200 sm:block">
         <table className="min-w-full text-left text-sm text-slate-700">
           <thead className="bg-slate-50 text-xs font-semibold text-slate-500">
             <tr>
