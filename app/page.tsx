@@ -39,8 +39,8 @@ export default function HomePage() {
               <span className="mb-4 inline-flex w-fit rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[#3B82F6]">
                 무인매장 컨설팅 전문
               </span>
-              <h1 className="max-w-xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                무인매장 성공을 위한<br className="sm:hidden" /> <span className="text-[#3B82F6]">ONE-STOP SOLUTION</span>
+              <h1 className="max-w-xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:max-w-2xl lg:text-6xl">
+                무인매장 성공을 위한<br className="sm:hidden" /> <span className="whitespace-nowrap text-[#3B82F6]">ONE-STOP SOLUTION</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
                 인테리어, 진열, 운영시스템, 판매운영까지 원스톱으로 설계해 가맹점주님이 안심하고 사업을 시작할 수 있도록 돕습니다.
