@@ -5,30 +5,11 @@ import { CasesSection, ShopSection } from "./components/home-previews";
 import { ProjectSections, ReceiptCost } from "./components/store-story";
 import { KakaoChatWidget } from "./components/kakao-chat-widget";
 
-const anatomyLeft = [
-  {
-    n: "01",
-    title: "상권",
-    lines: ["반경 500m", "주거 73%", "핵심 고객 30–40대"],
-  },
-  {
-    n: "03",
-    title: "공간",
-    lines: ["11평", "동선 14.2m"],
-  },
-];
-
-const anatomyRight = [
-  {
-    n: "02",
-    title: "상품",
-    lines: ["SKU 487개", "냉동·간편식 중심"],
-  },
-  {
-    n: "04",
-    title: "운영",
-    lines: ["입고 · 진열", "청소 · 재고관리"],
-  },
+const anatomyPoints = [
+  { n: "01", title: "상권", lines: ["반경 500m", "주거 73%", "핵심 고객 30–40대"], left: "18%", top: "48%", side: "right" as const },
+  { n: "02", title: "상품", lines: ["SKU 487개", "냉동·간편식 중심"], left: "54%", top: "16%", side: "right" as const },
+  { n: "03", title: "공간", lines: ["11평", "동선 14.2m"], left: "82%", top: "44%", side: "left" as const },
+  { n: "04", title: "운영", lines: ["입고 · 진열", "청소 · 재고관리"], left: "56%", top: "72%", side: "right" as const },
 ];
 
 const testimonials = [
@@ -37,14 +18,18 @@ const testimonials = [
   { name: "이상민 대표", text: "현장 노하우를 바탕으로 점주 입장에서 현실적인 조언을 주셔서 리스크를 많이 줄일 수 있었습니다." },
 ];
 
-function AnatomyTag({ n, title, lines }: { n: string; title: string; lines: string[] }) {
+function AnatomyPoint({ n, title, lines, left, top, side }: { n: string; title: string; lines: string[]; left: string; top: string; side: "left" | "right" }) {
   return (
-    <div className="w-44 border border-white/30 bg-black/30 p-3 backdrop-blur-sm">
-      <div className="font-mono text-[10px] tracking-[0.2em] text-white/60">{n} {title}</div>
-      <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
-        {lines.map((line) => (
-          <div key={line}>{line}</div>
-        ))}
+    <div className="absolute hidden lg:block" style={{ left, top }}>
+      <span className="absolute h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/80" />
+      <div className={`absolute top-0 h-px w-8 bg-white/50 ${side === "right" ? "left-1" : "right-1"}`} />
+      <div className={`absolute top-0 w-40 ${side === "right" ? "left-10" : "right-10 text-right"}`}>
+        <div className="font-mono text-[10px] tracking-[0.2em] text-white/60">{n}&nbsp;&nbsp;{title}</div>
+        <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
+          {lines.map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -65,27 +50,31 @@ export default function HomePage() {
               NJ RETAIL / STORE 01 / SEOUL
             </div>
 
-            <div className="absolute left-4 top-16 hidden flex-col gap-6 sm:left-8 lg:top-24 lg:flex">
-              {anatomyLeft.map((item) => (
-                <AnatomyTag key={item.n} {...item} />
-              ))}
-            </div>
-            <div className="absolute right-4 top-16 hidden flex-col gap-6 sm:right-8 lg:top-24 lg:flex">
-              {anatomyRight.map((item) => (
-                <AnatomyTag key={item.n} {...item} />
-              ))}
-            </div>
+            {anatomyPoints.map((item) => (
+              <AnatomyPoint key={item.n} {...item} />
+            ))}
 
-            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
-              <h1 className="max-w-2xl text-3xl font-bold leading-[1.2] text-white sm:text-5xl lg:text-6xl">
-                매장은 공간이 아니라<br />운영으로 완성됩니다.
-              </h1>
+            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-6 p-6 sm:p-10 lg:flex-row lg:items-end lg:justify-between lg:p-14">
+              <div>
+                <h1 className="max-w-2xl text-3xl font-bold leading-[1.2] text-white sm:text-5xl lg:text-6xl">
+                  매장은 공간이 아니라<br />운영으로 완성됩니다.
+                </h1>
+                <p className="mt-4 max-w-sm text-sm leading-6 text-white/70">
+                  우리는 매장을 만들고, 상품을 채우고, 운영합니다.
+                </p>
+                <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-white/50">
+                  Space / Merchandise / System / Operation
+                </div>
+              </div>
+              <div className="hidden items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/50 lg:flex">
+                Scroll <span className="inline-block">↓</span>
+              </div>
             </div>
           </div>
 
           {/* Mobile / tablet: anatomy data below the photo */}
           <div className="grid grid-cols-2 gap-px bg-white/10 lg:hidden">
-            {[...anatomyLeft, ...anatomyRight].map((item) => (
+            {anatomyPoints.map((item) => (
               <div key={item.n} className="bg-black p-4">
                 <div className="font-mono text-[10px] tracking-[0.2em] text-white/50">{item.n} {item.title}</div>
                 <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
@@ -95,23 +84,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Statement */}
-        <section className="border-t border-black/10 bg-[#F5F3EF] py-20 sm:py-28">
-          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-              우리는 매장을 만들고,<br />
-              상품을 채우고,<br />
-              운영합니다.
-            </h2>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[0.25em] text-black/40">
-              <span>Space</span><span className="text-black/20">/</span>
-              <span>Merchandise</span><span className="text-black/20">/</span>
-              <span>System</span><span className="text-black/20">/</span>
-              <span>Operation</span>
-            </div>
           </div>
         </section>
 

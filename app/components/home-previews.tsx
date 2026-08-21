@@ -24,43 +24,50 @@ export function CasesSection() {
   return (
     <section className="border-t border-black/10 bg-white py-20 sm:py-28" id="cases-preview">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 flex items-baseline justify-between">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-black/40">Cases</span>
-          <Link href="/cases" className="text-sm font-semibold text-black underline underline-offset-4 hover:text-black/60">
-            오픈사례 더 보기
-          </Link>
-        </div>
-
-        <div className="grid gap-3 lg:grid-cols-3">
-          <div className="relative aspect-[1238/1271] overflow-hidden lg:col-span-2">
-            <Image src="/store-01.png" alt="1호점 매장 전경" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 001 / Seoul / 11 PY</div>
-              <div className="mt-1 text-lg font-bold tracking-tight text-white">Unmanned Market</div>
-            </div>
+        <div className="grid gap-10 lg:grid-cols-[1fr_3fr] lg:gap-8">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-black/40">Our Stores</span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-black sm:text-4xl">
+              우리가 만든<br />실제 매장들.
+            </h2>
+            <Link href="/cases" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-black/60">
+              View All Stores <span>&#8594;</span>
+            </Link>
           </div>
 
-          <div className="grid gap-3">
-            <div className="relative aspect-[1402/1122] overflow-hidden">
-              <Image src="/2.jpg" alt="2호점 매장 전경" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 002</div>
-            </div>
-            <div className="relative aspect-[1086/1448] overflow-hidden">
-              <Image src="/3.jpg" alt="3호점 매장 전경" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 003</div>
-            </div>
-          </div>
-        </div>
+          <div>
+            <div className="grid gap-3 lg:grid-cols-3">
+              <div className="relative aspect-[1238/1271] overflow-hidden lg:col-span-2">
+                <Image src="/store-01.png" alt="1호점 매장 전경" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 001 / Seoul / 11 PY</div>
+                  <div className="mt-1 text-lg font-bold tracking-tight text-white">Unmanned Market</div>
+                </div>
+              </div>
 
-        <div className="relative mt-3 aspect-[1448/1086] overflow-hidden">
-          <Image src="/4.jpg" alt="4호점 매장 전경" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 p-5">
-            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 004 / Seoul</div>
-            <div className="mt-1 text-lg font-bold tracking-tight text-white">Operation Setup</div>
+              <div className="grid gap-3">
+                <div className="relative aspect-[1402/1122] overflow-hidden">
+                  <Image src="/2.jpg" alt="2호점 매장 전경" fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 002</div>
+                </div>
+                <div className="relative aspect-[1086/1448] overflow-hidden">
+                  <Image src="/3.jpg" alt="3호점 매장 전경" fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 003</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mt-3 aspect-[1448/1086] overflow-hidden">
+              <Image src="/4.jpg" alt="4호점 매장 전경" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 004 / Seoul</div>
+                <div className="mt-1 text-lg font-bold tracking-tight text-white">Operation Setup</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
