@@ -21,7 +21,7 @@ const testimonials = [
 function AnatomyPoint({ n, title, lines, left, top, side }: { n: string; title: string; lines: string[]; left: string; top: string; side: "left" | "right" }) {
   return (
     <div className="absolute hidden lg:block" style={{ left, top }}>
-      <span className="absolute h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/80" />
+      <span className="absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-[#C8075F]" />
       <div className={`absolute top-0 h-px w-8 bg-white/50 ${side === "right" ? "left-1" : "right-1"}`} />
       <div className={`absolute top-0 w-40 ${side === "right" ? "left-10" : "right-10 text-right"}`}>
         <div className="font-mono text-[10px] tracking-[0.2em] text-white/60">{n}&nbsp;&nbsp;{title}</div>
@@ -42,8 +42,8 @@ export default function HomePage() {
       <main className="bg-[#F5F3EF]">
         {/* Hero — store anatomy */}
         <section className="relative bg-black">
-          <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-[21/9]">
-            <Image src="/store-01.png" alt="엔제이리테일 1호점 실제 매장 전경" fill priority className="object-contain" />
+          <div className="relative aspect-[1238/1271] w-full overflow-hidden">
+            <Image src="/store-01.png" alt="엔제이리테일 1호점 실제 매장 전경" fill priority className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/50" />
 
             <div className="absolute left-4 top-4 font-mono text-[11px] uppercase tracking-[0.3em] text-white/70 sm:left-8 sm:top-8">
@@ -76,7 +76,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-px bg-white/10 lg:hidden">
             {anatomyPoints.map((item) => (
               <div key={item.n} className="bg-black p-4">
-                <div className="font-mono text-[10px] tracking-[0.2em] text-white/50">{item.n} {item.title}</div>
+                <div className="font-mono text-[10px] tracking-[0.2em] text-[#F587B0]">{item.n} {item.title}</div>
                 <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
                   {item.lines.map((line) => (
                     <div key={line}>{line}</div>
@@ -94,9 +94,9 @@ export default function HomePage() {
         <CasesSection />
 
         {/* Review */}
-        <section className="border-t border-black/10 bg-[#F5F3EF] py-20 sm:py-28">
+        <section className="border-t border-black/10 bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-black/40">Review</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#C8075F]">Review</span>
             <div className="mt-10 divide-y divide-black/10 border-t border-black/10">
               {testimonials.map((t) => (
                 <div key={t.name} className="py-8">
@@ -113,13 +113,13 @@ export default function HomePage() {
         {/* Final CTA */}
         <section className="border-t border-black/10 bg-black py-20 text-center text-white sm:py-28">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/40">Store 005</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#F587B0]">Store 005</p>
             <h2 className="mt-4 text-3xl font-bold sm:text-4xl">다음 매장은,<br className="sm:hidden" /> 당신의 매장입니다.</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/60">
               상권 분석부터 운영까지, 엔제이리테일이 함께 만듭니다.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link href="/contact#inquiry-form" className="inline-flex items-center justify-center bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90">
+              <Link href="/contact#inquiry-form" className="inline-flex items-center justify-center bg-[#C8075F] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#a8074f]">
                 상담 신청하기
               </Link>
               <Link href="/shop" className="inline-flex items-center justify-center border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">

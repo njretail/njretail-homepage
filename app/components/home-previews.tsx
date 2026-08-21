@@ -26,11 +26,11 @@ export function CasesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_3fr] lg:gap-8">
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-black/40">Our Stores</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#C8075F]">Our Stores</span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-black sm:text-4xl">
               우리가 만든<br />실제 매장들.
             </h2>
-            <Link href="/cases" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-black/60">
+            <Link href="/cases" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#C8075F] hover:text-[#a8074f]">
               View All Stores <span>&#8594;</span>
             </Link>
           </div>
