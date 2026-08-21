@@ -79,8 +79,8 @@ export function ProjectSections() {
                   ))}
                 </dl>
               </div>
-              <div className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-0 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                <Image src={p.image} alt={p.title} fill className="object-cover" />
+              <div className={`relative min-h-[280px] bg-black sm:min-h-[360px] lg:min-h-0 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                <Image src={p.image} alt={p.title} fill className="object-contain" />
               </div>
             </div>
           </section>

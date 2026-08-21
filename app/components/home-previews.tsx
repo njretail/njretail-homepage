@@ -32,7 +32,7 @@ export function CasesSection() {
         </div>
 
         <div className="grid gap-3 lg:grid-cols-3">
-          <div className="relative aspect-[4/5] overflow-hidden lg:col-span-2 lg:aspect-auto">
+          <div className="relative aspect-[1238/1271] overflow-hidden lg:col-span-2">
             <Image src="/store-01.png" alt="1호점 매장 전경" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-5">
@@ -42,12 +42,12 @@ export function CasesSection() {
           </div>
 
           <div className="grid gap-3">
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[1402/1122] overflow-hidden">
               <Image src="/2.jpg" alt="2호점 매장 전경" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 002</div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[1086/1448] overflow-hidden">
               <Image src="/3.jpg" alt="3호점 매장 전경" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 003</div>
@@ -55,7 +55,7 @@ export function CasesSection() {
           </div>
         </div>
 
-        <div className="relative mt-3 aspect-[21/9] overflow-hidden">
+        <div className="relative mt-3 aspect-[1448/1086] overflow-hidden">
           <Image src="/4.jpg" alt="4호점 매장 전경" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 p-5">

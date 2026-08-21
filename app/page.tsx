@@ -58,7 +58,7 @@ export default function HomePage() {
         {/* Hero — store anatomy */}
         <section className="relative bg-black">
           <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-[21/9]">
-            <Image src="/store-01.png" alt="엔제이리테일 1호점 실제 매장 전경" fill priority className="object-cover" />
+            <Image src="/store-01.png" alt="엔제이리테일 1호점 실제 매장 전경" fill priority className="object-contain" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/50" />
 
             <div className="absolute left-4 top-4 font-mono text-[11px] uppercase tracking-[0.3em] text-white/70 sm:left-8 sm:top-8">
