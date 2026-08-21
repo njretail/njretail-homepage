@@ -1,12 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CTAButton, SectionTitle } from "./site-shell";
-
-const previewCases = [
-  { title: "1호점", result: "24시간 무인마켓 오픈", image: "/1호점.png" },
-  { title: "2호점", result: "상권 맞춤형 매장 오픈", image: "/2.jpg" },
-  { title: "3호점", result: "상품 구성과 매대 진열 최적화", image: "/3.jpg" },
-  { title: "4호점", result: "운영 셋팅과 청결 관리 지원", image: "/4.jpg" },
-];
 
 export function AboutSection() {
   return (
@@ -28,17 +22,48 @@ export function AboutSection() {
 
 export function CasesSection() {
   return (
-    <section className="border-t border-slate-200 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" id="cases-preview">
-      <SectionTitle eyebrow="Case" title="오픈사례" description="상권과 매장 형태에 맞춘 전략으로 실제 매장을 오픈한 사례들을 확인해보세요." />
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-        {previewCases.map((item) => (
-          <article key={item.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <Image src={item.image} alt={`${item.title} 매장 전경`} width={700} height={520} className="h-52 w-full bg-slate-100 object-contain" />
-            <div className="p-5"><h3 className="text-xl font-bold text-slate-900">{item.title}</h3><p className="mt-2 text-slate-600">{item.result}</p></div>
-          </article>
-        ))}
+    <section className="border-t border-black/10 bg-white py-20 sm:py-28" id="cases-preview">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex items-baseline justify-between">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-black/40">Cases</span>
+          <Link href="/cases" className="text-sm font-semibold text-black underline underline-offset-4 hover:text-black/60">
+            오픈사례 더 보기
+          </Link>
+        </div>
+
+        <div className="grid gap-3 lg:grid-cols-3">
+          <div className="relative aspect-[4/5] overflow-hidden lg:col-span-2 lg:aspect-auto">
+            <Image src="/store-01.png" alt="1호점 매장 전경" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-5">
+              <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 001 / Seoul / 11 PY</div>
+              <div className="mt-1 text-lg font-bold tracking-tight text-white">Unmanned Market</div>
+            </div>
+          </div>
+
+          <div className="grid gap-3">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/2.jpg" alt="2호점 매장 전경" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 002</div>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/3.jpg" alt="3호점 매장 전경" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white">Store 003</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative mt-3 aspect-[21/9] overflow-hidden">
+          <Image src="/4.jpg" alt="4호점 매장 전경" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 p-5">
+            <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/70">Store 004 / Seoul</div>
+            <div className="mt-1 text-lg font-bold tracking-tight text-white">Operation Setup</div>
+          </div>
+        </div>
       </div>
-      <div className="mt-8 text-center"><CTAButton href="/cases" text="오픈사례 더 보기" variant="secondary" /></div>
     </section>
   );
 }

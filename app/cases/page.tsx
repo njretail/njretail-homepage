@@ -12,7 +12,7 @@ const cases = [
     category: "편의점",
     location: "서울 강남",
     result: "월 매출 150% 성장",
-    image: "/1호점.png",
+    image: "/store-01.png",
   },
   {
     title: "2호점",
