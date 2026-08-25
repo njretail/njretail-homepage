@@ -7,7 +7,7 @@ const PINK = "#C8075F";
 
 function BoxIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M21 8l-9-5-9 5 9 5 9-5Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 8v8l9 5 9-5V8" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M12 13v8" strokeLinecap="round" />
@@ -28,7 +28,7 @@ function StoreIcon() {
 
 function SearchIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <circle cx="11" cy="11" r="6.5" />
       <path d="m20.5 20.5-4.4-4.4" strokeLinecap="round" />
     </svg>
@@ -37,7 +37,7 @@ function SearchIcon() {
 
 function PencilIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M4 20.5 4.7 17 16.4 5.3a2 2 0 0 1 2.8 0l1 1a2 2 0 0 1 0 2.8L8.5 20.5H4Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="m14.5 7.2 2.8 2.8" strokeLinecap="round" />
     </svg>
@@ -46,7 +46,7 @@ function PencilIcon() {
 
 function GearIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <circle cx="12" cy="12" r="3.2" />
       <path d="M12 3.5v2.3M12 18.2v2.3M4.9 6.9l1.6 1.6M17.5 15.5l1.6 1.6M3.5 12h2.3M18.2 12h2.3M4.9 17.1l1.6-1.6M17.5 8.5l1.6-1.6" strokeLinecap="round" />
     </svg>
@@ -55,7 +55,7 @@ function GearIcon() {
 
 function HeadsetIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M4 13v-1a8 8 0 0 1 16 0v1" strokeLinecap="round" />
       <rect x="2.5" y="13" width="4" height="6" rx="1.6" />
       <rect x="17.5" y="13" width="4" height="6" rx="1.6" />
@@ -246,12 +246,12 @@ export default function HomePage() {
               창업 <span style={{ color: PINK }}>진행</span> 프로세스
             </h2>
 
-            <div className="mt-12 flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:flex lg:flex-row lg:items-start lg:gap-3">
+            <div className="mt-12 flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:flex lg:flex-row lg:items-stretch lg:gap-3">
               {processSteps.map((step, i) => (
-                <div key={step.n} className="flex flex-1 items-center lg:items-start">
-                  <div className="flex flex-1 flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm">
+                <div key={step.n} className="flex flex-1 items-stretch">
+                  <div className="flex flex-1 flex-col items-center rounded-2xl bg-white p-7 text-center shadow-sm sm:p-8">
                     <span
-                      className="flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white"
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
                       style={{ backgroundColor: PINK }}
                     >
                       {step.n}
@@ -259,11 +259,11 @@ export default function HomePage() {
                     <div className="mt-4 text-slate-700">
                       <step.icon />
                     </div>
-                    <div className="mt-3 text-base font-bold text-slate-900">{step.title}</div>
-                    <p className="mt-2 text-xs leading-5 text-slate-500">{step.desc}</p>
+                    <div className="mt-3 text-lg font-bold text-slate-900 sm:text-xl">{step.title}</div>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">{step.desc}</p>
                   </div>
                   {i < processSteps.length - 1 && (
-                    <span className="mx-1 hidden shrink-0 text-slate-300 lg:block">
+                    <span className="mx-1 hidden shrink-0 self-center text-slate-300 lg:block">
                       <ArrowRightIcon />
                     </span>
                   )}
