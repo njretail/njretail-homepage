@@ -55,12 +55,12 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
+              className="text-base font-semibold text-slate-700 transition hover:text-slate-900"
             >
               {item.label}
             </Link>
@@ -81,7 +81,7 @@ export function Header() {
           <div className="absolute right-0 top-14 w-56 rounded-xl border border-slate-200 bg-white p-3 shadow-lg">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+                <Link key={item.href} href={item.href} className="rounded-lg px-3 py-2 text-base font-semibold text-slate-700 hover:bg-slate-50">
                   {item.label}
                 </Link>
               ))}
