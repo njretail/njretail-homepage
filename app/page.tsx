@@ -23,17 +23,6 @@ function BoxIcon() {
   );
 }
 
-function PeopleIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
-      <circle cx="9" cy="8" r="3" />
-      <path d="M2.5 20c0-3.5 2.9-6 6.5-6s6.5 2.5 6.5 6" strokeLinecap="round" />
-      <circle cx="17" cy="9" r="2.4" />
-      <path d="M15.5 14.2c2.7.4 4.5 2.4 4.5 5.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function StoreIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
@@ -41,14 +30,6 @@ function StoreIcon() {
       <path d="M3 10a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M5 10v9.5h14V10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M9.5 19.5V14h5v5.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function HeartIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
-      <path d="M12 20.5s-7.5-4.6-9.8-9.3C.6 7.8 2.4 4.5 5.9 4c2.2-.3 4.1.9 6.1 3 2-2.1 3.9-3.3 6.1-3 3.5.5 5.3 3.8 3.7 7.2C19.5 15.9 12 20.5 12 20.5Z" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -107,11 +88,62 @@ function ArrowRightIcon() {
   );
 }
 
-const stats = [
-  { icon: BoxIcon, value: "10년+", label: "운영 노하우" },
-  { icon: PeopleIcon, value: "1,200+", label: "누적 창업 상담" },
-  { icon: StoreIcon, value: "80+", label: "다모아 가맹 매장" },
-  { icon: HeartIcon, value: "96%", label: "고객 만족도" },
+function ChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5v-3.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="8.3" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
+      <circle cx="15.7" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function ClipboardIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <rect x="5" y="4" width="14" height="17" rx="1.6" />
+      <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" strokeLinecap="round" />
+      <path d="M8.5 11.5l1.7 1.7L13.5 10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.5 16h7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ChipIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <rect x="7" y="7" width="10" height="10" rx="1.4" />
+      <path d="M9.5 7V3.5M14.5 7V3.5M9.5 20.5V17M14.5 20.5V17M7 9.5H3.5M7 14.5H3.5M17 9.5h3.5M17 14.5h3.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function HomeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M4 11.5 12 4l8 7.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6 10v9.5h12V10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 19.5V14h4v5.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M4.5 20c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+const serviceHighlights = [
+  { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
+  { icon: ClipboardIcon, title: "맞춤형 설계", desc: "상권 분석부터 최적의 맞춤 설계" },
+  { icon: ChipIcon, title: "시스템 구축", desc: "무인 운영 시스템 및 통합 솔루션 구축" },
+  { icon: HomeIcon, title: "사후관리", desc: "오픈 후 안정적인 관리와 운영 지원" },
+  { icon: UserIcon, title: "지속 지원", desc: "지속 가능한 수익구조 설계 및 지원" },
 ];
 
 const processSteps = [
@@ -197,17 +229,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="mt-14 grid grid-cols-2 gap-6 rounded-2xl border border-black/5 bg-[#FBF4F7] p-6 sm:grid-cols-4 sm:p-8">
-              {stats.map((s) => (
-                <div key={s.label} className="flex items-center gap-3">
+            {/* Service highlights */}
+            <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {serviceHighlights.map((s) => (
+                <div key={s.title} className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
                   <IconBox>
                     <s.icon />
                   </IconBox>
-                  <div>
-                    <div className="text-xl font-bold text-slate-900 sm:text-2xl">{s.value}</div>
-                    <div className="text-xs text-slate-500 sm:text-sm">{s.label}</div>
-                  </div>
+                  <div className="mt-4 text-base font-bold text-slate-900">{s.title}</div>
+                  <p className="mt-1.5 text-xs leading-5 text-slate-500">{s.desc}</p>
                 </div>
               ))}
             </div>
