@@ -17,7 +17,7 @@ function BoxIcon() {
 
 function StoreIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-10 w-10">
       <path d="M3 10 4.5 4h15L21 10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 10a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M5 10v9.5h14V10" strokeLinecap="round" strokeLinejoin="round" />
@@ -367,18 +367,18 @@ export default function HomePage() {
 
         {/* CTA banner */}
         <section className="bg-[#FBF4F7]">
-          <div className="mx-auto flex max-w-7xl flex-col items-start gap-7 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-12 lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-8 lg:px-8">
             <div className="flex items-center gap-5">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-[#C8075F] shadow-sm">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white text-[#C8075F] shadow-sm">
                 <StoreIcon />
               </div>
               <div>
-                <p className="text-lg font-bold leading-7 text-slate-900 sm:text-xl">
+                <p className="text-xl font-bold leading-7 text-slate-900 sm:text-2xl">
                   창업 고민, 혼자 하지 마세요.
                   <br />
                   엔제이리테일이 함께 하겠습니다.
                 </p>
-                <a href="tel:010-7650-9600" className="mt-2 block text-2xl font-bold" style={{ color: PINK }}>
+                <a href="tel:010-7650-9600" className="mt-1.5 block text-3xl font-bold sm:text-4xl" style={{ color: PINK }}>
                   010-7650-9600
                 </a>
               </div>
@@ -388,7 +388,7 @@ export default function HomePage() {
               <span className="text-base text-slate-500">평일 09:00 - 18:00</span>
               <Link
                 href="/contact#inquiry-form"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-bold text-white shadow-sm transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-lg font-bold text-white shadow-sm transition hover:opacity-90"
                 style={{ backgroundColor: PINK }}
               >
                 무료 창업 상담 신청 <ArrowRightIcon />
