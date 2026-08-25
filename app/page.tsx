@@ -171,7 +171,7 @@ export default function HomePage() {
         {/* Hero */}
         <section>
           <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.25fr] lg:items-center lg:gap-10">
               <div>
                 <h1 className="text-4xl font-bold leading-[1.25] text-slate-900 sm:text-5xl lg:text-[3.4rem]">
                   가까운 동네에서,
@@ -198,13 +198,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative aspect-[615/595] overflow-hidden rounded-3xl shadow-xl">
+              <div className="relative aspect-[626/617] overflow-hidden rounded-3xl shadow-xl">
                 <Image
-                  src="/6.png"
+                  src="/7.png"
                   alt="엔제이리테일 다모아 무인매장 매장 전경"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 56vw, 100vw"
                   className="object-contain"
                 />
               </div>
