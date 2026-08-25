@@ -64,14 +64,6 @@ function HeadsetIcon() {
   );
 }
 
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
-      <path d="M5.5 3.5h3l1.4 4.3-2.1 1.7a12.5 12.5 0 0 0 6.2 6.2l1.7-2.1 4.3 1.4v3a1.5 1.5 0 0 1-1.6 1.5C10.9 19 5 13.1 4 5.6a1.5 1.5 0 0 1 1.5-2.1Z" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 function ArrowRightIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
@@ -165,10 +157,10 @@ const costTotal = costItems.reduce((sum, item) => sum + item.value, 0);
 const won = (n: number) => n.toLocaleString("ko-KR");
 
 const storeGallery = [
-  { img: "/2.jpg", name: "서울 상계점" },
-  { img: "/1.png", name: "인천 부평점" },
-  { img: "/3.jpg", name: "대전 유성점" },
-  { img: "/4.jpg", name: "대구 수성점" },
+  { img: "/2.jpg", name: "다모아마켓 상월곡동" },
+  { img: "/1.png", name: "다모아마켓 동덕여대" },
+  { img: "/3.jpg", name: "다모아마켓 장위동" },
+  { img: "/4.jpg", name: "다모아마켓 장위초" },
 ];
 
 export default function HomePage() {
@@ -203,9 +195,6 @@ export default function HomePage() {
                   >
                     무료 창업 상담 신청 <ArrowRightIcon />
                   </Link>
-                  <a href="tel:010-7650-9600" className="inline-flex items-center gap-2 text-lg font-bold text-slate-900">
-                    <PhoneIcon /> 010-7650-9600
-                  </a>
                 </div>
               </div>
 
@@ -374,9 +363,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-xl font-bold leading-7 text-slate-900 sm:text-2xl">
-                  창업 고민, 혼자 하지 마세요.
-                  <br />
-                  엔제이리테일이 함께 하겠습니다.
+                  창업 고민, 혼자 하지 마세요. 엔제이리테일이 함께 하겠습니다.
                 </p>
                 <a href="tel:010-7650-9600" className="mt-1.5 block text-3xl font-bold sm:text-4xl" style={{ color: PINK }}>
                   010-7650-9600
