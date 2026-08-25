@@ -5,14 +5,6 @@ import { KakaoChatWidget } from "./components/kakao-chat-widget";
 
 const PINK = "#C8075F";
 
-function IconBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FCE7F0] text-[#C8075F]">
-      {children}
-    </div>
-  );
-}
-
 function BoxIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
@@ -374,35 +366,33 @@ export default function HomePage() {
         </section>
 
         {/* CTA banner */}
-        <section className="bg-white py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-8 rounded-3xl bg-[#FBF4F7] p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-              <div className="flex items-center gap-4">
-                <IconBox>
-                  <StoreIcon />
-                </IconBox>
-                <div>
-                  <p className="text-lg font-bold leading-7 text-slate-900 sm:text-xl">
-                    창업 고민, 혼자 하지 마세요.
-                    <br />
-                    엔제이리테일이 함께 하겠습니다.
-                  </p>
-                  <a href="tel:010-7650-9600" className="mt-2 block text-xl font-bold" style={{ color: PINK }}>
-                    010-7650-9600
-                  </a>
-                </div>
+        <section className="bg-[#FBF4F7]">
+          <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-10 lg:px-8">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-[#C8075F] shadow-sm">
+                <StoreIcon />
               </div>
+              <div>
+                <p className="text-base font-bold leading-6 text-slate-900 sm:text-lg">
+                  창업 고민, 혼자 하지 마세요.
+                  <br />
+                  엔제이리테일이 함께 하겠습니다.
+                </p>
+                <a href="tel:010-7650-9600" className="mt-1.5 block text-lg font-bold" style={{ color: PINK }}>
+                  010-7650-9600
+                </a>
+              </div>
+            </div>
 
-              <div className="flex w-full flex-col items-start gap-4 sm:w-auto sm:flex-row sm:items-center">
-                <span className="text-sm text-slate-500">평일 09:00 - 18:00</span>
-                <Link
-                  href="/contact#inquiry-form"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
-                  style={{ backgroundColor: PINK }}
-                >
-                  무료 창업 상담 신청 <ArrowRightIcon />
-                </Link>
-              </div>
+            <div className="flex w-full flex-col items-start gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
+              <span className="text-sm text-slate-500">평일 09:00 - 18:00</span>
+              <Link
+                href="/contact#inquiry-form"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+                style={{ backgroundColor: PINK }}
+              >
+                무료 창업 상담 신청 <ArrowRightIcon />
+              </Link>
             </div>
           </div>
         </section>
