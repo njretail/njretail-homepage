@@ -198,25 +198,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative">
-                <div
-                  className="absolute -inset-4 -z-10 hidden lg:block"
-                  style={{ backgroundColor: PINK, clipPath: "polygon(9% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+              <div className="relative aspect-[485/579] overflow-hidden rounded-3xl shadow-xl">
+                <Image
+                  src="/5.png"
+                  alt="엔제이리테일 다모아 무인매장 매장 전경"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-contain"
                 />
-                <div
-                  className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl lg:aspect-[5/4] lg:rounded-none lg:[clip-path:polygon(14%_0%,100%_0%,100%_100%,0%_100%)] lg:[perspective:1200px]"
-                >
-                  <div className="absolute inset-0 lg:[transform:rotateY(-10deg)_scale(1.18)]">
-                    <Image
-                      src="/2.jpg"
-                      alt="엔제이리테일 다모아 무인매장 매장 전경"
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
 
