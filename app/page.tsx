@@ -211,17 +211,17 @@ export default function HomePage() {
             </div>
 
             {/* Service highlights */}
-            <div className="mt-16 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-5">
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-8"
+                  className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7 lg:p-8"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F] sm:h-16 sm:w-16">
                     <s.icon />
                   </div>
-                  <div className="mt-5 text-xl font-bold text-slate-900 sm:text-2xl">{s.title}</div>
-                  <p className="mt-2 text-base leading-6 text-slate-600">{s.desc}</p>
+                  <div className="mt-3 text-sm font-bold leading-5 text-slate-900 sm:mt-5 sm:text-xl sm:leading-normal lg:text-2xl">{s.title}</div>
+                  <p className="mt-1.5 text-xs leading-5 text-slate-600 sm:mt-2 sm:text-base sm:leading-6">{s.desc}</p>
                 </div>
               ))}
             </div>
