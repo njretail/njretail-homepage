@@ -84,7 +84,7 @@ export function ServiceCost() {
   return (
     <section className="mt-20 rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
       <div className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Startup Cost</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Startup Cost</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">11평 기준 창업비용 안내</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">1호점 실제 발생 비용을 기준으로 정리한 예상 금액입니다. 매장 위치와 상태, 장비 선택에 따라 달라질 수 있습니다.</p>
       </div>
@@ -142,7 +142,7 @@ export function ServiceAgency() {
   return (
     <section className="mt-20 rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
       <div className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">매장 운영 대행도 함께 지원합니다</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">입고와 매대진열, 매장 청소까지 필요한 운영 업무를 선택해 신청할 수 있습니다.</p>
       </div>

@@ -7,7 +7,7 @@ const PINK = "#C8075F";
 
 function BoxIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <path d="M21 8l-9-5-9 5 9 5 9-5Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 8v8l9 5 9-5V8" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M12 13v8" strokeLinecap="round" />
@@ -17,7 +17,7 @@ function BoxIcon() {
 
 function StoreIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M3 10 4.5 4h15L21 10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 10a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M5 10v9.5h14V10" strokeLinecap="round" strokeLinejoin="round" />
@@ -28,7 +28,7 @@ function StoreIcon() {
 
 function SearchIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <circle cx="11" cy="11" r="6.5" />
       <path d="m20.5 20.5-4.4-4.4" strokeLinecap="round" />
     </svg>
@@ -37,7 +37,7 @@ function SearchIcon() {
 
 function PencilIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <path d="M4 20.5 4.7 17 16.4 5.3a2 2 0 0 1 2.8 0l1 1a2 2 0 0 1 0 2.8L8.5 20.5H4Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="m14.5 7.2 2.8 2.8" strokeLinecap="round" />
     </svg>
@@ -46,7 +46,7 @@ function PencilIcon() {
 
 function GearIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <circle cx="12" cy="12" r="3.2" />
       <path d="M12 3.5v2.3M12 18.2v2.3M4.9 6.9l1.6 1.6M17.5 15.5l1.6 1.6M3.5 12h2.3M18.2 12h2.3M4.9 17.1l1.6-1.6M17.5 8.5l1.6-1.6" strokeLinecap="round" />
     </svg>
@@ -55,7 +55,7 @@ function GearIcon() {
 
 function HeadsetIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <path d="M4 13v-1a8 8 0 0 1 16 0v1" strokeLinecap="round" />
       <rect x="2.5" y="13" width="4" height="6" rx="1.6" />
       <rect x="17.5" y="13" width="4" height="6" rx="1.6" />
@@ -66,7 +66,7 @@ function HeadsetIcon() {
 
 function PhoneIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
       <path d="M5.5 3.5h3l1.4 4.3-2.1 1.7a12.5 12.5 0 0 0 6.2 6.2l1.7-2.1 4.3 1.4v3a1.5 1.5 0 0 1-1.6 1.5C10.9 19 5 13.1 4 5.6a1.5 1.5 0 0 1 1.5-2.1Z" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -82,7 +82,7 @@ function ArrowRightIcon() {
 
 function ChatIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5v-3.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" strokeLinecap="round" strokeLinejoin="round" />
       <circle cx="8.3" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
       <circle cx="12" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
@@ -93,7 +93,7 @@ function ChatIcon() {
 
 function ClipboardIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <rect x="5" y="4" width="14" height="17" rx="1.6" />
       <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" strokeLinecap="round" />
       <path d="M8.5 11.5l1.7 1.7L13.5 10" strokeLinecap="round" strokeLinejoin="round" />
@@ -104,7 +104,7 @@ function ClipboardIcon() {
 
 function ChipIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <rect x="7" y="7" width="10" height="10" rx="1.4" />
       <path d="M9.5 7V3.5M14.5 7V3.5M9.5 20.5V17M14.5 20.5V17M7 9.5H3.5M7 14.5H3.5M17 9.5h3.5M17 14.5h3.5" strokeLinecap="round" />
     </svg>
@@ -113,7 +113,7 @@ function ChipIcon() {
 
 function HomeIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <path d="M4 11.5 12 4l8 7.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M6 10v9.5h12V10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M10 19.5V14h4v5.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -123,7 +123,7 @@ function HomeIcon() {
 
 function UserIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
       <circle cx="12" cy="8" r="3.5" />
       <path d="M4.5 20c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7" strokeLinecap="round" />
     </svg>
@@ -181,7 +181,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
               <div>
-                <h1 className="text-3xl font-bold leading-[1.35] text-slate-900 sm:text-4xl lg:text-[2.75rem]">
+                <h1 className="text-4xl font-bold leading-[1.25] text-slate-900 sm:text-5xl lg:text-[3.4rem]">
                   가까운 동네에서,
                   <br />
                   <span style={{ color: PINK }}>믿고 찾는 무인매장</span>
@@ -190,7 +190,7 @@ export default function HomePage() {
                   <br />
                   엔제이리테일
                 </h1>
-                <p className="mt-5 text-base leading-7 text-slate-600">
+                <p className="mt-6 text-lg leading-8 text-slate-600">
                   운영은 편하게, 수익은 안정적으로
                   <br />
                   내 가게 같은 마음으로 성공 창업을 함께 만들어갑니다.
@@ -198,12 +198,12 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-wrap items-center gap-6">
                   <Link
                     href="/contact#inquiry-form"
-                    className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+                    className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white shadow-sm transition hover:opacity-90"
                     style={{ backgroundColor: PINK }}
                   >
                     무료 창업 상담 신청 <ArrowRightIcon />
                   </Link>
-                  <a href="tel:010-7650-9600" className="inline-flex items-center gap-2 text-base font-bold text-slate-900">
+                  <a href="tel:010-7650-9600" className="inline-flex items-center gap-2 text-lg font-bold text-slate-900">
                     <PhoneIcon /> 010-7650-9600
                   </a>
                 </div>
@@ -222,17 +222,17 @@ export default function HomePage() {
             </div>
 
             {/* Service highlights */}
-            <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-16 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7"
+                  className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-8"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F]">
                     <s.icon />
                   </div>
-                  <div className="mt-5 text-lg font-bold text-slate-900 sm:text-xl">{s.title}</div>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{s.desc}</p>
+                  <div className="mt-5 text-xl font-bold text-slate-900 sm:text-2xl">{s.title}</div>
+                  <p className="mt-2 text-base leading-6 text-slate-600">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -242,16 +242,16 @@ export default function HomePage() {
         {/* Process */}
         <section className="bg-[#FBF4F7] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
+            <h2 className="text-center text-3xl font-bold text-slate-900 sm:text-4xl">
               창업 <span style={{ color: PINK }}>진행</span> 프로세스
             </h2>
 
-            <div className="mt-12 flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:flex lg:flex-row lg:items-stretch lg:gap-3">
+            <div className="mt-14 flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:flex lg:flex-row lg:items-stretch lg:gap-3">
               {processSteps.map((step, i) => (
                 <div key={step.n} className="flex flex-1 items-stretch">
                   <div className="flex flex-1 flex-col items-center rounded-2xl bg-white p-7 text-center shadow-sm sm:p-8">
                     <span
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-base font-bold text-white"
                       style={{ backgroundColor: PINK }}
                     >
                       {step.n}
@@ -259,8 +259,8 @@ export default function HomePage() {
                     <div className="mt-4 text-slate-700">
                       <step.icon />
                     </div>
-                    <div className="mt-3 text-lg font-bold text-slate-900 sm:text-xl">{step.title}</div>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{step.desc}</p>
+                    <div className="mt-3 text-xl font-bold text-slate-900 sm:text-2xl">{step.title}</div>
+                    <p className="mt-2 text-base leading-6 text-slate-500">{step.desc}</p>
                   </div>
                   {i < processSteps.length - 1 && (
                     <span className="mx-1 hidden shrink-0 self-center text-slate-300 lg:block">
@@ -278,7 +278,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid min-w-0 gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
               <div className="min-w-0">
-                <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+                <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                   다모아 브랜드 <span style={{ color: PINK }}>경쟁력</span>
                 </h2>
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
@@ -287,7 +287,7 @@ export default function HomePage() {
                       <div className="relative aspect-square overflow-hidden rounded-2xl">
                         <Image src={b.img} alt={b.title} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
                       </div>
-                      <p className="mt-3 text-center text-sm font-semibold text-slate-800">{b.title}</p>
+                      <p className="mt-3 text-center text-base font-semibold text-slate-800">{b.title}</p>
                     </div>
                   ))}
                 </div>
@@ -296,9 +296,9 @@ export default function HomePage() {
               <div className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-black/5 shadow-sm sm:flex-row lg:flex-col">
                 <div className="flex min-w-0 flex-1 flex-col justify-between p-8 text-white sm:p-10" style={{ backgroundColor: PINK }}>
                   <div>
-                    <div className="text-3xl font-bold sm:text-4xl">11평.</div>
-                    <div className="mt-1 text-3xl font-bold sm:text-4xl">{won(costTotal / 1000)}만원.</div>
-                    <p className="mt-4 text-sm leading-6 text-white/85">
+                    <div className="text-4xl font-bold sm:text-5xl">11평.</div>
+                    <div className="mt-1 text-4xl font-bold sm:text-5xl">{won(costTotal / 1000)}만원.</div>
+                    <p className="mt-4 text-base leading-6 text-white/85">
                       설레 1호점 기준
                       <br />
                       초기 창업 비용입니다.
@@ -306,7 +306,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     href="/service"
-                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold"
+                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-bold"
                     style={{ color: PINK }}
                   >
                     비용 상세보기 <ArrowRightIcon />
@@ -316,7 +316,7 @@ export default function HomePage() {
                 <div className="min-w-0 flex-1 bg-white p-8 sm:p-10">
                   <dl className="divide-y divide-slate-100">
                     {costItems.map((item) => (
-                      <div key={item.label} className="flex items-baseline justify-between gap-3 py-3 text-sm">
+                      <div key={item.label} className="flex items-baseline justify-between gap-3 py-3.5 text-base">
                         <dt className="min-w-0 font-medium text-slate-600">
                           {item.label} <span className="text-slate-400">({item.sub})</span>
                         </dt>
@@ -325,8 +325,8 @@ export default function HomePage() {
                     ))}
                   </dl>
                   <div className="mt-3 flex items-baseline justify-between gap-3 border-t border-slate-200 pt-4">
-                    <dt className="text-base font-bold text-slate-900">TOTAL</dt>
-                    <dd className="shrink-0 text-xl font-bold" style={{ color: PINK }}>
+                    <dt className="text-lg font-bold text-slate-900">TOTAL</dt>
+                    <dd className="shrink-0 text-2xl font-bold" style={{ color: PINK }}>
                       {won(costTotal)}
                     </dd>
                   </div>
@@ -340,8 +340,8 @@ export default function HomePage() {
         <section className="bg-[#FBF4F7] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">실제 다모아 매장</h2>
-              <Link href="/cases" className="flex items-center gap-1 text-sm font-semibold" style={{ color: PINK }}>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">실제 다모아 매장</h2>
+              <Link href="/cases" className="flex items-center gap-1 text-base font-semibold" style={{ color: PINK }}>
                 전체 보기 <ArrowRightIcon />
               </Link>
             </div>
@@ -358,7 +358,7 @@ export default function HomePage() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="mt-3 text-center text-sm font-semibold text-slate-800">{store.name}</p>
+                  <p className="mt-3 text-center text-base font-semibold text-slate-800">{store.name}</p>
                 </div>
               ))}
             </div>
@@ -367,28 +367,28 @@ export default function HomePage() {
 
         {/* CTA banner */}
         <section className="bg-[#FBF4F7]">
-          <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-10 lg:px-8">
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-[#C8075F] shadow-sm">
+          <div className="mx-auto flex max-w-7xl flex-col items-start gap-7 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-12 lg:px-8">
+            <div className="flex items-center gap-5">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-[#C8075F] shadow-sm">
                 <StoreIcon />
               </div>
               <div>
-                <p className="text-base font-bold leading-6 text-slate-900 sm:text-lg">
+                <p className="text-lg font-bold leading-7 text-slate-900 sm:text-xl">
                   창업 고민, 혼자 하지 마세요.
                   <br />
                   엔제이리테일이 함께 하겠습니다.
                 </p>
-                <a href="tel:010-7650-9600" className="mt-1.5 block text-lg font-bold" style={{ color: PINK }}>
+                <a href="tel:010-7650-9600" className="mt-2 block text-2xl font-bold" style={{ color: PINK }}>
                   010-7650-9600
                 </a>
               </div>
             </div>
 
-            <div className="flex w-full flex-col items-start gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
-              <span className="text-sm text-slate-500">평일 09:00 - 18:00</span>
+            <div className="flex w-full flex-col items-start gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-7">
+              <span className="text-base text-slate-500">평일 09:00 - 18:00</span>
               <Link
                 href="/contact#inquiry-form"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-bold text-white shadow-sm transition hover:opacity-90"
                 style={{ backgroundColor: PINK }}
               >
                 무료 창업 상담 신청 <ArrowRightIcon />

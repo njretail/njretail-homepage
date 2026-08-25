@@ -7,7 +7,7 @@ export function AboutSection() {
     <div className="border-t border-slate-200 bg-white">
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8" id="about-preview">
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">About</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">About</p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">무인리테일의 새로운 기준을<br className="sm:hidden" /> 만들어 갑니다</h2>
           <p className="mt-5 text-base leading-8 text-slate-600">엔제이리테일은 데이터 기반 운영 최적화와 24시간 안정적인 시스템 관리로 점주님이 안심할 수 있는 무인매장을 설계합니다.</p>
           <div className="mt-7"><CTAButton href="/about" text="기업소개 자세히 보기" variant="secondary" /></div>

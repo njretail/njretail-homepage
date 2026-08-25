@@ -12,7 +12,7 @@ export const navItems = [
 ];
 
 export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" | "brand" }) {
-  const shared = "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8075F] focus-visible:ring-offset-2";
+  const shared = "inline-flex items-center justify-center rounded-xl px-6 py-3.5 text-base font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8075F] focus-visible:ring-offset-2";
   const classes =
     variant === "primary"
       ? `${shared} bg-[#C8075F] text-white shadow-sm hover:bg-[#a8054e]`
@@ -38,9 +38,9 @@ export function SectionTitle({
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">{eyebrow}</p>
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">{eyebrow}</p>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-slate-600">{description}</p>
+      <p className="mt-4 text-lg leading-8 text-slate-600">{description}</p>
     </div>
   );
 }

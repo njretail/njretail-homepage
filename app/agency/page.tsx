@@ -19,7 +19,7 @@ export default function AgencyPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">대행 신청하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             매장 운영에 필요한 업무를 선택해 주세요. 매장 상황을 확인한 뒤 맞춤형 대행 범위와 일정을 안내해드립니다.
@@ -42,7 +42,7 @@ export default function AgencyPage() {
         <section className="mt-16 rounded-[30px] bg-slate-50 p-8 sm:p-12">
           <div className="mx-auto max-w-3xl">
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Application</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Application</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">대행 서비스 신청서</h2>
             </div>
             <form className="mt-10 space-y-6">

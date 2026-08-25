@@ -56,7 +56,7 @@ export default function TermsPage() {
     <>
       <Header />
       <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Terms of Service</p>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Terms of Service</p>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">이용약관</h1>
         <p className="mt-5 text-base leading-8 text-slate-600">
           엔제이리테일 홈페이지 및 쇼핑몰 이용과 관련하여 회사와 이용자의 권리·의무 및 책임사항을 안내드립니다.

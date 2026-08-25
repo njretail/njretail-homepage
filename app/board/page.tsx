@@ -30,7 +30,7 @@ export default function BoardPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Board</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Board</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">게시판</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장 창업, 운영, 보안, 인테리어에 관련된 정보를 확인할 수 있는 공간입니다.

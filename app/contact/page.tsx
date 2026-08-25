@@ -6,7 +6,7 @@ export default function ContactPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Contact</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Contact</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">문의하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장 창업 및 운영에 대한 궁금한 점이 있으시면 언제든 편하게 문의해 주세요.

@@ -26,7 +26,7 @@ export default function AboutPage() {
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-12">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">About</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">About</p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               무인리테일의 새로운 기준을 만들어 갑니다
             </h1>
