@@ -133,7 +133,7 @@ function UserIcon() {
 }
 
 const serviceHighlights = [
-  { icon: StepsIcon, title: "매장이 만들어지는 5단계 과정", desc: "지금부터 순서대로 알려드릴게요" },
+  { icon: StepsIcon, title: "매장이 만들어지는 5단계 과정", desc: "지금부터 순서대로 알려드릴게요", highlight: true },
   { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
   { icon: ClipboardIcon, title: "맞춤형 설계", desc: "상권 분석부터 최적의 맞춤 설계" },
   { icon: ChipIcon, title: "시스템 구축", desc: "무인 운영 시스템 및 통합 솔루션 구축" },
@@ -226,13 +226,28 @@ export default function HomePage() {
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7 lg:p-8"
+                  className={`rounded-2xl p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7 lg:p-8 ${
+                    s.highlight ? "text-white" : "border border-black/5 bg-white"
+                  }`}
+                  style={s.highlight ? { backgroundColor: PINK } : undefined}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F] sm:h-16 sm:w-16">
+                  <div
+                    className={`flex h-11 w-11 items-center justify-center rounded-2xl sm:h-16 sm:w-16 ${
+                      s.highlight ? "bg-white/15 text-white" : "bg-[#FCE7F0] text-[#C8075F]"
+                    }`}
+                  >
                     <s.icon />
                   </div>
-                  <div className="mt-3 text-sm font-bold leading-5 text-slate-900 sm:mt-5 sm:text-xl sm:leading-normal lg:text-2xl">{s.title}</div>
-                  <p className="mt-1.5 text-xs leading-5 text-slate-600 sm:mt-2 sm:text-base sm:leading-6">{s.desc}</p>
+                  <div
+                    className={`mt-3 text-sm font-bold leading-5 sm:mt-5 sm:text-xl sm:leading-normal lg:text-2xl ${
+                      s.highlight ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    {s.title}
+                  </div>
+                  <p className={`mt-1.5 text-xs leading-5 sm:mt-2 sm:text-base sm:leading-6 ${s.highlight ? "text-white/80" : "text-slate-600"}`}>
+                    {s.desc}
+                  </p>
                 </div>
               ))}
             </div>
