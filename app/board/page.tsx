@@ -30,7 +30,7 @@ export default function BoardPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Board</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Board</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">게시판</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장 창업, 운영, 보안, 인테리어에 관련된 정보를 확인할 수 있는 공간입니다.
@@ -43,7 +43,7 @@ export default function BoardPage() {
               type="button"
               onClick={() => changeTab("notice")}
               className={`flex-1 px-6 py-4 text-sm font-semibold transition ${
-                tab === "notice" ? "bg-[#3B82F6] text-white" : "text-slate-700 hover:bg-slate-50"
+                tab === "notice" ? "bg-[#C8075F] text-white" : "text-slate-700 hover:bg-slate-50"
               }`}
             >
               공지사항
@@ -52,7 +52,7 @@ export default function BoardPage() {
               type="button"
               onClick={() => changeTab("qna")}
               className={`flex-1 px-6 py-4 text-sm font-semibold transition ${
-                tab === "qna" ? "bg-[#3B82F6] text-white" : "text-slate-700 hover:bg-slate-50"
+                tab === "qna" ? "bg-[#C8075F] text-white" : "text-slate-700 hover:bg-slate-50"
               }`}
             >
               Q&A
@@ -91,7 +91,7 @@ export default function BoardPage() {
                   <tr key={item.id} className="border-t border-slate-200 hover:bg-slate-50">
                     <td className="px-6 py-4">{item.id}</td>
                     <td className="px-6 py-4">
-                      <button type="button" onClick={() => setSelected(item)} className="text-left font-medium text-slate-900 hover:text-[#3B82F6] hover:underline">
+                      <button type="button" onClick={() => setSelected(item)} className="text-left font-medium text-slate-900 hover:text-[#C8075F] hover:underline">
                         {item.title}
                       </button>
                     </td>

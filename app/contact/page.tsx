@@ -6,7 +6,7 @@ export default function ContactPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Contact</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Contact</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">문의하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장 창업 및 운영에 대한 궁금한 점이 있으시면 언제든 편하게 문의해 주세요.
@@ -46,22 +46,22 @@ export default function ContactPage() {
             <div className="grid gap-6 md:grid-cols-2">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">이름</label>
-                <input id="name" type="text" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#3B82F6]" placeholder="홍길동" />
+                <input id="name" type="text" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#C8075F]" placeholder="홍길동" />
               </div>
               <div>
                 <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-700">연락처</label>
-                <input id="phone" type="tel" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#3B82F6]" placeholder="010-1234-5678" />
+                <input id="phone" type="tel" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#C8075F]" placeholder="010-1234-5678" />
               </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">이메일</label>
-                <input id="email" type="email" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#3B82F6]" placeholder="name@example.com" />
+                <input id="email" type="email" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#C8075F]" placeholder="name@example.com" />
               </div>
               <div>
                 <label htmlFor="type" className="mb-2 block text-sm font-medium text-slate-700">문의 유형</label>
-                <select id="type" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 focus:border-[#3B82F6]">
+                <select id="type" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 focus:border-[#C8075F]">
                   <option>무인매장 창업 상담</option>
                   <option>운영시스템 문의</option>
                   <option>입고 및 매대진열 대행 신청</option>
@@ -74,11 +74,11 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">문의 내용</label>
-              <textarea id="message" rows={6} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#3B82F6]" placeholder="상담하고 싶은 내용을 입력해 주세요." />
+              <textarea id="message" rows={6} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none ring-0 placeholder:text-slate-400 focus:border-[#C8075F]" placeholder="상담하고 싶은 내용을 입력해 주세요." />
             </div>
 
             <div className="flex justify-center">
-              <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-[#F97316] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#ea680c]">
+              <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-[#C8075F] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#a8054e]">
                 문의 보내기
               </button>
             </div>

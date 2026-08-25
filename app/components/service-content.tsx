@@ -61,17 +61,17 @@ export function ServiceWhyUs() {
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#3B82F6]">01</div>
+          <div className="text-2xl font-bold text-[#C8075F]">01</div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">현장 중심 컨설팅</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">취급 상품, 고객 패턴, 매장 구조를 고려한 실제 적용형 제안으로 설계합니다.</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#3B82F6]">02</div>
+          <div className="text-2xl font-bold text-[#C8075F]">02</div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">운영 데이터 연동</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">재고, 매출, 결제, 보안 정보를 실시간으로 확인할 수 있도록 통합 관리 구조를 구성합니다.</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#3B82F6]">03</div>
+          <div className="text-2xl font-bold text-[#C8075F]">03</div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">지속적인 성과 개선</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">오픈 이후에도 데이터 분석과 현장 피드백을 기반으로 매출 상승과 운영 효율을 개선합니다.</p>
         </div>
@@ -84,7 +84,7 @@ export function ServiceCost() {
   return (
     <section className="mt-20 rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
       <div className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Startup Cost</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Startup Cost</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">11평 기준 창업비용 안내</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">1호점 실제 발생 비용을 기준으로 정리한 예상 금액입니다. 매장 위치와 상태, 장비 선택에 따라 달라질 수 있습니다.</p>
       </div>
@@ -142,7 +142,7 @@ export function ServiceAgency() {
   return (
     <section className="mt-20 rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
       <div className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Agency Service</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">매장 운영 대행도 함께 지원합니다</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">입고와 매대진열, 매장 청소까지 필요한 운영 업무를 선택해 신청할 수 있습니다.</p>
       </div>

@@ -34,11 +34,11 @@ export default function ProductCard({ product }: { product: Product }) {
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <img src={product.image} alt={product.name} className="h-64 w-full object-cover" />
       <div className="p-6">
-        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3B82F6]">{product.category}</div>
+        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C8075F]">{product.category}</div>
         <h3 className="mt-3 text-xl font-bold text-slate-900">{product.name}</h3>
         <p className="mt-4 text-2xl font-bold text-slate-900">{product.price}</p>
         <div className="mt-5 flex items-center gap-3">
-          <button onClick={addToCart} className="inline-flex flex-1 items-center justify-center rounded-xl bg-[#3B82F6] px-4 py-3 text-sm font-semibold text-white hover:bg-[#2563eb]">
+          <button onClick={addToCart} className="inline-flex flex-1 items-center justify-center rounded-xl bg-[#C8075F] px-4 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]">
             장바구니 담기
           </button>
           <a href="/service" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">

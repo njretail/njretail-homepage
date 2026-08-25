@@ -57,13 +57,13 @@ export default function CartWidget() {
       <button
         onClick={() => setOpen(true)}
         aria-label="장바구니 열기"
-        className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-full bg-[#3B82F6] px-4 py-3 text-white shadow-lg"
+        className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-full bg-[#C8075F] px-4 py-3 text-white shadow-lg"
       >
         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8h14l-2-8M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z" />
         </svg>
         <span className="text-sm font-semibold">장바구니</span>
-        <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-bold text-[#3B82F6]">{count}</span>
+        <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-bold text-[#C8075F]">{count}</span>
       </button>
 
       {open && (
@@ -98,7 +98,7 @@ export default function CartWidget() {
               </div>
               <div className="flex gap-2">
                 <button onClick={clearCart} className="rounded-xl border border-slate-200 px-4 py-2 text-sm">비우기</button>
-                <Link href="/contact" className="rounded-xl bg-[#F97316] px-4 py-2 text-sm font-semibold text-white">구매 문의</Link>
+                <Link href="/contact" className="rounded-xl bg-[#C8075F] px-4 py-2 text-sm font-semibold text-white">구매 문의</Link>
               </div>
             </div>
           </div>

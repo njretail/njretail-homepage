@@ -8,7 +8,7 @@ export default function ShopPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Shop</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Shop</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">쇼핑하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             무인매장에 필요한 핵심 장비와 운영 패키지를 필요한 시점에 선택해 구성할 수 있습니다.

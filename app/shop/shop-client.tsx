@@ -82,7 +82,7 @@ export default function ShopClient() {
             onClick={() => handleFilterClick(filter)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition ${
               activeFilter === filter
-                ? "bg-[#3B82F6] text-white"
+                ? "bg-[#C8075F] text-white"
                 : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50"
             }`}
           >
@@ -100,7 +100,7 @@ export default function ShopClient() {
               onClick={() => setActiveSubCategory(activeSubCategory === sub.name ? null : sub.name)}
               className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeSubCategory === sub.name
-                  ? "bg-[#3B82F6] text-white"
+                  ? "bg-[#C8075F] text-white"
                   : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-100"
               }`}
             >

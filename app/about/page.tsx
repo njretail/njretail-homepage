@@ -26,7 +26,7 @@ export default function AboutPage() {
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:py-12">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">About</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">About</p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               무인리테일의 새로운 기준을 만들어 갑니다
             </h1>
@@ -65,7 +65,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {visionPoints.map((item) => (
               <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#3B82F6]/10 text-lg font-bold text-[#3B82F6]">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#C8075F]/10 text-lg font-bold text-[#C8075F]">
                   {item.title.slice(0, 1)}
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
@@ -86,13 +86,13 @@ export default function AboutPage() {
             {timeline.map((item, index) => (
               <div key={item.year} className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#3B82F6] text-xs font-bold text-white shadow-sm">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#C8075F] text-xs font-bold text-white shadow-sm">
                     {index + 1}
                   </div>
                   {index < timeline.length - 1 && <div className="mt-2 h-20 w-px bg-slate-200" />}
                 </div>
                 <div className="flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3B82F6]">{item.year}</div>
+                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#C8075F]">{item.year}</div>
                   <h3 className="mt-3 text-2xl font-bold text-slate-900">{item.title}</h3>
                   <p className="mt-3 text-base leading-7 text-slate-600">{item.text}</p>
                 </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {strengths.map((item) => (
               <div key={item} className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#3B82F6] text-sm font-bold text-white">✓</div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C8075F] text-sm font-bold text-white">✓</div>
                 <p className="text-base font-medium text-slate-700">{item}</p>
               </div>
             ))}

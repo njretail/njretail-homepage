@@ -12,10 +12,10 @@ export const navItems = [
 ];
 
 export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" | "brand" }) {
-  const shared = "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2";
+  const shared = "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8075F] focus-visible:ring-offset-2";
   const classes =
     variant === "primary"
-      ? `${shared} bg-[#F97316] text-white shadow-sm hover:bg-[#ea680c]`
+      ? `${shared} bg-[#C8075F] text-white shadow-sm hover:bg-[#a8054e]`
       : variant === "brand"
         ? `${shared} rounded-full bg-[#C8075F] text-white shadow-sm hover:bg-[#a8054e]`
         : `${shared} border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50`;
@@ -38,7 +38,7 @@ export function SectionTitle({
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">{eyebrow}</p>
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">{eyebrow}</p>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h2>
       <p className="mt-4 text-base leading-7 text-slate-600">{description}</p>
     </div>
@@ -49,14 +49,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="엔제이리테일 홈으로 이동">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C8075F] text-sm font-bold text-white shadow-sm">
-            NJ
-          </div>
-          <div>
-            <div className="text-lg font-bold text-slate-900">엔제이리테일</div>
-            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-slate-500">JUICE RETAIL</div>
-          </div>
+        <Link href="/" className="flex items-center" aria-label="엔제이리테일 홈으로 이동">
+          <span className="text-2xl font-extrabold tracking-tight text-slate-900">NJ RETAIL</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -104,14 +98,9 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3B82F6] text-sm font-bold text-white">
-            NJ
-          </div>
-          <div>
-            <div className="text-lg font-bold text-slate-900">엔제이리테일</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500">NJ RETAIL</div>
-          </div>
+        <div>
+          <div className="text-2xl font-extrabold tracking-tight text-slate-900">NJ RETAIL</div>
+          <div className="mt-1 text-xs font-medium text-slate-500">엔제이리테일</div>
         </div>
 
         <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-slate-600">

@@ -40,7 +40,7 @@ export default function PrivacyPage() {
     <>
       <Header />
       <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Privacy Policy</p>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Privacy Policy</p>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">개인정보처리방침</h1>
         <p className="mt-5 text-base leading-8 text-slate-600">
           엔제이리테일(이하 '회사')은 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수하고 있습니다.

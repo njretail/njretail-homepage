@@ -19,7 +19,7 @@ export default function AgencyPage() {
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Agency Service</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Agency Service</p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">대행 신청하기</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             매장 운영에 필요한 업무를 선택해 주세요. 매장 상황을 확인한 뒤 맞춤형 대행 범위와 일정을 안내해드립니다.
@@ -29,7 +29,7 @@ export default function AgencyPage() {
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
           {agencyCategories.map((category) => (
             <article key={category.title} className="rounded-[24px] border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-xl font-bold text-[#3B82F6]">✓</div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FCE7F0] text-xl font-bold text-[#C8075F]">✓</div>
               <h2 className="mt-6 text-2xl font-bold text-slate-900">{category.title}</h2>
               <p className="mt-3 leading-7 text-slate-600">{category.description}</p>
               <ul className="mt-6 space-y-3 text-sm text-slate-700">
@@ -42,24 +42,24 @@ export default function AgencyPage() {
         <section className="mt-16 rounded-[30px] bg-slate-50 p-8 sm:p-12">
           <div className="mx-auto max-w-3xl">
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#3B82F6]">Application</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Application</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">대행 서비스 신청서</h2>
             </div>
             <form className="mt-10 space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <label htmlFor="agency-name" className="mb-2 block text-sm font-medium text-slate-700">이름</label>
-                  <input id="agency-name" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#3B82F6]" placeholder="홍길동" />
+                  <input id="agency-name" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="홍길동" />
                 </div>
                 <div>
                   <label htmlFor="agency-phone" className="mb-2 block text-sm font-medium text-slate-700">연락처</label>
-                  <input id="agency-phone" type="tel" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#3B82F6]" placeholder="010-1234-5678" />
+                  <input id="agency-phone" type="tel" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="010-1234-5678" />
                 </div>
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <label htmlFor="agency-type" className="mb-2 block text-sm font-medium text-slate-700">신청 서비스</label>
-                  <select id="agency-type" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#3B82F6]">
+                  <select id="agency-type" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]">
                     <option value="">서비스를 선택해 주세요</option>
                     <option>입고 및 매대진열</option>
                     <option>청소대행</option>
@@ -68,15 +68,15 @@ export default function AgencyPage() {
                 </div>
                 <div>
                   <label htmlFor="agency-store" className="mb-2 block text-sm font-medium text-slate-700">매장 위치</label>
-                  <input id="agency-store" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#3B82F6]" placeholder="서울시 성북구" />
+                  <input id="agency-store" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="서울시 성북구" />
                 </div>
               </div>
               <div>
                 <label htmlFor="agency-message" className="mb-2 block text-sm font-medium text-slate-700">신청 내용</label>
-                <textarea id="agency-message" rows={5} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#3B82F6]" placeholder="희망 일정과 필요한 업무를 적어 주세요." />
+                <textarea id="agency-message" rows={5} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="희망 일정과 필요한 업무를 적어 주세요." />
               </div>
               <div className="flex justify-center">
-                <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-[#F97316] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#ea680c]">대행 신청 접수하기</button>
+                <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-[#C8075F] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#a8054e]">대행 신청 접수하기</button>
               </div>
             </form>
           </div>
