@@ -90,7 +90,7 @@ function ArrowRightIcon() {
 
 function ChatIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5v-3.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" strokeLinecap="round" strokeLinejoin="round" />
       <circle cx="8.3" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
       <circle cx="12" cy="10.8" r="0.9" fill="currentColor" stroke="none" />
@@ -101,7 +101,7 @@ function ChatIcon() {
 
 function ClipboardIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <rect x="5" y="4" width="14" height="17" rx="1.6" />
       <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" strokeLinecap="round" />
       <path d="M8.5 11.5l1.7 1.7L13.5 10" strokeLinecap="round" strokeLinejoin="round" />
@@ -112,7 +112,7 @@ function ClipboardIcon() {
 
 function ChipIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <rect x="7" y="7" width="10" height="10" rx="1.4" />
       <path d="M9.5 7V3.5M14.5 7V3.5M9.5 20.5V17M14.5 20.5V17M7 9.5H3.5M7 14.5H3.5M17 9.5h3.5M17 14.5h3.5" strokeLinecap="round" />
     </svg>
@@ -121,7 +121,7 @@ function ChipIcon() {
 
 function HomeIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <path d="M4 11.5 12 4l8 7.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M6 10v9.5h12V10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M10 19.5V14h4v5.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -131,7 +131,7 @@ function HomeIcon() {
 
 function UserIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
       <circle cx="12" cy="8" r="3.5" />
       <path d="M4.5 20c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7" strokeLinecap="round" />
     </svg>
@@ -230,14 +230,17 @@ export default function HomePage() {
             </div>
 
             {/* Service highlights */}
-            <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
               {serviceHighlights.map((s) => (
-                <div key={s.title} className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
-                  <IconBox>
+                <div
+                  key={s.title}
+                  className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7"
+                >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F]">
                     <s.icon />
-                  </IconBox>
-                  <div className="mt-4 text-base font-bold text-slate-900">{s.title}</div>
-                  <p className="mt-1.5 text-xs leading-5 text-slate-500">{s.desc}</p>
+                  </div>
+                  <div className="mt-5 text-lg font-bold text-slate-900 sm:text-xl">{s.title}</div>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{s.desc}</p>
                 </div>
               ))}
             </div>
