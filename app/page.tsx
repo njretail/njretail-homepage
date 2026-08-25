@@ -1,130 +1,375 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Footer, Header } from "./components/site-shell";
-import { CasesSection, ShopSection } from "./components/home-previews";
-import { ProjectSections, ReceiptCost } from "./components/store-story";
 import { KakaoChatWidget } from "./components/kakao-chat-widget";
 
-const anatomyPoints = [
-  { n: "01", title: "상권", lines: ["반경 500m", "주거 73%", "핵심 고객 30–40대"], left: "18%", top: "48%", side: "right" as const },
-  { n: "02", title: "상품", lines: ["SKU 487개", "냉동·간편식 중심"], left: "54%", top: "16%", side: "right" as const },
-  { n: "03", title: "공간", lines: ["11평", "동선 14.2m"], left: "82%", top: "44%", side: "left" as const },
-  { n: "04", title: "운영", lines: ["입고 · 진열", "청소 · 재고관리"], left: "56%", top: "72%", side: "right" as const },
-];
+const PINK = "#C8075F";
 
-const testimonials = [
-  { name: "박준호 대표", text: "무인매장에 필요한 인테리어, 시스템, 상품 구성을 모두 맞춰줘서 오픈 직후 매출이 안정적으로 유지됐습니다." },
-  { name: "최유진 점주", text: "운영 초반에 자주 고민하던 재고 관리와 보안 부분을 체계적으로 해결해 주셔서 큰 도움이 됐습니다." },
-  { name: "이상민 대표", text: "현장 노하우를 바탕으로 점주 입장에서 현실적인 조언을 주셔서 리스크를 많이 줄일 수 있었습니다." },
-];
-
-function AnatomyPoint({ n, title, lines, left, top, side }: { n: string; title: string; lines: string[]; left: string; top: string; side: "left" | "right" }) {
+function IconBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="absolute hidden lg:block" style={{ left, top }}>
-      <span className="absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-[#C8075F]" />
-      <div className={`absolute top-0 h-px w-8 bg-white/50 ${side === "right" ? "left-1" : "right-1"}`} />
-      <div className={`absolute top-0 w-40 ${side === "right" ? "left-10" : "right-10 text-right"}`}>
-        <div className="font-mono text-[10px] tracking-[0.2em] text-white/60">{n}&nbsp;&nbsp;{title}</div>
-        <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
-          {lines.map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-        </div>
-      </div>
+    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FCE7F0] text-[#C8075F]">
+      {children}
     </div>
   );
 }
+
+function BoxIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M21 8l-9-5-9 5 9 5 9-5Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 8v8l9 5 9-5V8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 13v8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PeopleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <circle cx="9" cy="8" r="3" />
+      <path d="M2.5 20c0-3.5 2.9-6 6.5-6s6.5 2.5 6.5 6" strokeLinecap="round" />
+      <circle cx="17" cy="9" r="2.4" />
+      <path d="M15.5 14.2c2.7.4 4.5 2.4 4.5 5.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function StoreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M3 10 4.5 4h15L21 10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 10a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 10v9.5h14V10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9.5 19.5V14h5v5.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function HeartIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M12 20.5s-7.5-4.6-9.8-9.3C.6 7.8 2.4 4.5 5.9 4c2.2-.3 4.1.9 6.1 3 2-2.1 3.9-3.3 6.1-3 3.5.5 5.3 3.8 3.7 7.2C19.5 15.9 12 20.5 12 20.5Z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="m20.5 20.5-4.4-4.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PencilIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M4 20.5 4.7 17 16.4 5.3a2 2 0 0 1 2.8 0l1 1a2 2 0 0 1 0 2.8L8.5 20.5H4Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="m14.5 7.2 2.8 2.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function GearIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <circle cx="12" cy="12" r="3.2" />
+      <path d="M12 3.5v2.3M12 18.2v2.3M4.9 6.9l1.6 1.6M17.5 15.5l1.6 1.6M3.5 12h2.3M18.2 12h2.3M4.9 17.1l1.6-1.6M17.5 8.5l1.6-1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function HeadsetIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+      <path d="M4 13v-1a8 8 0 0 1 16 0v1" strokeLinecap="round" />
+      <rect x="2.5" y="13" width="4" height="6" rx="1.6" />
+      <rect x="17.5" y="13" width="4" height="6" rx="1.6" />
+      <path d="M19.5 19.5v.5a3 3 0 0 1-3 3h-3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
+      <path d="M5.5 3.5h3l1.4 4.3-2.1 1.7a12.5 12.5 0 0 0 6.2 6.2l1.7-2.1 4.3 1.4v3a1.5 1.5 0 0 1-1.6 1.5C10.9 19 5 13.1 4 5.6a1.5 1.5 0 0 1 1.5-2.1Z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+      <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+const stats = [
+  { icon: BoxIcon, value: "10년+", label: "운영 노하우" },
+  { icon: PeopleIcon, value: "1,200+", label: "누적 창업 상담" },
+  { icon: StoreIcon, value: "80+", label: "다모아 가맹 매장" },
+  { icon: HeartIcon, value: "96%", label: "고객 만족도" },
+];
+
+const processSteps = [
+  { n: "01", title: "상권분석", desc: "입지 및 상권 분석 리포트 제공", icon: SearchIcon },
+  { n: "02", title: "매장설계", desc: "효율적인 동선과 맞춤형 매장 설계", icon: PencilIcon },
+  { n: "03", title: "시스템구축", desc: "무인 운영에 최적화된 시스템 구축", icon: GearIcon },
+  { n: "04", title: "상품공급", desc: "경쟁력 있는 상품 안정적 공급", icon: BoxIcon },
+  { n: "05", title: "운영관리", desc: "지속적인 관리와 운영 지원", icon: HeadsetIcon },
+];
+
+const brandPoints = [
+  { img: "/1.png", title: "접근성 높은 동네형 마켓" },
+  { img: "/store-dashboard.png", title: "효율적인 무인 운영시스템" },
+  { img: "/3.jpg", title: "합리적인 투자비 & 안정적 수익" },
+  { img: "/4.jpg", title: "데이터 기반 운영 노하우" },
+];
+
+const costItems = [
+  { label: "SPACE", sub: "인테리어", value: 1_500_000 },
+  { label: "SIGNAGE", sub: "간판", value: 1_100_000 },
+  { label: "KIOSK", sub: "키오스크·솔루션", value: 1_200_000 },
+  { label: "REFRIGERATION", sub: "냉장·냉동설비", value: 860_000 },
+  { label: "FIXTURE", sub: "집기·선반", value: 2_660_000 },
+  { label: "INITIAL STOCK", sub: "초기 상품", value: 15_000_000 },
+];
+const costTotal = costItems.reduce((sum, item) => sum + item.value, 0);
+const won = (n: number) => n.toLocaleString("ko-KR");
+
+const storeGallery = [
+  { img: "/2.jpg", name: "서울 상계점" },
+  { img: "/1.png", name: "인천 부평점" },
+  { img: "/3.jpg", name: "대전 유성점" },
+  { img: "/4.jpg", name: "대구 수성점" },
+];
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="bg-[#F5F3EF]">
-        {/* Hero — store anatomy */}
-        <section className="relative bg-black">
-          <div className="relative aspect-[1238/1271] w-full overflow-hidden">
-            <Image src="/store-01.png" alt="엔제이리테일 1호점 실제 매장 전경" fill priority className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/50" />
-
-            <div className="absolute left-4 top-4 font-mono text-[11px] uppercase tracking-[0.3em] text-white/70 sm:left-8 sm:top-8">
-              NJ RETAIL / STORE 01 / SEOUL
-            </div>
-
-            {anatomyPoints.map((item) => (
-              <AnatomyPoint key={item.n} {...item} />
-            ))}
-
-            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-6 p-6 sm:p-10 lg:flex-row lg:items-end lg:justify-between lg:p-14">
+      <main className="bg-white">
+        {/* Hero */}
+        <section>
+          <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
               <div>
-                <h1 className="max-w-2xl text-3xl font-bold leading-[1.2] text-white sm:text-5xl lg:text-6xl">
-                  매장은 공간이 아니라<br />운영으로 완성됩니다.
+                <h1 className="text-3xl font-bold leading-[1.35] text-slate-900 sm:text-4xl lg:text-[2.75rem]">
+                  가까운 동네에서,
+                  <br />
+                  <span style={{ color: PINK }}>믿고 찾는 무인매장</span>
+                  <br />
+                  함께 시작해요!
+                  <br />
+                  엔제이리테일
                 </h1>
-                <p className="mt-4 max-w-sm text-sm leading-6 text-white/70">
-                  우리는 매장을 만들고, 상품을 채우고, 운영합니다.
+                <p className="mt-5 text-base leading-7 text-slate-600">
+                  운영은 편하게, 수익은 안정적으로
+                  <br />
+                  내 가게 같은 마음으로 성공 창업을 함께 만들어갑니다.
                 </p>
-                <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-white/50">
-                  Space / Merchandise / System / Operation
+                <div className="mt-8 flex flex-wrap items-center gap-6">
+                  <Link
+                    href="/contact#inquiry-form"
+                    className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+                    style={{ backgroundColor: PINK }}
+                  >
+                    무료 창업 상담 신청 <ArrowRightIcon />
+                  </Link>
+                  <a href="tel:010-7650-9600" className="inline-flex items-center gap-2 text-base font-bold text-slate-900">
+                    <PhoneIcon /> 010-7650-9600
+                  </a>
                 </div>
               </div>
-              <div className="hidden items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/50 lg:flex">
-                Scroll <span className="inline-block">↓</span>
+
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl lg:aspect-[5/4]">
+                <Image
+                  src="/2.jpg"
+                  alt="엔제이리테일 다모아 무인매장 매장 전경"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </div>
-          </div>
 
-          {/* Mobile / tablet: anatomy data below the photo */}
-          <div className="grid grid-cols-2 gap-px bg-white/10 lg:hidden">
-            {anatomyPoints.map((item) => (
-              <div key={item.n} className="bg-black p-4">
-                <div className="font-mono text-[10px] tracking-[0.2em] text-[#F587B0]">{item.n} {item.title}</div>
-                <div className="mt-1.5 space-y-0.5 text-xs leading-5 text-white/90">
-                  {item.lines.map((line) => (
-                    <div key={line}>{line}</div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <ProjectSections />
-
-        <ReceiptCost />
-
-        <CasesSection />
-
-        {/* Review */}
-        <section className="border-t border-black/10 bg-white py-20 sm:py-28">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#C8075F]">Review</span>
-            <div className="mt-10 divide-y divide-black/10 border-t border-black/10">
-              {testimonials.map((t) => (
-                <div key={t.name} className="py-8">
-                  <p className="text-xl leading-8 text-black sm:text-2xl">&ldquo;{t.text}&rdquo;</p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-black/40">{t.name}</p>
+            {/* Stats */}
+            <div className="mt-14 grid grid-cols-2 gap-6 rounded-2xl border border-black/5 bg-[#FBF4F7] p-6 sm:grid-cols-4 sm:p-8">
+              {stats.map((s) => (
+                <div key={s.label} className="flex items-center gap-3">
+                  <IconBox>
+                    <s.icon />
+                  </IconBox>
+                  <div>
+                    <div className="text-xl font-bold text-slate-900 sm:text-2xl">{s.value}</div>
+                    <div className="text-xs text-slate-500 sm:text-sm">{s.label}</div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <ShopSection />
+        {/* Process */}
+        <section className="bg-[#FBF4F7] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
+              창업 <span style={{ color: PINK }}>진행</span> 프로세스
+            </h2>
 
-        {/* Final CTA */}
-        <section className="border-t border-black/10 bg-black py-20 text-center text-white sm:py-28">
-          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#F587B0]">Store 005</p>
-            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">다음 매장은,<br className="sm:hidden" /> 당신의 매장입니다.</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/60">
-              상권 분석부터 운영까지, 엔제이리테일이 함께 만듭니다.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link href="/contact#inquiry-form" className="inline-flex items-center justify-center bg-[#C8075F] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#a8074f]">
-                상담 신청하기
+            <div className="mt-12 flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:flex lg:flex-row lg:items-start lg:gap-3">
+              {processSteps.map((step, i) => (
+                <div key={step.n} className="flex flex-1 items-center lg:items-start">
+                  <div className="flex flex-1 flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm">
+                    <span
+                      className="flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white"
+                      style={{ backgroundColor: PINK }}
+                    >
+                      {step.n}
+                    </span>
+                    <div className="mt-4 text-slate-700">
+                      <step.icon />
+                    </div>
+                    <div className="mt-3 text-base font-bold text-slate-900">{step.title}</div>
+                    <p className="mt-2 text-xs leading-5 text-slate-500">{step.desc}</p>
+                  </div>
+                  {i < processSteps.length - 1 && (
+                    <span className="mx-1 hidden shrink-0 text-slate-300 lg:block">
+                      <ArrowRightIcon />
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Brand competitiveness + cost */}
+        <section className="bg-white py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid min-w-0 gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
+              <div className="min-w-0">
+                <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+                  다모아 브랜드 <span style={{ color: PINK }}>경쟁력</span>
+                </h2>
+                <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
+                  {brandPoints.map((b) => (
+                    <div key={b.title}>
+                      <div className="relative aspect-square overflow-hidden rounded-2xl">
+                        <Image src={b.img} alt={b.title} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                      </div>
+                      <p className="mt-3 text-center text-sm font-semibold text-slate-800">{b.title}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-black/5 shadow-sm sm:flex-row lg:flex-col">
+                <div className="flex min-w-0 flex-1 flex-col justify-between p-8 text-white sm:p-10" style={{ backgroundColor: PINK }}>
+                  <div>
+                    <div className="text-3xl font-bold sm:text-4xl">11평.</div>
+                    <div className="mt-1 text-3xl font-bold sm:text-4xl">{won(costTotal / 1000)}만원.</div>
+                    <p className="mt-4 text-sm leading-6 text-white/85">
+                      설레 1호점 기준
+                      <br />
+                      초기 창업 비용입니다.
+                    </p>
+                  </div>
+                  <Link
+                    href="/service"
+                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold"
+                    style={{ color: PINK }}
+                  >
+                    비용 상세보기 <ArrowRightIcon />
+                  </Link>
+                </div>
+
+                <div className="min-w-0 flex-1 bg-white p-8 sm:p-10">
+                  <dl className="divide-y divide-slate-100">
+                    {costItems.map((item) => (
+                      <div key={item.label} className="flex items-baseline justify-between gap-3 py-3 text-sm">
+                        <dt className="min-w-0 font-medium text-slate-600">
+                          {item.label} <span className="text-slate-400">({item.sub})</span>
+                        </dt>
+                        <dd className="shrink-0 font-semibold text-slate-800">{won(item.value)}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <div className="mt-3 flex items-baseline justify-between gap-3 border-t border-slate-200 pt-4">
+                    <dt className="text-base font-bold text-slate-900">TOTAL</dt>
+                    <dd className="shrink-0 text-xl font-bold" style={{ color: PINK }}>
+                      {won(costTotal)}
+                    </dd>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Real stores gallery */}
+        <section className="bg-[#FBF4F7] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">실제 다모아 매장</h2>
+              <Link href="/cases" className="flex items-center gap-1 text-sm font-semibold" style={{ color: PINK }}>
+                전체 보기 <ArrowRightIcon />
               </Link>
-              <Link href="/shop" className="inline-flex items-center justify-center border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                패키지 보기
-              </Link>
+            </div>
+
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+              {storeGallery.map((store) => (
+                <div key={store.name}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                    <Image
+                      src={store.img}
+                      alt={`${store.name} 다모아 무인매장`}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="mt-3 text-center text-sm font-semibold text-slate-800">{store.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA banner */}
+        <section className="bg-white py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-start gap-8 rounded-3xl bg-[#FBF4F7] p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+              <div className="flex items-center gap-4">
+                <IconBox>
+                  <StoreIcon />
+                </IconBox>
+                <div>
+                  <p className="text-lg font-bold leading-7 text-slate-900 sm:text-xl">
+                    창업 고민, 혼자 하지 마세요.
+                    <br />
+                    엔제이리테일이 함께 하겠습니다.
+                  </p>
+                  <a href="tel:010-7650-9600" className="mt-2 block text-xl font-bold" style={{ color: PINK }}>
+                    010-7650-9600
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex w-full flex-col items-start gap-4 sm:w-auto sm:flex-row sm:items-center">
+                <span className="text-sm text-slate-500">평일 09:00 - 18:00</span>
+                <Link
+                  href="/contact#inquiry-form"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:opacity-90"
+                  style={{ backgroundColor: PINK }}
+                >
+                  무료 창업 상담 신청 <ArrowRightIcon />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -11,12 +11,14 @@ export const navItems = [
   { href: "/shop", label: "쇼핑하기" },
 ];
 
-export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" }) {
+export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" | "brand" }) {
   const shared = "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2";
   const classes =
     variant === "primary"
       ? `${shared} bg-[#F97316] text-white shadow-sm hover:bg-[#ea680c]`
-      : `${shared} border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50`;
+      : variant === "brand"
+        ? `${shared} rounded-full bg-[#C8075F] text-white shadow-sm hover:bg-[#a8054e]`
+        : `${shared} border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50`;
 
   return (
     <Link href={href} className={classes}>
@@ -48,7 +50,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="엔제이리테일 홈으로 이동">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#3B82F6] text-sm font-bold text-white shadow-sm">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C8075F] text-sm font-bold text-white shadow-sm">
             NJ
           </div>
           <div>
@@ -70,7 +72,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <CTAButton href="/contact" text="무료 상담 신청" />
+          <CTAButton href="/contact" text="무료 상담 신청" variant="brand" />
         </div>
 
         <details className="group relative lg:hidden">
@@ -88,7 +90,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="pt-2">
-                <CTAButton href="/contact" text="무료 상담 신청" variant="primary" />
+                <CTAButton href="/contact" text="무료 상담 신청" variant="brand" />
               </div>
             </div>
           </div>
