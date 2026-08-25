@@ -72,6 +72,16 @@ function ArrowRightIcon() {
   );
 }
 
+function StepsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <rect x="3" y="14" width="4" height="7" rx="1" />
+      <rect x="10" y="10" width="4" height="11" rx="1" />
+      <rect x="17" y="5" width="4" height="16" rx="1" />
+    </svg>
+  );
+}
+
 function ChatIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
@@ -123,6 +133,7 @@ function UserIcon() {
 }
 
 const serviceHighlights = [
+  { icon: StepsIcon, title: "매장이 만들어지는 5단계 과정", desc: "지금부터 순서대로 알려드릴게요" },
   { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
   { icon: ClipboardIcon, title: "맞춤형 설계", desc: "상권 분석부터 최적의 맞춤 설계" },
   { icon: ChipIcon, title: "시스템 구축", desc: "무인 운영 시스템 및 통합 솔루션 구축" },
@@ -211,7 +222,7 @@ export default function HomePage() {
             </div>
 
             {/* Service highlights */}
-            <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-5">
+            <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-6">
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
