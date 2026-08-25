@@ -198,9 +198,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative aspect-[485/579] overflow-hidden rounded-3xl shadow-xl">
+              <div className="relative aspect-[615/595] overflow-hidden rounded-3xl shadow-xl">
                 <Image
-                  src="/5.png"
+                  src="/6.png"
                   alt="엔제이리테일 다모아 무인매장 매장 전경"
                   fill
                   priority
