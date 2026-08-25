@@ -95,7 +95,7 @@ export function ServiceCost() {
           <div key={cost.category} className="p-5">
             <div className="flex items-center justify-between gap-3">
               <span className="font-semibold text-slate-900">{cost.category}</span>
-              <span className="font-semibold text-[#2563EB]">{cost.amount}</span>
+              <span className="font-semibold text-[#C8075F]">{cost.amount}</span>
             </div>
             <p className="mt-1.5 text-sm text-slate-600">{cost.item}</p>
             {cost.note && <p className="mt-1 text-xs text-slate-500">{cost.note}</p>}
@@ -119,7 +119,7 @@ export function ServiceCost() {
               <tr key={cost.category} className="border-t border-slate-200">
                 <td className="whitespace-nowrap px-5 py-4 font-semibold text-slate-900">{cost.category}</td>
                 <td className="min-w-56 px-5 py-4">{cost.item}</td>
-                <td className="whitespace-nowrap px-5 py-4 font-semibold text-[#2563EB]">{cost.amount}</td>
+                <td className="whitespace-nowrap px-5 py-4 font-semibold text-[#C8075F]">{cost.amount}</td>
                 <td className="min-w-64 px-5 py-4 text-slate-500">{cost.note || "-"}</td>
               </tr>
             ))}
