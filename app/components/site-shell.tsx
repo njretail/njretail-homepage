@@ -50,7 +50,9 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center" aria-label="엔제이리테일 홈으로 이동">
-          <span className="text-2xl font-extrabold tracking-tight text-slate-900">NJ RETAIL</span>
+          <span className="text-2xl font-extrabold tracking-tight text-slate-900">
+            <span className="text-[#C8075F]">NJ</span> RETAIL
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -99,7 +101,9 @@ export function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div>
-          <div className="text-2xl font-extrabold tracking-tight text-slate-900">NJ RETAIL</div>
+          <div className="text-2xl font-extrabold tracking-tight text-slate-900">
+            <span className="text-[#C8075F]">NJ</span> RETAIL
+          </div>
           <div className="mt-1 text-xs font-medium text-slate-500">엔제이리테일</div>
         </div>
 
