@@ -8,7 +8,7 @@ export default function ServicePage() {
       <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <section className="text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">창업지원</p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">무인매장 창업의 6단계 프로세스</h1>
+          <h1 className="text-4xl font-bold leading-[1.25] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.4rem]">무인매장 창업의 6단계 프로세스</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
             단순한 설치를 넘어, 점주가 실제로 운영하는 데 필요한 전략과 시스템을 연결해 안정적인 무인매장 생태계를 만들어갑니다.
           </p>
