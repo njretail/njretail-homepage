@@ -150,10 +150,10 @@ const processSteps = [
 ];
 
 const brandPoints = [
-  { img: "/1.png", title: "접근성 높은 동네형 마켓" },
-  { img: "/store-dashboard.png", title: "효율적인 무인 운영시스템" },
-  { img: "/3.jpg", title: "합리적인 투자비 & 안정적 수익" },
-  { img: "/4.jpg", title: "데이터 기반 운영 노하우" },
+  { img: "/brand-kiosk.jpg", title: "접근성 높은 동네형 마켓" },
+  { img: "/brand-eggs.jpg", title: "효율적인 무인 운영시스템" },
+  { img: "/brand-goods.jpg", title: "합리적인 투자비 & 안정적 수익" },
+  { img: "/brand-snacks.jpg", title: "데이터 기반 운영 노하우" },
 ];
 
 const costItems = [
