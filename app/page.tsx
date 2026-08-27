@@ -291,12 +291,18 @@ export default function HomePage() {
             </h2>
 
             <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
-              {damoaEdge.map((d) => (
+              {damoaEdge.map((d, i) => (
                 <div
                   key={d.title}
-                  className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className={`overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                    i === damoaEdge.length - 1 ? "col-span-2 sm:col-span-1" : ""
+                  }`}
                 >
-                  <div className="relative aspect-square w-full overflow-hidden">
+                  <div
+                    className={`relative w-full overflow-hidden ${
+                      i === damoaEdge.length - 1 ? "aspect-[21/9] sm:aspect-square" : "aspect-square"
+                    }`}
+                  >
                     <Image src={d.img} alt={d.title} fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
                   </div>
                   <div className="p-4 sm:p-5">
