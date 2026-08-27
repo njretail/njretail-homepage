@@ -132,6 +132,52 @@ function UserIcon() {
   );
 }
 
+function NoStaffIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M4.5 20c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7" strokeLinecap="round" />
+      <path d="M3.5 20.5 20.5 3.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CoinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7.5v9M14.6 9.7c0-1.2-1.2-2.2-2.6-2.2s-2.6.9-2.6 2c0 3 5.2 1.5 5.2 4.5 0 1.1-1.2 2-2.6 2s-2.6-1-2.6-2.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function KeyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <circle cx="8" cy="8" r="4" />
+      <path d="M11 11l9.5 9.5M16.5 15.5l3-3M19 18l2.5-2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function BroomIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <path d="M14 3 6.5 20.5" strokeLinecap="round" />
+      <path d="M14 3l4 2-9 15-6-2Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9.5 12.5 20 16" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+const damoaEdge = [
+  { icon: NoStaffIcon, title: "인건비 Zero", desc: "24시간 무인 운영이라 인건비 부담이 없어요" },
+  { icon: CoinIcon, title: "저렴한 창업비용", desc: "합리적인 초기 비용으로 부담 없이 시작" },
+  { icon: KeyIcon, title: "오픈까지 본사가 대행", desc: "시작부터 마무리까지 본사가 모두 진행" },
+  { icon: BroomIcon, title: "청소까지 대행", desc: "매장 청소도 본사 대행 서비스로 관리" },
+  { icon: BoxIcon, title: "전 상품군 매장 셋업", desc: "필요한 모든 상품군을 본사가 구성해 셋업" },
+];
+
 const serviceHighlights = [
   { icon: StepsIcon, title: "5단계 과정", desc: "순서대로 알려드릴게요", highlight: true },
   { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
@@ -284,6 +330,34 @@ export default function HomePage() {
                       <ArrowRightIcon />
                     </span>
                   )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Damoa edge */}
+        <section className="bg-white py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center text-3xl font-bold text-slate-900 sm:text-4xl">
+              다모아 <span style={{ color: PINK }}>창업</span>이 다른 이유
+            </h2>
+
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
+              {damoaEdge.map((d) => (
+                <div
+                  key={d.title}
+                  className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F] sm:h-16 sm:w-16">
+                    <d.icon />
+                  </div>
+                  <div className="mt-3 text-sm font-bold leading-5 text-slate-900 sm:mt-5 sm:text-xl sm:leading-normal">
+                    {d.title}
+                  </div>
+                  <p className="mt-1.5 text-xs leading-5 text-slate-600 sm:mt-2 sm:text-base sm:leading-6">
+                    {d.desc}
+                  </p>
                 </div>
               ))}
             </div>
