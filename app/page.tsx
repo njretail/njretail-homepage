@@ -220,13 +220,15 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Store video */}
+            <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
+              <video controls poster="/7.png" className="h-full w-full object-cover">
+                <source src="/store-tour.mp4" type="video/mp4" />
+              </video>
+            </div>
+
             {/* Service highlights */}
-            <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-6">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-slate-900 shadow-sm">
-                <video controls poster="/7.png" className="h-full w-full object-cover">
-                  <source src="/store-tour.mp4" type="video/mp4" />
-                </video>
-              </div>
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-5">
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
