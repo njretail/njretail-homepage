@@ -336,7 +336,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                   다모아 <span style={{ color: PINK }}>취급 품목</span>
                 </h2>
-                <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
+                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5">
                   {brandPoints.map((b) => (
                     <div key={b.title}>
                       <div className="relative aspect-square overflow-hidden rounded-2xl">
