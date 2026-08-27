@@ -72,16 +72,6 @@ function ArrowRightIcon() {
   );
 }
 
-function StepsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
-      <rect x="3" y="14" width="4" height="7" rx="1" />
-      <rect x="10" y="10" width="4" height="11" rx="1" />
-      <rect x="17" y="5" width="4" height="16" rx="1" />
-    </svg>
-  );
-}
-
 function ChatIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
@@ -141,7 +131,6 @@ const damoaEdge = [
 ];
 
 const serviceHighlights = [
-  { icon: StepsIcon, title: "5단계 과정", desc: "순서대로 알려드릴게요", highlight: true },
   { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
   { icon: ClipboardIcon, title: "맞춤형 설계", desc: "상권 분석부터 최적의 맞춤 설계" },
   { icon: ChipIcon, title: "시스템 구축", desc: "무인 운영 시스템 및 통합 솔루션 구축" },
@@ -233,29 +222,23 @@ export default function HomePage() {
 
             {/* Service highlights */}
             <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-6">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-slate-900 shadow-sm">
+                <video controls poster="/7.png" className="h-full w-full object-cover">
+                  <source src="/store-tour.mp4" type="video/mp4" />
+                </video>
+              </div>
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
-                  className={`rounded-2xl p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7 lg:p-8 ${
-                    s.highlight ? "text-white" : "border border-black/5 bg-white"
-                  }`}
-                  style={s.highlight ? { backgroundColor: PINK } : undefined}
+                  className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-7 lg:p-8"
                 >
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-2xl sm:h-16 sm:w-16 ${
-                      s.highlight ? "bg-white/15 text-white" : "bg-[#FCE7F0] text-[#C8075F]"
-                    }`}
-                  >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FCE7F0] text-[#C8075F] sm:h-16 sm:w-16">
                     <s.icon />
                   </div>
-                  <div
-                    className={`mt-3 text-sm font-bold leading-5 sm:mt-5 sm:text-xl sm:leading-normal lg:text-2xl ${
-                      s.highlight ? "text-white" : "text-slate-900"
-                    }`}
-                  >
+                  <div className="mt-3 text-sm font-bold leading-5 text-slate-900 sm:mt-5 sm:text-xl sm:leading-normal lg:text-2xl">
                     {s.title}
                   </div>
-                  <p className={`mt-1.5 text-xs leading-5 sm:mt-2 sm:text-base sm:leading-6 ${s.highlight ? "text-white/80" : "text-slate-600"}`}>
+                  <p className="mt-1.5 text-xs leading-5 text-slate-600 sm:mt-2 sm:text-base sm:leading-6">
                     {s.desc}
                   </p>
                 </div>
