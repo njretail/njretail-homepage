@@ -122,6 +122,15 @@ function UserIcon() {
   );
 }
 
+function MegaphoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-8 w-8">
+      <path d="M3 10.5v3a1.5 1.5 0 0 0 1.5 1.5H6l1.2 5h2l-1-5h2.3L18 18.5v-13L10.5 9H4.5A1.5 1.5 0 0 0 3 10.5Z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20.5 9.5a3 3 0 0 1 0 5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const damoaEdge = [
   { img: "/brand-kiosk.png", title: "인건비 Zero", desc: "24시간 무인 운영이라 인건비 부담이 없어요" },
   { img: "/edge-cost.jpg", title: "저렴한 창업비용", desc: "합리적인 초기 비용으로 부담 없이 시작" },
@@ -136,6 +145,7 @@ const serviceHighlights = [
   { icon: ChipIcon, title: "시스템 구축", desc: "무인 운영 시스템 및 통합 솔루션 구축" },
   { icon: HomeIcon, title: "사후관리", desc: "오픈 후 안정적인 관리와 운영 지원" },
   { icon: UserIcon, title: "지속 지원", desc: "지속 가능한 수익구조 설계 및 지원" },
+  { icon: MegaphoneIcon, title: "마케팅 지원", desc: "오픈 홍보부터 SNS 마케팅까지 지원" },
 ];
 
 const processSteps = [
@@ -228,7 +238,7 @@ export default function HomePage() {
             </div>
 
             {/* Service highlights */}
-            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-5">
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-6">
               {serviceHighlights.map((s) => (
                 <div
                   key={s.title}
