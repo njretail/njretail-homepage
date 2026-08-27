@@ -302,7 +302,7 @@ export default function HomePage() {
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center text-3xl font-bold text-slate-900 sm:text-4xl">
-              다모아 <span style={{ color: PINK }}>창업</span>이 다른 이유
+              다모아 <span style={{ color: PINK }}>브랜드 경쟁력</span>
             </h2>
 
             <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
@@ -334,7 +334,7 @@ export default function HomePage() {
             <div className="grid min-w-0 gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
               <div className="min-w-0">
                 <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                  다모아 브랜드 <span style={{ color: PINK }}>경쟁력</span>
+                  다모아 <span style={{ color: PINK }}>취급 품목</span>
                 </h2>
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
                   {brandPoints.map((b) => (
