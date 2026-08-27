@@ -349,11 +349,11 @@ export default function HomePage() {
               </div>
 
               <div className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-black/5 shadow-sm sm:flex-row lg:flex-col">
-                <div className="flex min-w-0 flex-1 flex-col justify-between p-8 text-white sm:p-10" style={{ backgroundColor: PINK }}>
+                <div className="flex min-w-0 flex-1 flex-col justify-between p-6 text-white sm:p-8" style={{ backgroundColor: PINK }}>
                   <div>
-                    <div className="text-4xl font-bold sm:text-5xl">11평.</div>
-                    <div className="mt-1 text-4xl font-bold sm:text-5xl">{won(costTotal / 1000)}만원.</div>
-                    <p className="mt-4 text-base leading-6 text-white/85">
+                    <div className="text-3xl font-bold sm:text-4xl">11평.</div>
+                    <div className="mt-1 text-3xl font-bold sm:text-4xl">{won(costTotal / 1000)}만원.</div>
+                    <p className="mt-3 text-sm leading-5 text-white/85">
                       설레 1호점 기준
                       <br />
                       초기 창업 비용입니다.
@@ -361,17 +361,17 @@ export default function HomePage() {
                   </div>
                   <Link
                     href="/service"
-                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-bold"
+                    className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold"
                     style={{ color: PINK }}
                   >
                     비용 상세보기 <ArrowRightIcon />
                   </Link>
                 </div>
 
-                <div className="min-w-0 flex-1 bg-white p-8 sm:p-10">
+                <div className="min-w-0 flex-1 bg-white p-6 sm:p-8">
                   <dl className="divide-y divide-slate-100">
                     {costItems.map((item) => (
-                      <div key={item.label} className="flex items-baseline justify-between gap-3 py-3.5 text-base">
+                      <div key={item.label} className="flex items-baseline justify-between gap-3 py-2 text-sm">
                         <dt className="min-w-0 font-medium text-slate-600">
                           {item.label} <span className="text-slate-400">({item.sub})</span>
                         </dt>
@@ -379,9 +379,9 @@ export default function HomePage() {
                       </div>
                     ))}
                   </dl>
-                  <div className="mt-3 flex items-baseline justify-between gap-3 border-t border-slate-200 pt-4">
-                    <dt className="text-lg font-bold text-slate-900">TOTAL</dt>
-                    <dd className="shrink-0 text-2xl font-bold" style={{ color: PINK }}>
+                  <div className="mt-2 flex items-baseline justify-between gap-3 border-t border-slate-200 pt-3">
+                    <dt className="text-base font-bold text-slate-900">TOTAL</dt>
+                    <dd className="shrink-0 text-xl font-bold" style={{ color: PINK }}>
                       {won(costTotal)}
                     </dd>
                   </div>
