@@ -232,9 +232,13 @@ export default function HomePage() {
 
             {/* Store video */}
             <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
-              <video controls poster="/7.png" className="h-full w-full object-cover">
-                <source src="/store-tour.mp4" type="video/mp4" />
-              </video>
+              <iframe
+                src="https://www.youtube.com/embed/_c3kvO7r2CY"
+                title="다모아 매장 영상"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="h-full w-full"
+              />
             </div>
 
             {/* Service highlights */}
