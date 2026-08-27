@@ -137,6 +137,7 @@ const damoaEdge = [
   { img: "/edge-support.jpg", title: "오픈까지 본사가 대행", desc: "시작부터 마무리까지 본사가 모두 진행" },
   { img: "/edge-cleaning.jpg", title: "청소까지 대행", desc: "매장 청소도 본사 대행 서비스로 관리" },
   { img: "/edge-setup.jpg", title: "전 상품군 매장 셋업", desc: "필요한 모든 상품군을 본사가 구성해 셋업" },
+  { img: "/edge-logistics.jpg", title: "상품유통관리", desc: "본사 물류망으로 안정적인 상품 유통을 관리해요" },
 ];
 
 const serviceHighlights = [
@@ -233,7 +234,7 @@ export default function HomePage() {
             {/* Store video */}
             <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
               <iframe
-                src="https://www.youtube.com/embed/_c3kvO7r2CY"
+                src="https://www.youtube.com/embed/Ni8nI6tTOQw"
                 title="다모아 매장 영상"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -304,19 +305,13 @@ export default function HomePage() {
               다모아 <span style={{ color: PINK }}>브랜드 경쟁력</span>
             </h2>
 
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
-              {damoaEdge.map((d, i) => (
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
+              {damoaEdge.map((d) => (
                 <div
                   key={d.title}
-                  className={`overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                    i === damoaEdge.length - 1 ? "col-span-2 sm:col-span-1" : ""
-                  }`}
+                  className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
-                  <div
-                    className={`relative w-full overflow-hidden ${
-                      i === damoaEdge.length - 1 ? "aspect-[21/9] sm:aspect-square" : "aspect-square"
-                    }`}
-                  >
+                  <div className="relative aspect-square w-full overflow-hidden">
                     <Image src={d.img} alt={d.title} fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
                   </div>
                   <div className="p-4 sm:p-5">
