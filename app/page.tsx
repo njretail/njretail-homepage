@@ -150,12 +150,12 @@ const processSteps = [
 ];
 
 const brandPoints = [
-  { img: "/brand-kiosk.png", title: "무인 운영시스템 취급" },
-  { img: "/brand-goods.png", title: "생필품 취급" },
-  { img: "/brand-eggs.png", title: "계란 취급" },
-  { img: "/brand-toys.png", title: "문구류 취급" },
-  { img: "/brand-snacks.png", title: "과자류 취급" },
-  { img: "/brand-icecream.png", title: "아이스크림 취급" },
+  { img: "/brand-kiosk.png", title: "무인 셀프 결제 시스템" },
+  { img: "/brand-goods.png", title: "생필품 판매" },
+  { img: "/brand-eggs.png", title: "계란 판매" },
+  { img: "/brand-toys.png", title: "문구류 판매" },
+  { img: "/brand-snacks.png", title: "과자류 판매" },
+  { img: "/brand-icecream.png", title: "아이스크림 판매" },
 ];
 
 const costItems = [
