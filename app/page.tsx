@@ -150,10 +150,12 @@ const processSteps = [
 ];
 
 const brandPoints = [
-  { img: "/brand-kiosk.png", title: "접근성 높은 동네형 마켓" },
-  { img: "/brand-goods.png", title: "효율적인 무인 운영시스템" },
-  { img: "/brand-eggs.png", title: "합리적인 투자비 & 안정적 수익" },
-  { img: "/brand-toys.png", title: "데이터 기반 운영 노하우" },
+  { img: "/brand-kiosk.png", title: "무인 운영시스템 취급" },
+  { img: "/brand-goods.png", title: "생필품 취급" },
+  { img: "/brand-eggs.png", title: "계란 취급" },
+  { img: "/brand-toys.png", title: "문구류 취급" },
+  { img: "/brand-snacks.png", title: "과자류 취급" },
+  { img: "/brand-icecream.png", title: "아이스크림 취급" },
 ];
 
 const costItems = [
@@ -296,7 +298,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                   다모아 브랜드 <span style={{ color: PINK }}>경쟁력</span>
                 </h2>
-                <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
+                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5">
                   {brandPoints.map((b) => (
                     <div key={b.title}>
                       <div className="relative aspect-square overflow-hidden rounded-2xl">
