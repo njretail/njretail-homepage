@@ -98,7 +98,13 @@ export default function CartWidget() {
               </div>
               <div className="flex gap-2">
                 <button onClick={clearCart} className="rounded-xl border border-slate-200 px-4 py-2 text-sm">비우기</button>
-                <Link href="/contact" className="rounded-xl bg-[#C8075F] px-4 py-2 text-sm font-semibold text-white">구매 문의</Link>
+                <Link
+                  href="/shop/checkout"
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl bg-[#C8075F] px-4 py-2 text-sm font-semibold text-white"
+                >
+                  결제하기
+                </Link>
               </div>
             </div>
           </div>
