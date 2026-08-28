@@ -3,39 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Footer, Header } from "../components/site-shell";
+import { stores } from "../data/stores";
 
 const filters = ["전체", "편의점", "카페", "세탁", "기타"];
 
-const cases = [
-  {
-    title: "다모아마켓 상월곡동",
-    category: "편의점",
-    location: "서울 성북구 상월곡동",
-    result: "주거 밀집 지역과 역세권 유동인구가 함께 형성하는 배후수요 안정형 상권",
-    image: "/2.jpg",
-  },
-  {
-    title: "다모아마켓 동덕여대",
-    category: "편의점",
-    location: "서울 성북구 동덕여대 인근",
-    result: "대학가 고정 수요와 시내 상권 유동인구가 결합된 복합형 상권",
-    image: "/1.png",
-  },
-  {
-    title: "다모아마켓 장위동",
-    category: "편의점",
-    location: "서울 성북구 장위동",
-    result: "탄탄한 배후세대를 기반으로 한 주거 밀집형 상권",
-    image: "/3.jpg",
-  },
-  {
-    title: "다모아마켓 장위초",
-    category: "편의점",
-    location: "서울 성북구 장위초 인근",
-    result: "통학 동선을 따라 형성된 학교상권",
-    image: "/4.jpg",
-  },
-];
+const cases = stores.map((store) => ({
+  title: store.name,
+  category: store.category,
+  location: store.location,
+  result: store.trait,
+  image: store.image,
+}));
 
 export default function CasesPage() {
   const [selectedFilter, setSelectedFilter] = useState("전체");

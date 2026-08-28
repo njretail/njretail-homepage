@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Footer, Header } from "./components/site-shell";
 import { KakaoChatWidget } from "./components/kakao-chat-widget";
+import StoreGallerySlider from "./components/StoreGallerySlider";
+import { stores } from "./data/stores";
 
 const PINK = "#C8075F";
 
@@ -176,13 +178,6 @@ const costItems = [
 ];
 const costTotal = costItems.reduce((sum, item) => sum + item.value, 0);
 const won = (n: number) => n.toLocaleString("ko-KR");
-
-const storeGallery = [
-  { img: "/2.jpg", name: "다모아마켓 상월곡동" },
-  { img: "/1.png", name: "다모아마켓 동덕여대" },
-  { img: "/3.jpg", name: "다모아마켓 장위동" },
-  { img: "/4.jpg", name: "다모아마켓 장위초" },
-];
 
 export default function HomePage() {
   return (
@@ -401,21 +396,8 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-              {storeGallery.map((store) => (
-                <div key={store.name}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                    <Image
-                      src={store.img}
-                      alt={`${store.name} 다모아 무인매장`}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <p className="mt-3 text-center text-base font-semibold text-slate-800">{store.name}</p>
-                </div>
-              ))}
+            <div className="mt-8">
+              <StoreGallerySlider stores={stores} />
             </div>
           </div>
         </section>
