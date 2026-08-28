@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../../components/site-shell";
+import CartWidget from "../../../components/cart-widget";
 import { getProductDetail } from "../../../../lib/cafe24";
 import DetailActions from "./detail-actions";
 
@@ -39,6 +40,7 @@ export default async function ProductDetailPage({
       </main>
       <Footer />
 
+      <CartWidget raised />
       <DetailActions product={{ id: product.id, name: product.name, price: product.price }} />
     </>
   );

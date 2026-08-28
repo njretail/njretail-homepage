@@ -20,7 +20,7 @@ function writeCart(items: CartItem[]) {
   window.dispatchEvent(new CustomEvent('njcart:update'));
 }
 
-export default function CartWidget() {
+export default function CartWidget({ raised = false }: { raised?: boolean }) {
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<CartItem[]>([]);
 
@@ -57,7 +57,9 @@ export default function CartWidget() {
       <button
         onClick={() => setOpen(true)}
         aria-label="장바구니 열기"
-        className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-full bg-[#C8075F] px-4 py-3 text-white shadow-lg"
+        className={`fixed right-6 z-50 flex items-center gap-3 rounded-full bg-[#C8075F] px-4 py-3 text-white shadow-lg ${
+          raised ? "bottom-24" : "bottom-6"
+        }`}
       >
         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8h14l-2-8M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z" />
