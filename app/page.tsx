@@ -136,9 +136,9 @@ function MegaphoneIcon() {
 const damoaEdge = [
   { img: "/brand-kiosk.png", title: "인건비 Zero", desc: "24시간 무인 운영이라 인건비 부담이 없어요" },
   { img: "/edge-cost.jpg", title: "저렴한 창업비용", desc: "합리적인 초기 비용으로 부담 없이 시작" },
-  { img: "/edge-support.jpg", title: "오픈까지 본사가 대행", desc: "시작부터 마무리까지 본사가 모두 진행" },
-  { img: "/edge-logistics.jpg", title: "상품유통관리", desc: "본사 물류망으로 안정적인 상품 유통을 관리해요" },
   { img: "/edge-setup.jpg", title: "전 상품군 매장 셋업", desc: "필요한 모든 상품군을 본사가 구성해 셋업" },
+  { img: "/edge-logistics.jpg", title: "상품유통관리", desc: "본사 물류망으로 안정적인 상품 유통을 관리해요" },
+  { img: "/edge-support.jpg", title: "오픈까지 본사가 대행", desc: "시작부터 마무리까지 본사가 모두 진행" },
   { img: "/edge-cleaning.jpg", title: "청소대행", desc: "매장 청소도 본사 대행 서비스로 관리" },
 ];
 
