@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { CTAButton, Footer, Header, SectionTitle } from "../components/site-shell";
 import ShopClient from './shop-client';
+import { getStoreProducts } from "../../lib/cafe24";
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const { categories, products } = await getStoreProducts();
+
   return (
     <>
       <Header />
@@ -16,7 +19,7 @@ export default function ShopPage() {
         </section>
 
         {/* Client-side shopping area (handles add-to-cart) */}
-        <ShopClient />
+        <ShopClient categories={categories} products={products} />
 
         <section className="mt-20 rounded-[30px] bg-[#F3F4F6] p-8 sm:p-12">
           <SectionTitle
