@@ -3,7 +3,7 @@ import { CTAButton, Footer, Header, SectionTitle } from "../components/site-shel
 import ShopClient from './shop-client';
 import { getStoreProducts } from "../../lib/cafe24";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function ShopPage() {
   const { categories, products } = await getStoreProducts();

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Footer, Header } from "../../../components/site-shell";
 import { getProductDetailImages } from "../../../../lib/cafe24";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function ProductDetailPage({
   params,
