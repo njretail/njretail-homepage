@@ -5,6 +5,13 @@ const MALL_ID = process.env.CAFE24_MALL_ID!;
 const CLIENT_ID = process.env.CAFE24_CLIENT_ID!;
 const FRONT_API_KEY = process.env.CAFE24_FRONT_API_KEY!;
 
+// 장바구니/결제는 카페24 자체 페이지에서 처리한다 — 도메인이 연결되면 이 한 곳만 바꾸면 된다.
+export const STORE_URL = `https://${MALL_ID}.cafe24.com`;
+
+export function getProductPageUrl(productNo: number): string {
+  return `${STORE_URL}/product/detail.html?product_no=${productNo}`;
+}
+
 function authHeaders() {
   const basic = Buffer.from(`${CLIENT_ID}:${FRONT_API_KEY}`).toString("base64");
   return {
@@ -97,7 +104,7 @@ async function getProductsInCategory(
         category: "매장상품",
         rootCategory: rootName,
         subCategory: subName,
-        detailUrl: `https://${MALL_ID}.cafe24.com/product/detail.html?product_no=${p.product_no}`,
+        detailUrl: getProductPageUrl(p.product_no),
       });
     }
     if (products.length < limit) break;
@@ -112,6 +119,7 @@ export type ProductDetail = {
   name: string;
   price: string;
   images: string[];
+  storeUrl: string;
 };
 
 export async function getProductDetail(productNo: number): Promise<ProductDetail> {
@@ -126,6 +134,7 @@ export async function getProductDetail(productNo: number): Promise<ProductDetail
     name: product.product_name ?? "",
     price: `₩${Math.round(Number(product.price)).toLocaleString("ko-KR")}`,
     images,
+    storeUrl: getProductPageUrl(productNo),
   };
 }
 
