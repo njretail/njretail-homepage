@@ -34,6 +34,7 @@ export type StoreProduct = {
   image: string;
   category: "매장상품";
   subCategory: string;
+  detailUrl: string;
 };
 
 type Cafe24Category = {
@@ -79,6 +80,7 @@ async function getProductsInCategory(categoryNo: number, subCategoryName: string
         image: p.list_image || p.small_image,
         category: "매장상품",
         subCategory: subCategoryName,
+        detailUrl: `https://${MALL_ID}.cafe24.com/product/detail.html?product_no=${p.product_no}`,
       });
     }
     if (products.length < limit) break;

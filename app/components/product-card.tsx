@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react';
 
-type Product = { name: string; category: string; price: string; image: string };
+type Product = { name: string; category: string; price: string; image: string; detailUrl?: string };
 
 function parsePrice(price: string) {
   // convert strings like '₩1,490,000' to number 1490000
@@ -41,7 +41,12 @@ export default function ProductCard({ product }: { product: Product }) {
           <button onClick={addToCart} className="inline-flex flex-1 items-center justify-center rounded-xl bg-[#C8075F] px-4 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]">
             장바구니 담기
           </button>
-          <a href="/service" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+          <a
+            href={product.detailUrl ?? "/service"}
+            target={product.detailUrl ? "_blank" : undefined}
+            rel={product.detailUrl ? "noopener noreferrer" : undefined}
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+          >
             상세보기
           </a>
         </div>
