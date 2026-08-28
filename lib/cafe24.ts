@@ -107,6 +107,15 @@ async function getProductsInCategory(
   return results;
 }
 
+export async function getProductDetailImages(productNo: number): Promise<string[]> {
+  const data = await cafe24Fetch(`/api/v2/products/${productNo}`);
+  const description: string = data.product?.description ?? "";
+  const urls = Array.from(description.matchAll(/<img[^>]+src="([^"]+)"/gi)).map((m) => m[1]);
+  if (urls.length > 0) return urls;
+  const detailImage: string | undefined = data.product?.detail_image;
+  return detailImage ? [detailImage] : [];
+}
+
 export async function getStoreProducts(): Promise<{
   categories: StoreCategory[];
   products: StoreProduct[];

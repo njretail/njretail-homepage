@@ -2,7 +2,6 @@
 
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 type Product = { id: number; name: string; category: string; price: string; image: string };
 
@@ -26,7 +25,13 @@ function addItemToCart(product: Product) {
   window.dispatchEvent(new CustomEvent('njcart:update'));
 }
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  onShowDetail,
+}: {
+  product: Product;
+  onShowDetail: (id: number) => void;
+}) {
   const router = useRouter();
 
   const handleAddToCart = useCallback(() => {
@@ -68,12 +73,12 @@ export default function ProductCard({ product }: { product: Product }) {
             주문하기
           </button>
         </div>
-        <Link
-          href={`/shop/product/${product.id}`}
-          className="mt-3 block text-center text-sm font-semibold text-slate-500 hover:text-slate-700"
+        <button
+          onClick={() => onShowDetail(product.id)}
+          className="mt-3 block w-full text-center text-sm font-semibold text-slate-500 hover:text-slate-700"
         >
           상세보기
-        </Link>
+        </button>
       </div>
     </article>
   );

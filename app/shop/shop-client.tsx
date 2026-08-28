@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ProductCard from '../components/product-card';
 import CartWidget from '../components/cart-widget';
+import DetailModal from '../components/detail-modal';
 import type { StoreCategory, StoreProduct } from '../../lib/cafe24';
 
 const filters = ["전체", "매장상품", "장비", "소모품", "패키지"];
@@ -17,6 +18,7 @@ export default function ShopClient({
   const [activeFilter, setActiveFilter] = useState("전체");
   const [activeRoot, setActiveRoot] = useState<string | null>(null);
   const [activeSub, setActiveSub] = useState<string | null>(null);
+  const [detailId, setDetailId] = useState<number | null>(null);
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
@@ -126,7 +128,7 @@ export default function ShopClient({
 
       <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onShowDetail={setDetailId} />
         ))}
       </div>
 
@@ -135,6 +137,8 @@ export default function ShopClient({
       )}
 
       <CartWidget />
+
+      {detailId !== null && <DetailModal productId={detailId} onClose={() => setDetailId(null)} />}
     </section>
   );
 }
