@@ -25,7 +25,12 @@ async function cafe24Fetch(path: string) {
   return res.json();
 }
 
-export type StoreCategory = { categoryNo: number; name: string };
+export type StoreSubCategory = { categoryNo: number; name: string };
+export type StoreCategory = {
+  categoryNo: number;
+  name: string;
+  children: StoreSubCategory[];
+};
 
 export type StoreProduct = {
   id: number;
@@ -33,6 +38,7 @@ export type StoreProduct = {
   price: string;
   image: string;
   category: "매장상품";
+  rootCategory: string;
   subCategory: string;
   detailUrl: string;
 };
@@ -40,6 +46,7 @@ export type StoreProduct = {
 type Cafe24Category = {
   category_no: number;
   category_depth: number;
+  parent_category_no: number;
   category_name: string;
 };
 
@@ -56,12 +63,21 @@ type Cafe24Product = {
 export async function getStoreCategories(): Promise<StoreCategory[]> {
   const data = await cafe24Fetch("/api/v2/categories?limit=100");
   const categories = (data.categories ?? []) as Cafe24Category[];
-  return categories
-    .filter((c) => c.category_depth === 1)
-    .map((c) => ({ categoryNo: c.category_no, name: c.category_name }));
+  const roots = categories.filter((c) => c.category_depth === 1);
+  return roots.map((root) => ({
+    categoryNo: root.category_no,
+    name: root.category_name,
+    children: categories
+      .filter((c) => c.parent_category_no === root.category_no && c.category_depth === 2)
+      .map((c) => ({ categoryNo: c.category_no, name: c.category_name.trim() })),
+  }));
 }
 
-async function getProductsInCategory(categoryNo: number, subCategoryName: string): Promise<StoreProduct[]> {
+async function getProductsInCategory(
+  categoryNo: number,
+  rootName: string,
+  subName: string
+): Promise<StoreProduct[]> {
   const results: StoreProduct[] = [];
   let offset = 0;
   const limit = 100;
@@ -79,7 +95,8 @@ async function getProductsInCategory(categoryNo: number, subCategoryName: string
         price: `₩${Math.round(Number(p.price)).toLocaleString("ko-KR")}`,
         image: p.list_image || p.small_image,
         category: "매장상품",
-        subCategory: subCategoryName,
+        rootCategory: rootName,
+        subCategory: subName,
         detailUrl: `https://${MALL_ID}.cafe24.com/product/detail.html?product_no=${p.product_no}`,
       });
     }
@@ -95,8 +112,28 @@ export async function getStoreProducts(): Promise<{
   products: StoreProduct[];
 }> {
   const categories = await getStoreCategories();
-  const productLists = await Promise.all(
-    categories.map((c) => getProductsInCategory(c.categoryNo, c.name))
-  );
-  return { categories, products: productLists.flat() };
+
+  // 소분류가 있으면 소분류 기준으로, 없으면(예: 아이스크림/빙과, 기타) 대분류 자체를 기준으로 가져온다.
+  // 카페24 상품-카테고리 조회는 지정한 분류 번호에 직접 연결된 상품만 반환하므로, 소분류가 있는데
+  // 상품이 대분류에도 바로 연결돼 있을 수 있어 두 경우 모두 가져와서 합친다(중복은 상품번호로 제거).
+  const fetches: Promise<StoreProduct[]>[] = [];
+  for (const root of categories) {
+    fetches.push(getProductsInCategory(root.categoryNo, root.name, root.name));
+    for (const child of root.children) {
+      fetches.push(getProductsInCategory(child.categoryNo, root.name, child.name));
+    }
+  }
+
+  const productLists = await Promise.all(fetches);
+  const seen = new Set<number>();
+  const products: StoreProduct[] = [];
+  for (const list of productLists) {
+    for (const p of list) {
+      if (seen.has(p.id)) continue;
+      seen.add(p.id);
+      products.push(p);
+    }
+  }
+
+  return { categories, products };
 }
