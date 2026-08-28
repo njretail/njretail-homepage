@@ -11,6 +11,13 @@ export type StoreCase = {
 
 export const stores: StoreCase[] = [
   {
+    name: "다모아마켓 창동",
+    image: "/store-changdong.png",
+    category: "편의점",
+    location: "서울 도봉구 창동",
+    trait: "안정적인 배후세대를 갖춘 주거 밀집형 상권",
+  },
+  {
     name: "다모아마켓 상월곡동",
     image: "/2.jpg",
     category: "편의점",
