@@ -107,13 +107,26 @@ async function getProductsInCategory(
   return results;
 }
 
-export async function getProductDetailImages(productNo: number): Promise<string[]> {
+export type ProductDetail = {
+  id: number;
+  name: string;
+  price: string;
+  images: string[];
+};
+
+export async function getProductDetail(productNo: number): Promise<ProductDetail> {
   const data = await cafe24Fetch(`/api/v2/products/${productNo}`);
-  const description: string = data.product?.description ?? "";
+  const product = data.product ?? {};
+  const description: string = product.description ?? "";
   const urls = Array.from(description.matchAll(/<img[^>]+src="([^"]+)"/gi)).map((m) => m[1]);
-  if (urls.length > 0) return urls;
-  const detailImage: string | undefined = data.product?.detail_image;
-  return detailImage ? [detailImage] : [];
+  const images = urls.length > 0 ? urls : product.detail_image ? [product.detail_image] : [];
+
+  return {
+    id: productNo,
+    name: product.product_name ?? "",
+    price: `₩${Math.round(Number(product.price)).toLocaleString("ko-KR")}`,
+    images,
+  };
 }
 
 export async function getStoreProducts(): Promise<{

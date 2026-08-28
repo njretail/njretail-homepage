@@ -3,28 +3,9 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { addItemToCart } from '../../lib/cart';
 
 type Product = { id: number; name: string; category: string; price: string; image: string };
-
-function parsePrice(price: string) {
-  // convert strings like '₩1,490,000' to number 1490000
-  const digits = price.replace(/[^0-9]/g, '');
-  return digits ? parseInt(digits, 10) : 0;
-}
-
-function addItemToCart(product: Product) {
-  const raw = localStorage.getItem('nj_cart');
-  const arr = raw ? JSON.parse(raw) : [];
-  const price = parsePrice(product.price);
-  const existIdx = arr.findIndex((p: any) => p.name === product.name);
-  if (existIdx >= 0) {
-    arr[existIdx].qty += 1;
-  } else {
-    arr.push({ name: product.name, price, qty: 1 });
-  }
-  localStorage.setItem('nj_cart', JSON.stringify(arr));
-  window.dispatchEvent(new CustomEvent('njcart:update'));
-}
 
 export default function ProductCard({ product }: { product: Product }) {
   const router = useRouter();
