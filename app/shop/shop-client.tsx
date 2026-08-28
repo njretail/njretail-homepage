@@ -36,6 +36,13 @@ export default function ShopClient({
 
   const activeRootCategory = categories.find((c) => c.name === activeRoot);
 
+  const rootCounts = new Map<string, number>();
+  const subCounts = new Map<string, number>();
+  for (const p of products) {
+    rootCounts.set(p.rootCategory, (rootCounts.get(p.rootCategory) ?? 0) + 1);
+    subCounts.set(p.subCategory, (subCounts.get(p.subCategory) ?? 0) + 1);
+  }
+
   // 장비/소모품/패키지는 아직 실제 판매 데이터가 없어 목록에는 포함하지 않는다.
   const filteredProducts =
     activeFilter === "장비" || activeFilter === "소모품" || activeFilter === "패키지"
@@ -80,6 +87,9 @@ export default function ShopClient({
                 }`}
               >
                 {cat.name}
+                <span className={activeRoot === cat.name ? "text-white/80" : "text-slate-400"}>
+                  {rootCounts.get(cat.name) ?? 0}
+                </span>
               </button>
             ))}
           </div>
@@ -91,13 +101,16 @@ export default function ShopClient({
                   key={sub.categoryNo}
                   type="button"
                   onClick={() => setActiveSub(activeSub === sub.name ? null : sub.name)}
-                  className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
+                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
                     activeSub === sub.name
                       ? "bg-slate-800 text-white"
                       : "border border-slate-200 bg-white text-slate-600 hover:bg-slate-100"
                   }`}
                 >
                   {sub.name}
+                  <span className={activeSub === sub.name ? "text-white/70" : "text-slate-400"}>
+                    {subCounts.get(sub.name) ?? 0}
+                  </span>
                 </button>
               ))}
             </div>
