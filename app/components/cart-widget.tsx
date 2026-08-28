@@ -103,7 +103,7 @@ export default function CartWidget() {
                   onClick={() => setOpen(false)}
                   className="rounded-xl bg-[#C8075F] px-4 py-2 text-sm font-semibold text-white"
                 >
-                  결제하기
+                  주문하기
                 </Link>
               </div>
             </div>

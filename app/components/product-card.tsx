@@ -65,7 +65,7 @@ export default function ProductCard({ product }: { product: Product }) {
             onClick={handleBuyNow}
             className="inline-flex items-center justify-center rounded-xl bg-[#C8075F] px-4 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]"
           >
-            결제하기
+            주문하기
           </button>
         </div>
         <Link

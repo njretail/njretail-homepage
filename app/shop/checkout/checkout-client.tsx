@@ -144,7 +144,7 @@ export default function CheckoutClient() {
           disabled={submitting}
           className="mt-6 w-full rounded-xl bg-[#C8075F] px-4 py-3.5 text-base font-semibold text-white hover:bg-[#a8054e] disabled:opacity-60"
         >
-          {submitting ? '처리 중...' : '결제하기'}
+          {submitting ? '처리 중...' : '주문하기'}
         </button>
       </div>
     </form>
