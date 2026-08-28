@@ -1,8 +1,10 @@
 'use client';
 
 import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
-type Product = { name: string; category: string; price: string; image: string; detailUrl?: string };
+type Product = { id: number; name: string; category: string; price: string; image: string };
 
 function parsePrice(price: string) {
   // convert strings like '₩1,490,000' to number 1490000
@@ -10,25 +12,40 @@ function parsePrice(price: string) {
   return digits ? parseInt(digits, 10) : 0;
 }
 
+function addItemToCart(product: Product) {
+  const raw = localStorage.getItem('nj_cart');
+  const arr = raw ? JSON.parse(raw) : [];
+  const price = parsePrice(product.price);
+  const existIdx = arr.findIndex((p: any) => p.name === product.name);
+  if (existIdx >= 0) {
+    arr[existIdx].qty += 1;
+  } else {
+    arr.push({ name: product.name, price, qty: 1 });
+  }
+  localStorage.setItem('nj_cart', JSON.stringify(arr));
+  window.dispatchEvent(new CustomEvent('njcart:update'));
+}
+
 export default function ProductCard({ product }: { product: Product }) {
-  const addToCart = useCallback(() => {
+  const router = useRouter();
+
+  const handleAddToCart = useCallback(() => {
     try {
-      const raw = localStorage.getItem('nj_cart');
-      const arr = raw ? JSON.parse(raw) : [];
-      const price = parsePrice(product.price);
-      const existIdx = arr.findIndex((p: any) => p.name === product.name);
-      if (existIdx >= 0) {
-        arr[existIdx].qty += 1;
-      } else {
-        arr.push({ name: product.name, price, qty: 1 });
-      }
-      localStorage.setItem('nj_cart', JSON.stringify(arr));
-      window.dispatchEvent(new CustomEvent('njcart:update'));
+      addItemToCart(product);
       alert('장바구니에 담겼습니다.');
     } catch (e) {
       console.error(e);
     }
   }, [product]);
+
+  const handleBuyNow = useCallback(() => {
+    try {
+      addItemToCart(product);
+      router.push('/shop/checkout');
+    } catch (e) {
+      console.error(e);
+    }
+  }, [product, router]);
 
   return (
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -37,19 +54,26 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C8075F]">{product.category}</div>
         <h3 className="mt-3 text-xl font-bold text-slate-900">{product.name}</h3>
         <p className="mt-4 text-2xl font-bold text-slate-900">{product.price}</p>
-        <div className="mt-5 flex items-center gap-3">
-          <button onClick={addToCart} className="inline-flex flex-1 items-center justify-center rounded-xl bg-[#C8075F] px-4 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]">
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          <button
+            onClick={handleAddToCart}
+            className="inline-flex items-center justify-center rounded-xl border border-[#C8075F] bg-white px-4 py-3 text-sm font-semibold text-[#C8075F] hover:bg-[#FDEEF4]"
+          >
             장바구니 담기
           </button>
-          <a
-            href={product.detailUrl ?? "/service"}
-            target={product.detailUrl ? "_blank" : undefined}
-            rel={product.detailUrl ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+          <button
+            onClick={handleBuyNow}
+            className="inline-flex items-center justify-center rounded-xl bg-[#C8075F] px-4 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]"
           >
-            상세보기
-          </a>
+            결제하기
+          </button>
         </div>
+        <Link
+          href={`/shop/product/${product.id}`}
+          className="mt-3 block text-center text-sm font-semibold text-slate-500 hover:text-slate-700"
+        >
+          상세보기
+        </Link>
       </div>
     </article>
   );
