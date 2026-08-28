@@ -38,7 +38,7 @@ export default function StoreGallerySlider({ stores }: { stores: StoreCase[] }) 
         className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 sm:gap-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {stores.map((store) => (
-          <div key={store.name} className="w-[62%] shrink-0 snap-start sm:w-[31%] lg:w-[23%]">
+          <div key={store.name} className="w-[54%] shrink-0 snap-start sm:w-[27%] lg:w-[20%]">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src={store.image}
