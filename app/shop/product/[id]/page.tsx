@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Footer, Header } from "../../../components/site-shell";
+import CartWidget from "../../../components/cart-widget";
 import { getProductDetail } from "../../../../lib/cafe24";
+import DetailActions from "./detail-actions";
 
 export const revalidate = 3600;
 
@@ -38,22 +40,8 @@ export default async function ProductDetailPage({
       </main>
       <Footer />
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] backdrop-blur-sm">
-        <div className="mx-auto flex max-w-3xl gap-3 px-4 py-3 sm:px-6">
-          <a
-            href={product.storeUrl}
-            className="flex-1 rounded-xl border border-[#C8075F] bg-white px-4 py-3.5 text-center text-sm font-semibold text-[#C8075F] hover:bg-[#FDEEF4] sm:text-base"
-          >
-            장바구니 담기
-          </a>
-          <a
-            href={product.storeUrl}
-            className="flex-1 rounded-xl bg-[#C8075F] px-4 py-3.5 text-center text-sm font-semibold text-white hover:bg-[#a8054e] sm:text-base"
-          >
-            주문하기
-          </a>
-        </div>
-      </div>
+      <CartWidget raised />
+      <DetailActions product={{ id: product.id, name: product.name, price: product.price }} />
     </>
   );
 }

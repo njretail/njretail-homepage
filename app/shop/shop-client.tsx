@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ProductCard from '../components/product-card';
+import CartWidget from '../components/cart-widget';
 import type { StoreCategory, StoreProduct } from '../../lib/cafe24';
 
 const filters = ["전체", "매장상품", "장비", "소모품", "패키지"];
@@ -159,6 +160,8 @@ export default function ShopClient({
           {trimmedQuery ? "검색 결과가 없습니다." : "해당 분류에 등록된 상품이 없습니다."}
         </p>
       )}
+
+      <CartWidget />
     </section>
   );
 }

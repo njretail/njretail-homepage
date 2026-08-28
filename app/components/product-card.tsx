@@ -1,8 +1,33 @@
-import Link from 'next/link';
+'use client';
 
-type Product = { id: number; name: string; category: string; price: string; image: string; detailUrl: string };
+import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { addItemToCart } from '../../lib/cart';
+
+type Product = { id: number; name: string; category: string; price: string; image: string };
 
 export default function ProductCard({ product }: { product: Product }) {
+  const router = useRouter();
+
+  const handleAddToCart = useCallback(() => {
+    try {
+      addItemToCart(product);
+      alert('장바구니에 담겼습니다.');
+    } catch (e) {
+      console.error(e);
+    }
+  }, [product]);
+
+  const handleBuyNow = useCallback(() => {
+    try {
+      addItemToCart(product);
+      router.push('/shop/checkout');
+    } catch (e) {
+      console.error(e);
+    }
+  }, [product, router]);
+
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <Link href={`/shop/product/${product.id}`}>
@@ -19,18 +44,18 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <div className="mt-auto pt-2.5 sm:pt-5">
           <div className="grid grid-cols-2 gap-1.5 sm:gap-3">
-            <a
-              href={product.detailUrl}
+            <button
+              onClick={handleAddToCart}
               className="inline-flex items-center justify-center rounded-lg border border-[#C8075F] bg-white px-1 py-1.5 text-[10px] font-semibold leading-tight text-[#C8075F] hover:bg-[#FDEEF4] sm:rounded-xl sm:px-4 sm:py-3 sm:text-sm"
             >
               장바구니 담기
-            </a>
-            <a
-              href={product.detailUrl}
+            </button>
+            <button
+              onClick={handleBuyNow}
               className="inline-flex items-center justify-center rounded-lg bg-[#C8075F] px-1 py-1.5 text-[10px] font-semibold leading-tight text-white hover:bg-[#a8054e] sm:rounded-xl sm:px-4 sm:py-3 sm:text-sm"
             >
               주문하기
-            </a>
+            </button>
           </div>
         </div>
       </div>
