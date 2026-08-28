@@ -8,31 +8,31 @@ const filters = ["전체", "편의점", "카페", "세탁", "기타"];
 
 const cases = [
   {
-    title: "1호점",
+    title: "다모아마켓 상월곡동",
     category: "편의점",
-    location: "서울 강남",
-    result: "월 매출 150% 성장",
-    image: "/store-01.png",
-  },
-  {
-    title: "2호점",
-    category: "편의점",
-    location: "서울 동대문",
-    result: "고객 이용률 2배 증가",
+    location: "서울 성북구 상월곡동",
+    result: "주거 밀집 지역과 역세권 유동인구가 함께 형성하는 배후수요 안정형 상권",
     image: "/2.jpg",
   },
   {
-    title: "3호점",
+    title: "다모아마켓 동덕여대",
     category: "편의점",
-    location: "부산 해운대",
-    result: "심야 매출 180% 상승",
+    location: "서울 성북구 동덕여대 인근",
+    result: "대학가 고정 수요와 시내 상권 유동인구가 결합된 복합형 상권",
+    image: "/1.png",
+  },
+  {
+    title: "다모아마켓 장위동",
+    category: "편의점",
+    location: "서울 성북구 장위동",
+    result: "탄탄한 배후세대를 기반으로 한 주거 밀집형 상권",
     image: "/3.jpg",
   },
   {
-    title: "4호점",
+    title: "다모아마켓 장위초",
     category: "편의점",
-    location: "경기 평택",
-    result: "오픈 3개월 내 흑자 전환",
+    location: "서울 성북구 장위초 인근",
+    result: "통학 동선을 따라 형성된 학교상권",
     image: "/4.jpg",
   },
 ];
