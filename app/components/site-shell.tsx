@@ -5,7 +5,7 @@ export const navItems = [
   { href: "/", label: "메인" },
   { href: "/about", label: "기업소개" },
   { href: "/service", label: "창업지원" },
-  { href: "/cases", label: "오픈사례" },
+  { href: "/cases", label: "창업매장" },
   { href: "/board", label: "게시판" },
   { href: "/agency", label: "대행 신청" },
   { href: "/shop", label: "쇼핑하기" },
