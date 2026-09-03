@@ -189,7 +189,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
             <Link
               href="/contact#inquiry-form"
-              className="relative block aspect-[1750/899] w-full"
+              className="relative block aspect-[1536/1024] w-full"
             >
               <Image
                 src="/7.png"
