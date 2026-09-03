@@ -196,6 +196,7 @@ export default function HomePage() {
                 alt="가까운 동네에서, 내 가게 같은 마음으로 함께 시작해요! 엔제이리테일 - 무료 창업 상담 신청"
                 fill
                 priority
+                quality={100}
                 sizes="(min-width: 1280px) 1216px, 100vw"
                 className="object-contain"
               />
