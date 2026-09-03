@@ -185,93 +185,22 @@ export default function HomePage() {
       <Header />
       <main className="bg-white">
         {/* Hero */}
-        <section
-          className="relative overflow-hidden"
-          style={{
-            background:
-              "radial-gradient(120% 100% at 100% 0%, #bfe0f5 0%, #ffffff 55%)",
-          }}
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute right-[38%] top-10 hidden h-24 w-28 sm:block"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, rgba(200,7,95,0.35) 1.5px, transparent 1.5px)",
-              backgroundSize: "14px 14px",
-            }}
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -left-16 top-24 h-40 w-40 rounded-full"
-            style={{ background: "rgba(200,7,95,0.08)" }}
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-4 bottom-8 h-20 w-20 rounded-full"
-            style={{ background: "rgba(200,7,95,0.06)" }}
-          />
-
-          <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 pb-10 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-2 lg:gap-6 lg:px-8">
-            <div>
-              <span
-                className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-white"
-                style={{ backgroundColor: PINK }}
-              >
-                24시 무인마켓 창업의 모든 것
-              </span>
-
-              <h1 className="mt-5 text-3xl font-bold leading-tight text-slate-900 sm:text-5xl">
-                가까운 동네에서,
-                <br />
-                <span style={{ color: PINK }}>내 가게 같은 마음으로</span>
-                <br />
-                함께 시작해요!
-              </h1>
-
-              <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
-                운영은 편하게, 수익은 안정적으로
-                <br />
-                내 가게 같은 마음으로 성공 창업을 함께 만들어갑니다.
-              </p>
-
-              <div className="mt-6 grid grid-cols-5 gap-2 sm:gap-3">
-                {processSteps.map((step) => (
-                  <div key={step.n} className="flex flex-col items-center text-center">
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12"
-                      style={{ backgroundColor: "#FCE7F0", color: PINK }}
-                    >
-                      <step.icon />
-                    </span>
-                    <span className="mt-1.5 text-[11px] font-semibold leading-tight text-slate-900 sm:text-xs">
-                      {step.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/contact#inquiry-form"
-                className="mt-7 inline-flex items-center gap-1.5 rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
-                style={{ backgroundColor: PINK }}
-              >
-                무료 창업 상담 신청
-                <ArrowRightIcon />
-              </Link>
-            </div>
-
-            <div className="relative aspect-[716/1024] w-full max-w-md justify-self-center lg:max-w-none lg:justify-self-end">
+        <section className="bg-white">
+          <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 sm:px-6 sm:pt-14 sm:pb-6 lg:px-8">
+            <Link
+              href="/contact#inquiry-form"
+              className="relative block aspect-[1536/1024] w-full"
+            >
               <Image
-                src="/hero-photo.png"
-                alt="다모아 24시 무인마켓 매장 전경"
+                src="/7.png"
+                alt="가까운 동네에서, 내 가게 같은 마음으로 함께 시작해요! 엔제이리테일 - 무료 창업 상담 신청"
                 fill
                 priority
                 quality={100}
-                sizes="(min-width: 1024px) 45vw, 80vw"
+                sizes="(min-width: 1280px) 1216px, 100vw"
                 className="object-contain"
               />
-            </div>
+            </Link>
           </div>
         </section>
 
