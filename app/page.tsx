@@ -186,46 +186,21 @@ export default function HomePage() {
       <main className="bg-white">
         {/* Hero */}
         <section>
+          <Link
+            href="/contact#inquiry-form"
+            className="relative block aspect-[1536/1024] w-full overflow-hidden"
+          >
+            <Image
+              src="/7.png"
+              alt="가까운 동네에서, 믿고 찾는 무인매장 함께 시작해요! 엔제이리테일 - 무료 창업 상담 신청"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </Link>
+
           <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.4fr] lg:items-center lg:gap-6">
-              <div>
-                <h1 className="text-4xl font-bold leading-[1.25] text-slate-900 sm:text-5xl lg:text-[3.4rem]">
-                  가까운 동네에서,
-                  <br />
-                  <span style={{ color: PINK }}>믿고 찾는 무인매장</span>
-                  <br />
-                  함께 시작해요!
-                  <br />
-                  엔제이리테일
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-slate-600">
-                  운영은 편하게, 수익은 안정적으로
-                  <br />
-                  내 가게 같은 마음으로 성공 창업을 함께 만들어갑니다.
-                </p>
-                <div className="mt-8 flex flex-wrap items-center gap-6">
-                  <Link
-                    href="/contact#inquiry-form"
-                    className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white shadow-sm transition hover:opacity-90"
-                    style={{ backgroundColor: PINK }}
-                  >
-                    무료 창업 상담 신청 <ArrowRightIcon />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative aspect-[626/617] overflow-hidden rounded-3xl shadow-xl">
-                <Image
-                  src="/7.png"
-                  alt="엔제이리테일 다모아 무인매장 매장 전경"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 62vw, 100vw"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
             {/* Store video */}
             <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
               <iframe
