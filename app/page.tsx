@@ -185,21 +185,33 @@ export default function HomePage() {
       <Header />
       <main className="bg-white">
         {/* Hero */}
-        <section>
-          <Link
-            href="/contact#inquiry-form"
-            className="relative block aspect-[1536/1024] w-full overflow-hidden"
-          >
-            <Image
-              src="/7.png"
-              alt="가까운 동네에서, 믿고 찾는 무인매장 함께 시작해요! 엔제이리테일 - 무료 창업 상담 신청"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </Link>
+        <section className="relative overflow-hidden bg-white">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(55% 65% at 68% 50%, #FCE7F0 0%, rgba(252,231,240,0) 72%)",
+            }}
+          />
+          <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+            <Link
+              href="/contact#inquiry-form"
+              className="relative block aspect-[1536/1024] w-full max-w-[900px] overflow-hidden rounded-3xl shadow-xl"
+            >
+              <Image
+                src="/7.png"
+                alt="가까운 동네에서, 믿고 찾는 무인매장 함께 시작해요! 엔제이리테일 - 무료 창업 상담 신청"
+                fill
+                priority
+                sizes="(min-width: 900px) 900px, 100vw"
+                className="object-contain"
+              />
+            </Link>
+          </div>
+        </section>
 
+        <section>
           <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
             {/* Store video */}
             <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
