@@ -186,7 +186,7 @@ export default function HomePage() {
       <main className="bg-white">
         {/* Hero */}
         <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 pt-10 pb-4 sm:px-6 sm:pt-14 sm:pb-6 lg:px-8">
             <Link
               href="/contact#inquiry-form"
               className="relative block aspect-[1536/1024] w-full"
@@ -204,9 +204,9 @@ export default function HomePage() {
         </section>
 
         <section>
-          <div className="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pt-16 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 pb-14 pt-2 sm:px-6 sm:pt-4 lg:px-8">
             {/* Store video */}
-            <div className="relative mt-16 aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
+            <div className="relative aspect-video w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl">
               <iframe
                 src="https://www.youtube.com/embed/Ni8nI6tTOQw"
                 title="다모아 매장 영상"
