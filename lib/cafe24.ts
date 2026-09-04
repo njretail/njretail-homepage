@@ -138,20 +138,26 @@ export async function getProductDetail(productNo: number): Promise<ProductDetail
   };
 }
 
+// 로컬 개발 환경에 카페24 키가 없거나 API 호출이 실패했을 때 쓰는 대체 데이터.
+// 실제 라이브 사이트에서 스냅샷한 상품 목록이라 최신 재고/가격과는 점점 어긋날 수 있지만,
+// "쇼핑하기가 비어 보이는" 것보다 낫다 — 키가 설정되면 항상 실시간 API 결과가 우선한다.
+import fallbackData from "./shop-fallback-data.json";
+const FALLBACK: { categories: StoreCategory[]; products: StoreProduct[] } = fallbackData;
+
 export async function getStoreProducts(): Promise<{
   categories: StoreCategory[];
   products: StoreProduct[];
 }> {
   if (!MALL_ID || !CLIENT_ID || !FRONT_API_KEY) {
-    console.warn("카페24 연동 환경변수가 설정되지 않아 쇼핑하기 상품 목록을 건너뜁니다.");
-    return { categories: [], products: [] };
+    console.warn("카페24 연동 환경변수가 설정되지 않아 대체 상품 데이터를 사용합니다.");
+    return FALLBACK;
   }
 
   try {
     return await fetchStoreProducts();
   } catch (err) {
-    console.error("카페24 상품 조회 실패:", err);
-    return { categories: [], products: [] };
+    console.error("카페24 상품 조회 실패, 대체 상품 데이터를 사용합니다:", err);
+    return FALLBACK;
   }
 }
 
