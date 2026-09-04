@@ -86,13 +86,13 @@ export default function HomePage() {
           <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 pb-10 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-2 lg:gap-6 lg:px-8">
             <div>
               <span
-                className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-white"
+                className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-white lg:px-5 lg:py-2 lg:text-base"
                 style={{ backgroundColor: PINK }}
               >
                 24시 무인마켓 창업의 모든 것
               </span>
 
-              <h1 className="mt-5 text-3xl font-bold leading-tight text-slate-900 sm:text-5xl">
+              <h1 className="mt-5 text-3xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
                 가까운 동네에서,
                 <br />
                 <span style={{ color: PINK }}>내 가게 같은 마음으로</span>
@@ -100,22 +100,22 @@ export default function HomePage() {
                 함께 시작해요!
               </h1>
 
-              <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
+              <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base lg:text-lg lg:leading-8">
                 운영은 편하게, 수익은 안정적으로
                 <br />
                 내 가게 같은 마음으로 성공 창업을 함께 만들어갑니다.
               </p>
 
-              <div className="mt-6 grid grid-cols-5 gap-2 sm:gap-3">
+              <div className="mt-6 grid grid-cols-5 gap-2 sm:gap-3 lg:gap-4">
                 {processSteps.map((step) => (
                   <div key={step.n} className="flex flex-col items-center text-center">
                     <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12"
+                      className="flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12 lg:h-16 lg:w-16 [&_svg]:h-4 [&_svg]:w-4 sm:[&_svg]:h-6 sm:[&_svg]:w-6 lg:[&_svg]:h-8 lg:[&_svg]:w-8"
                       style={{ backgroundColor: "#FCE7F0", color: PINK }}
                     >
                       <step.icon />
                     </span>
-                    <span className="mt-1.5 text-[11px] font-semibold leading-tight text-slate-900 sm:text-xs">
+                    <span className="mt-1.5 text-[11px] font-semibold leading-tight text-slate-900 sm:text-xs lg:mt-2.5 lg:text-sm">
                       {step.title}
                     </span>
                   </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
 
               <Link
                 href="/contact#inquiry-form"
-                className="mt-7 inline-flex items-center gap-1.5 rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+                className="mt-7 inline-flex items-center gap-1.5 rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90 lg:mt-9 lg:px-8 lg:py-4 lg:text-base"
                 style={{ backgroundColor: PINK }}
               >
                 무료 창업 상담 신청
