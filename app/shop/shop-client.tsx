@@ -70,14 +70,14 @@ export default function ShopClient({
 
       {!trimmedQuery && (
         <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
             <button
               type="button"
               onClick={() => {
                 setActiveRoot(null);
                 setActiveSub(null);
               }}
-              className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeRoot === null
                   ? "bg-[#C8075F] text-white"
                   : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50"
@@ -90,7 +90,7 @@ export default function ShopClient({
                 key={cat.categoryNo}
                 type="button"
                 onClick={() => handleRootClick(cat.name)}
-                className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
+                className={`flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeRoot === cat.name
                     ? "bg-[#C8075F] text-white"
                     : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-100"
