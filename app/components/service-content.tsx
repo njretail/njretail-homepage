@@ -1,29 +1,36 @@
 import { CTAButton, SectionTitle } from "./site-shell";
+import { BoxIcon, ChatIcon, ChipIcon, ClipboardIcon, GearIcon, HeadsetIcon, PencilIcon, SearchIcon, SparkleIcon } from "./icons";
 
 export const serviceSteps = [
   {
     title: "1. 상담 & 상권분석",
     description: "예비 점주님의 목표와 매장 위치, 인근 고객층, 경쟁매장 데이터를 종합 분석해 운영 가능성을 검증합니다.",
+    icon: SearchIcon,
   },
   {
     title: "2. 매장 인테리어 설계",
     description: "매장 규모와 업종에 맞춰 상품 진열, 동선, 출입 구조, 고객 경험 흐름까지 설계해 효율적인 공간을 만들어갑니다.",
+    icon: PencilIcon,
   },
   {
     title: "3. 상품 구성 & 진열 컨설팅",
     description: "고객 수요와 판매권을 고려하여 최적의 SKU 구성, 가격 설계, 매장별 진열 계획을 제안합니다.",
+    icon: BoxIcon,
   },
   {
     title: "4. 운영 시스템 셋팅",
     description: "POS, 키오스크, CCTV, 출입 인증, 재고관리까지 연동해 무인매장 운영에 필요한 시스템을 한 번에 구축합니다.",
+    icon: GearIcon,
   },
   {
     title: "5. 입고 및 청결 관리",
     description: "상품 입고와 검수, 재고 흐름을 관리하고 청소 주기와 점검 기준을 세워 매장 청결을 함께 유지합니다.",
+    icon: ClipboardIcon,
   },
   {
     title: "6. 오픈 후 판매 운영 & 사후관리",
     description: "오픈 이후 매출·재고·고객 반응을 분석하고, 지속적인 개선을 통해 안정적인 운영을 지원합니다.",
+    icon: HeadsetIcon,
   },
 ];
 
@@ -42,7 +49,12 @@ export function ServiceSteps() {
     <section className="grid gap-6 md:grid-cols-3">
       {serviceSteps.map((step) => (
         <details key={step.title} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" open>
-          <summary className="cursor-pointer list-none text-lg font-bold text-slate-900">{step.title}</summary>
+          <summary className="flex cursor-pointer list-none items-center gap-3 text-lg font-bold text-slate-900">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+              <step.icon />
+            </span>
+            {step.title}
+          </summary>
           <p className="mt-4 text-sm leading-7 text-slate-600">{step.description}</p>
         </details>
       ))}
@@ -61,17 +73,32 @@ export function ServiceWhyUs() {
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#C8075F]">01</div>
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+              <ChatIcon />
+            </span>
+            <div className="text-2xl font-bold text-[#C8075F]">01</div>
+          </div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">현장 중심 컨설팅</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">취급 상품, 고객 패턴, 매장 구조를 고려한 실제 적용형 제안으로 설계합니다.</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#C8075F]">02</div>
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+              <ChipIcon />
+            </span>
+            <div className="text-2xl font-bold text-[#C8075F]">02</div>
+          </div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">운영 데이터 연동</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">재고, 매출, 결제, 보안 정보를 실시간으로 확인할 수 있도록 통합 관리 구조를 구성합니다.</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="text-2xl font-bold text-[#C8075F]">03</div>
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+              <ClipboardIcon />
+            </span>
+            <div className="text-2xl font-bold text-[#C8075F]">03</div>
+          </div>
           <h3 className="mt-4 text-xl font-bold text-slate-900">지속적인 성과 개선</h3>
           <p className="mt-3 text-base leading-7 text-slate-600">오픈 이후에도 데이터 분석과 현장 피드백을 기반으로 매출 상승과 운영 효율을 개선합니다.</p>
         </div>
@@ -148,11 +175,17 @@ export function ServiceAgency() {
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-          <h3 className="text-xl font-bold text-slate-900">입고 및 매대진열</h3>
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+            <BoxIcon />
+          </span>
+          <h3 className="mt-4 text-xl font-bold text-slate-900">입고 및 매대진열</h3>
           <p className="mt-3 leading-7 text-slate-600">상품 입고 검수와 수량 확인, 매장별 매대 배치와 진열을 대행합니다.</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-          <h3 className="text-xl font-bold text-slate-900">청소대행</h3>
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FCE7F0] text-[#C8075F] [&_svg]:h-5 [&_svg]:w-5">
+            <SparkleIcon />
+          </span>
+          <h3 className="mt-4 text-xl font-bold text-slate-900">청소대행</h3>
           <p className="mt-3 leading-7 text-slate-600">정기 청소와 위생 점검으로 고객이 안심하는 매장 환경을 관리합니다.</p>
         </div>
       </div>
