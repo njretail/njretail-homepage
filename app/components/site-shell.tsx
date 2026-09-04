@@ -71,14 +71,14 @@ export function Header() {
           <CTAButton href="/contact" text="무료 상담 신청" variant="brand" />
         </div>
 
-        <details className="group relative lg:hidden">
+        <details className="group relative order-first lg:hidden">
           <summary className="flex cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700">
             <span className="sr-only">메뉴 열기</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
               <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
             </svg>
           </summary>
-          <div className="absolute right-0 top-14 w-56 rounded-xl border border-slate-200 bg-white p-3 shadow-lg">
+          <div className="absolute left-0 top-14 w-56 rounded-xl border border-slate-200 bg-white p-3 shadow-lg">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href} className="rounded-lg px-3 py-2 text-base font-semibold text-slate-700 hover:bg-slate-50">
