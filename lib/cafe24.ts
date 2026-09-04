@@ -142,6 +142,23 @@ export async function getStoreProducts(): Promise<{
   categories: StoreCategory[];
   products: StoreProduct[];
 }> {
+  if (!MALL_ID || !CLIENT_ID || !FRONT_API_KEY) {
+    console.warn("카페24 연동 환경변수가 설정되지 않아 쇼핑하기 상품 목록을 건너뜁니다.");
+    return { categories: [], products: [] };
+  }
+
+  try {
+    return await fetchStoreProducts();
+  } catch (err) {
+    console.error("카페24 상품 조회 실패:", err);
+    return { categories: [], products: [] };
+  }
+}
+
+async function fetchStoreProducts(): Promise<{
+  categories: StoreCategory[];
+  products: StoreProduct[];
+}> {
   const categories = await getStoreCategories();
 
   // 소분류가 있으면 소분류 기준으로, 없으면(예: 아이스크림/빙과, 기타) 대분류 자체를 기준으로 가져온다.
