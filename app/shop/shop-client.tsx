@@ -16,23 +16,17 @@ export default function ShopClient({
   const [activeSub, setActiveSub] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleRootClick = (name: string) => {
-    if (activeRoot === name) {
-      setActiveRoot(null);
-      setActiveSub(null);
-    } else {
-      setActiveRoot(name);
-      setActiveSub(null);
-    }
-  };
-
   const activeRootCategory = categories.find((c) => c.name === activeRoot);
 
   const rootCounts = new Map<string, number>();
   const subCounts = new Map<string, number>();
+  const rootImage = new Map<string, string>();
+  const subImage = new Map<string, string>();
   for (const p of products) {
     rootCounts.set(p.rootCategory, (rootCounts.get(p.rootCategory) ?? 0) + 1);
     subCounts.set(p.subCategory, (subCounts.get(p.subCategory) ?? 0) + 1);
+    if (!rootImage.has(p.rootCategory)) rootImage.set(p.rootCategory, p.image);
+    if (!subImage.has(p.subCategory)) subImage.set(p.subCategory, p.image);
   }
 
   const trimmedQuery = searchQuery.trim().toLowerCase();
@@ -69,18 +63,19 @@ export default function ShopClient({
       </div>
 
       {!trimmedQuery && (
-        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+        <div className="mt-4 flex overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          {/* Root category sidebar */}
+          <nav className="w-[26%] shrink-0 border-r border-slate-100 bg-slate-50 sm:w-[20%]">
             <button
               type="button"
               onClick={() => {
                 setActiveRoot(null);
                 setActiveSub(null);
               }}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`block w-full border-l-2 px-3 py-3.5 text-left text-xs font-semibold transition sm:text-sm ${
                 activeRoot === null
-                  ? "bg-[#C8075F] text-white"
-                  : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50"
+                  ? "border-[#C8075F] bg-white text-[#C8075F]"
+                  : "border-transparent text-slate-600 hover:bg-slate-100"
               }`}
             >
               전체
@@ -89,42 +84,68 @@ export default function ShopClient({
               <button
                 key={cat.categoryNo}
                 type="button"
-                onClick={() => handleRootClick(cat.name)}
-                className={`flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
+                onClick={() => {
+                  setActiveRoot(cat.name);
+                  setActiveSub(null);
+                }}
+                className={`block w-full border-l-2 px-3 py-3.5 text-left text-xs font-semibold leading-tight transition sm:text-sm ${
                   activeRoot === cat.name
-                    ? "bg-[#C8075F] text-white"
-                    : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-100"
+                    ? "border-[#C8075F] bg-white text-[#C8075F]"
+                    : "border-transparent text-slate-600 hover:bg-slate-100"
                 }`}
               >
                 {cat.name}
-                <span className={activeRoot === cat.name ? "text-white/80" : "text-slate-400"}>
-                  {rootCounts.get(cat.name) ?? 0}
+              </button>
+            ))}
+          </nav>
+
+          {/* Tile grid: subcategories of the active root, or all root categories when "전체" */}
+          <div className="grid flex-1 grid-cols-3 gap-x-2 gap-y-4 p-4 sm:gap-x-4">
+            {(activeRootCategory && activeRootCategory.children.length > 0
+              ? activeRootCategory.children.map((sub) => ({
+                  key: sub.categoryNo,
+                  name: sub.name,
+                  count: subCounts.get(sub.name) ?? 0,
+                  image: subImage.get(sub.name),
+                  active: activeSub === sub.name,
+                  onClick: () => setActiveSub(activeSub === sub.name ? null : sub.name),
+                }))
+              : categories.map((cat) => ({
+                  key: cat.categoryNo,
+                  name: cat.name,
+                  count: rootCounts.get(cat.name) ?? 0,
+                  image: rootImage.get(cat.name),
+                  active: activeRoot === cat.name,
+                  onClick: () => {
+                    setActiveRoot(cat.name);
+                    setActiveSub(null);
+                  },
+                }))
+            ).map((tile) => (
+              <button
+                key={tile.key}
+                type="button"
+                onClick={tile.onClick}
+                className="flex flex-col items-center gap-1.5 text-center"
+              >
+                <span
+                  className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-16 sm:w-16 ${
+                    tile.active ? "ring-[#C8075F]" : "ring-transparent"
+                  }`}
+                >
+                  {tile.image ? (
+                    <img src={tile.image} alt={tile.name} className="h-full w-full object-cover" />
+                  ) : (
+                    <span className="text-lg text-slate-300">–</span>
+                  )}
                 </span>
+                <span className={`line-clamp-2 text-[11px] font-medium leading-tight sm:text-xs ${tile.active ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>
+                  {tile.name}
+                </span>
+                <span className="text-[10px] text-slate-400">{tile.count}</span>
               </button>
             ))}
           </div>
-
-          {activeRootCategory && activeRootCategory.children.length > 0 && (
-            <div className="flex flex-wrap gap-2 border-t border-slate-200 pt-3">
-              {activeRootCategory.children.map((sub) => (
-                <button
-                  key={sub.categoryNo}
-                  type="button"
-                  onClick={() => setActiveSub(activeSub === sub.name ? null : sub.name)}
-                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
-                    activeSub === sub.name
-                      ? "bg-slate-800 text-white"
-                      : "border border-slate-200 bg-white text-slate-600 hover:bg-slate-100"
-                  }`}
-                >
-                  {sub.name}
-                  <span className={activeSub === sub.name ? "text-white/70" : "text-slate-400"}>
-                    {subCounts.get(sub.name) ?? 0}
-                  </span>
-                </button>
-              ))}
-            </div>
-          )}
         </div>
       )}
 
