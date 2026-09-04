@@ -27,7 +27,9 @@ export default function CasesPage() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Case</p>
           <h1 className="text-4xl font-bold leading-[1.25] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.4rem]">창업매장</h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-            실전 컨설팅으로 실제 매장 성과를 만든 사례들을 확인해보세요. 무인매장형태와 상권 특성을 반영한 맞춤형 전략이 핵심입니다.
+            실전 컨설팅으로 실제 매장 성과를 만든 사례들을 확인해보세요.
+            <br />
+            무인매장형태와 상권 특성을 반영한 맞춤형 전략이 핵심입니다.
           </p>
         </section>
 

@@ -111,7 +111,7 @@ export function Footer() {
           <li>대표자: 이수영</li>
           <li>사업자등록번호: 571-81-03959</li>
           <li>전화: 010-7650-9600</li>
-          <li>이메일: njretail@njgroup.kr</li>
+          <li>이메일: njretail@njgroup.co.kr</li>
           <li className="col-span-2">주소: 서울시 성북구 장월로1길 80 1층</li>
         </ul>
 

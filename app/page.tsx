@@ -133,15 +133,6 @@ function MegaphoneIcon() {
   );
 }
 
-const damoaEdge = [
-  { img: "/brand-kiosk.png", title: "인건비 Zero", desc: "24시간 무인 운영이라 인건비 부담이 없어요" },
-  { img: "/edge-cost.jpg", title: "저렴한 창업비용", desc: "합리적인 초기 비용으로 부담 없이 시작" },
-  { img: "/edge-setup.jpg", title: "전 상품군 매장 셋업", desc: "필요한 모든 상품군을 본사가 구성해 셋업" },
-  { img: "/edge-logistics.jpg", title: "상품유통관리", desc: "본사 물류망으로 안정적인 상품 유통을 관리해요" },
-  { img: "/edge-support.jpg", title: "A부터 Z까지 본사대행", desc: "시작부터 마무리까지 본사가 모두 진행" },
-  { img: "/edge-cleaning.jpg", title: "청소대행", desc: "매장 청소도 본사 대행 서비스로 관리" },
-];
-
 const serviceHighlights = [
   { icon: ChatIcon, title: "전문 컨설팅", desc: "창업 전문 컨설턴트 1:1 맞춤 상담 지원" },
   { icon: ClipboardIcon, title: "맞춤형 설계", desc: "상권 분석부터 최적의 맞춤 설계" },
@@ -342,25 +333,14 @@ export default function HomePage() {
               다모아 <span style={{ color: PINK }}>브랜드 경쟁력</span>
             </h2>
 
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
-              {damoaEdge.map((d) => (
-                <div
-                  key={d.title}
-                  className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <div className="relative aspect-square w-full overflow-hidden">
-                    <Image src={d.img} alt={d.title} fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
-                  </div>
-                  <div className="p-4 sm:p-5">
-                    <div className="text-sm font-bold leading-5 text-slate-900 sm:text-lg sm:leading-normal">
-                      {d.title}
-                    </div>
-                    <p className="mt-1.5 text-xs leading-5 text-slate-600 sm:mt-2 sm:text-sm sm:leading-6">
-                      {d.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="relative mt-12 aspect-[1337/1176] w-full overflow-hidden rounded-2xl border border-black/5 shadow-sm">
+              <Image
+                src="/damoa-edge-collage.jpg"
+                alt="다모아 브랜드 경쟁력: 인건비 Zero, 저렴한 창업비용, 전 상품군 매장 셋업, 상품유통관리, A부터 Z까지 본사대행, 청소대행"
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>

@@ -29,13 +29,13 @@ export default function ContactPage() {
             <ul className="mt-6 space-y-4 text-base text-slate-700">
               <li><span className="font-semibold text-slate-900">주소:</span> 서울시 성북구 장월로1길 80 1층</li>
                             <li><span className="font-semibold text-slate-900">전화:</span> 010-7650-9600</li>
-                            <li><span className="font-semibold text-slate-900">이메일:</span> njretail@njgroup.kr</li>
+                            <li><span className="font-semibold text-slate-900">이메일:</span> njretail@njgroup.co.kr</li>
               <li><span className="font-semibold text-slate-900">영업시간:</span> 평일 09:00~18:00</li>
             </ul>
 
             <div className="mt-8 flex gap-3">
               <CTAButton href="tel:01076509600" text="전화 상담" />
-                            <CTAButton href="mailto:njretail@njgroup.kr" text="이메일 문의" variant="secondary" />
+                            <CTAButton href="mailto:njretail@njgroup.co.kr" text="이메일 문의" variant="secondary" />
             </div>
           </div>
         </section>

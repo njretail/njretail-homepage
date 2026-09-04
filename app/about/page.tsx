@@ -105,7 +105,13 @@ export default function AboutPage() {
           <SectionTitle
             eyebrow="Strengths"
             title="핵심 역량"
-            description="단순한 매장 도입이 아니라, 운영 안정과 매출성을 함께 고려하는 종합 솔루션으로 실질적 성장을 돕습니다."
+            description={
+              <>
+                단순한 매장 도입이 아니라, 운영 안정과 매출성을 함께 고려하는
+                <br />
+                종합 솔루션으로 실질적 성장을 돕습니다.
+              </>
+            }
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
