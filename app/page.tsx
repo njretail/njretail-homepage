@@ -194,15 +194,6 @@ export default function HomePage() {
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute right-[38%] top-10 hidden h-24 w-28 sm:block"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, rgba(200,7,95,0.35) 1.5px, transparent 1.5px)",
-              backgroundSize: "14px 14px",
-            }}
-          />
-          <div
-            aria-hidden
             className="pointer-events-none absolute -left-16 top-24 h-40 w-40 rounded-full"
             style={{ background: "rgba(200,7,95,0.08)" }}
           />
