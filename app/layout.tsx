@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BackToTopButton } from "./components/back-to-top-button";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://njretail-homepage.vercel.app"),
@@ -26,7 +27,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko" className="h-full scroll-smooth antialiased">
-      <body className="min-h-full bg-[#FAFAFA] text-slate-700">{children}</body>
+      <body className="min-h-full bg-[#FAFAFA] text-slate-700">
+        {children}
+        <BackToTopButton />
+      </body>
     </html>
   );
 }
