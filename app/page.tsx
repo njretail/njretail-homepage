@@ -388,7 +388,7 @@ export default function HomePage() {
               <div className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-black/5 shadow-sm sm:flex-row lg:flex-col">
                 <div className="flex min-w-0 flex-1 flex-col justify-between p-6 text-white sm:p-8" style={{ backgroundColor: PINK }}>
                   <div>
-                    <div className="text-3xl font-bold sm:text-4xl">11평.</div>
+                    <div className="text-3xl font-bold sm:text-4xl">10평.</div>
                     <div className="mt-1 text-3xl font-bold sm:text-4xl">{won(costTotal / 1000)}만원.</div>
                     <p className="mt-3 text-sm leading-5 text-white/85">
                       설레 1호점 기준

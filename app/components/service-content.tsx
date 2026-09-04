@@ -85,7 +85,7 @@ export function ServiceCost() {
     <section className="mt-20 rounded-[30px] border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
       <div className="text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Startup Cost</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">11평 기준 창업비용 안내</h2>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">10평 기준 창업비용 안내</h2>
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">1호점 실제 발생 비용을 기준으로 정리한 예상 금액입니다. 매장 위치와 상태, 장비 선택에 따라 달라질 수 있습니다.</p>
       </div>
 
@@ -133,7 +133,7 @@ export function ServiceCost() {
           <div className="mt-2 text-3xl font-bold">약 2,232만원</div>
         </div>
       </div>
-      <p className="mt-5 text-center text-xs leading-6 text-slate-500">※ 위 금액은 11평 1호점 사례를 바탕으로 한 대략적인 안내이며, 실제 견적은 매장 조건에 따라 달라질 수 있습니다.</p>
+      <p className="mt-5 text-center text-xs leading-6 text-slate-500">※ 위 금액은 10평 1호점 사례를 바탕으로 한 대략적인 안내이며, 실제 견적은 매장 조건에 따라 달라질 수 있습니다.</p>
     </section>
   );
 }

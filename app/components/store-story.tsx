@@ -35,9 +35,9 @@ const projects = [
   {
     n: "03",
     title: "공간을 설계합니다",
-    body: "11평이라는 제한된 면적 안에서 동선과 진열, 조명까지 하나의 시스템으로 설계합니다.",
+    body: "10평이라는 제한된 면적 안에서 동선과 진열, 조명까지 하나의 시스템으로 설계합니다.",
     stats: [
-      { label: "매장 면적", value: "11평" },
+      { label: "매장 면적", value: "10평" },
       { label: "동선 길이", value: "14.2m" },
       { label: "진열대", value: "6열" },
     ],
@@ -173,7 +173,7 @@ export function ReceiptCost() {
       <div className="mx-auto grid max-w-7xl lg:grid-cols-[2fr_3fr]">
         <div className="bg-black px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#F587B0]">Startup Cost</p>
-          <p className="mt-8 text-2xl font-bold sm:text-3xl">11평.</p>
+          <p className="mt-8 text-2xl font-bold sm:text-3xl">10평.</p>
           <p className="mt-2 text-5xl font-bold text-[#F587B0] sm:text-6xl">2,232만원.</p>
           <p className="mt-4 max-w-xs text-base leading-7 text-white/60">실제 1호점에 들어간 돈입니다.</p>
           <div className="mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-white/50">
@@ -197,7 +197,7 @@ export function ReceiptCost() {
               <span>22,320,000</span>
             </div>
           </div>
-          <p className="mt-6 max-w-xl text-xs leading-6 text-black/40">※ 단위: 원 · 임대료 제외 · 11평 1호점 실제 사례 기준이며 매장 조건에 따라 달라질 수 있습니다.</p>
+          <p className="mt-6 max-w-xl text-xs leading-6 text-black/40">※ 단위: 원 · 임대료 제외 · 10평 1호점 실제 사례 기준이며 매장 조건에 따라 달라질 수 있습니다.</p>
 
           <div className="pointer-events-none absolute inset-y-0 right-8 hidden flex-col items-center justify-center gap-4 lg:flex">
             <div className="flex h-40 items-end gap-[2px]">
