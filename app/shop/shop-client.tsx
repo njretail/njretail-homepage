@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ProductCard from '../components/product-card';
 import CartWidget from '../components/cart-widget';
+import { BoxIcon } from '../components/icons';
 import type { StoreCategory, StoreProduct } from '../../lib/cafe24';
 
 export default function ShopClient({
@@ -28,6 +29,8 @@ export default function ShopClient({
     if (!rootImage.has(p.rootCategory)) rootImage.set(p.rootCategory, p.image);
     if (!subImage.has(p.subCategory)) subImage.set(p.subCategory, p.image);
   }
+  // 상품이 없어 대표 이미지가 없는 분류는 임의의 상품 사진으로 채워 빈 원이 없게 한다.
+  const fallbackImage = products[Math.floor(products.length / 3)]?.image ?? products[0]?.image;
 
   const trimmedQuery = searchQuery.trim().toLowerCase();
 
@@ -106,7 +109,7 @@ export default function ShopClient({
                   key: sub.categoryNo,
                   name: sub.name,
                   count: subCounts.get(sub.name) ?? 0,
-                  image: subImage.get(sub.name),
+                  image: subImage.get(sub.name) ?? fallbackImage,
                   active: activeSub === sub.name,
                   onClick: () => setActiveSub(activeSub === sub.name ? null : sub.name),
                 }))
@@ -114,7 +117,7 @@ export default function ShopClient({
                   key: cat.categoryNo,
                   name: cat.name,
                   count: rootCounts.get(cat.name) ?? 0,
-                  image: rootImage.get(cat.name),
+                  image: rootImage.get(cat.name) ?? fallbackImage,
                   active: activeRoot === cat.name,
                   onClick: () => {
                     setActiveRoot(cat.name);
@@ -129,14 +132,14 @@ export default function ShopClient({
                 className="flex flex-col items-center gap-1.5 text-center"
               >
                 <span
-                  className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-16 sm:w-16 ${
+                  className={`flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-24 sm:w-24 ${
                     tile.active ? "ring-[#C8075F]" : "ring-transparent"
                   }`}
                 >
                   {tile.image ? (
                     <img src={tile.image} alt={tile.name} className="h-full w-full object-cover" />
                   ) : (
-                    <span className="text-lg text-slate-300">–</span>
+                    <BoxIcon />
                   )}
                 </span>
                 <span className={`line-clamp-2 text-[11px] font-medium leading-tight sm:text-xs ${tile.active ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>
