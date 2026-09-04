@@ -142,7 +142,7 @@ export async function getProductDetail(productNo: number): Promise<ProductDetail
 // 실제 라이브 사이트에서 스냅샷한 상품 목록이라 최신 재고/가격과는 점점 어긋날 수 있지만,
 // "쇼핑하기가 비어 보이는" 것보다 낫다 — 키가 설정되면 항상 실시간 API 결과가 우선한다.
 import fallbackData from "./shop-fallback-data.json";
-const FALLBACK: { categories: StoreCategory[]; products: StoreProduct[] } = fallbackData;
+const FALLBACK = fallbackData as unknown as { categories: StoreCategory[]; products: StoreProduct[] };
 
 export async function getStoreProducts(): Promise<{
   categories: StoreCategory[];
