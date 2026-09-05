@@ -19,13 +19,14 @@ export default function ShopClient({
 
   const activeRootCategory = categories.find((c) => c.name === activeRoot);
 
-  // 대분류마다 대표 상품 사진 한 장을 고정으로 정해 하위 소분류까지 같은 사진을 쓴다
-  // (분류마다 사진이 다르면 들쭉날쭉해 보여서, 상품 목록 순서 기준으로 고정된 사진 하나만 쓴다).
+  // 대분류/소분류마다 그 분류에 실제로 속한 상품 사진을 대표 이미지로 고정해서 쓴다.
   const subCounts = new Map<string, number>();
   const rootImage = new Map<string, string>();
+  const subImage = new Map<string, string>();
   for (const p of products) {
     subCounts.set(p.subCategory, (subCounts.get(p.subCategory) ?? 0) + 1);
     if (!rootImage.has(p.rootCategory)) rootImage.set(p.rootCategory, p.image);
+    if (!subImage.has(p.subCategory)) subImage.set(p.subCategory, p.image);
   }
   // 상품이 없는 분류(대표 사진이 없는 경우)에 쓸 대체 사진.
   const fallbackImage = products[Math.floor(products.length / 3)]?.image ?? products[0]?.image;
@@ -116,7 +117,7 @@ export default function ShopClient({
             <div className="-mx-1 mt-4 flex gap-1 overflow-x-auto border-t border-slate-200 px-1 pb-1 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {activeRootCategory.children.map((sub) => {
                 const active = activeSub === sub.name;
-                const image = rootImage.get(activeRootCategory.name) ?? fallbackImage;
+                const image = subImage.get(sub.name) ?? fallbackImage;
                 return (
                   <button
                     key={sub.categoryNo}
