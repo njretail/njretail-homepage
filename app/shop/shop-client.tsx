@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ProductCard from '../components/product-card';
 import CartWidget from '../components/cart-widget';
-import { BoxIcon } from '../components/icons';
+import { StoreIcon } from '../components/icons';
 import type { StoreCategory, StoreProduct } from '../../lib/cafe24';
 
 export default function ShopClient({
@@ -19,17 +19,15 @@ export default function ShopClient({
 
   const activeRootCategory = categories.find((c) => c.name === activeRoot);
 
-  const rootCounts = new Map<string, number>();
+  // 대분류마다 대표 상품 사진 한 장을 고정으로 정해 하위 소분류까지 같은 사진을 쓴다
+  // (분류마다 사진이 다르면 들쭉날쭉해 보여서, 상품 목록 순서 기준으로 고정된 사진 하나만 쓴다).
   const subCounts = new Map<string, number>();
   const rootImage = new Map<string, string>();
-  const subImage = new Map<string, string>();
   for (const p of products) {
-    rootCounts.set(p.rootCategory, (rootCounts.get(p.rootCategory) ?? 0) + 1);
     subCounts.set(p.subCategory, (subCounts.get(p.subCategory) ?? 0) + 1);
     if (!rootImage.has(p.rootCategory)) rootImage.set(p.rootCategory, p.image);
-    if (!subImage.has(p.subCategory)) subImage.set(p.subCategory, p.image);
   }
-  // 상품이 없어 대표 이미지가 없는 분류는 임의의 상품 사진으로 채워 빈 원이 없게 한다.
+  // 상품이 없는 분류(대표 사진이 없는 경우)에 쓸 대체 사진.
   const fallbackImage = products[Math.floor(products.length / 3)]?.image ?? products[0]?.image;
 
   const trimmedQuery = searchQuery.trim().toLowerCase();
@@ -66,89 +64,82 @@ export default function ShopClient({
       </div>
 
       {!trimmedQuery && (
-        <div className="mt-4 flex overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          {/* Root category sidebar */}
-          <nav className="w-[26%] shrink-0 border-r border-slate-100 bg-slate-50 sm:w-[20%]">
+        <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          {/* 대분류: 가로 스크롤 아이콘 행 */}
+          <div className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <button
               type="button"
               onClick={() => {
                 setActiveRoot(null);
                 setActiveSub(null);
               }}
-              className={`block w-full border-l-2 px-3 py-3.5 text-left text-xs font-semibold transition sm:text-sm ${
-                activeRoot === null
-                  ? "border-[#C8075F] bg-white text-[#C8075F]"
-                  : "border-transparent text-slate-600 hover:bg-slate-100"
-              }`}
+              className="flex w-16 shrink-0 flex-col items-center gap-1.5 text-center sm:w-20"
             >
-              전체
-            </button>
-            {categories.map((cat) => (
-              <button
-                key={cat.categoryNo}
-                type="button"
-                onClick={() => {
-                  setActiveRoot(cat.name);
-                  setActiveSub(null);
-                }}
-                className={`block w-full border-l-2 px-3 py-3.5 text-left text-xs font-semibold leading-tight transition sm:text-sm ${
-                  activeRoot === cat.name
-                    ? "border-[#C8075F] bg-white text-[#C8075F]"
-                    : "border-transparent text-slate-600 hover:bg-slate-100"
-                }`}
+              <span
+                className="flex h-14 w-14 items-center justify-center rounded-full transition sm:h-16 sm:w-16 [&_svg]:h-7 [&_svg]:w-7 sm:[&_svg]:h-8 sm:[&_svg]:w-8"
+                style={activeRoot === null ? { backgroundColor: "#C8075F", color: "white" } : { backgroundColor: "#FCE7F0", color: "#C8075F" }}
               >
-                {cat.name}
-              </button>
-            ))}
-          </nav>
-
-          {/* Tile grid: subcategories of the active root, or all root categories when "전체" */}
-          <div className="grid flex-1 grid-cols-3 gap-x-2 gap-y-4 p-4 sm:gap-x-4">
-            {(activeRootCategory && activeRootCategory.children.length > 0
-              ? activeRootCategory.children.map((sub) => ({
-                  key: sub.categoryNo,
-                  name: sub.name,
-                  count: subCounts.get(sub.name) ?? 0,
-                  image: subImage.get(sub.name) ?? fallbackImage,
-                  active: activeSub === sub.name,
-                  onClick: () => setActiveSub(activeSub === sub.name ? null : sub.name),
-                }))
-              : categories.map((cat) => ({
-                  key: cat.categoryNo,
-                  name: cat.name,
-                  count: rootCounts.get(cat.name) ?? 0,
-                  image: rootImage.get(cat.name) ?? fallbackImage,
-                  active: activeRoot === cat.name,
-                  onClick: () => {
+                <StoreIcon />
+              </span>
+              <span className={`text-xs font-medium sm:text-sm ${activeRoot === null ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>전체</span>
+            </button>
+            {categories.map((cat) => {
+              const active = activeRoot === cat.name;
+              const image = rootImage.get(cat.name) ?? fallbackImage;
+              return (
+                <button
+                  key={cat.categoryNo}
+                  type="button"
+                  onClick={() => {
                     setActiveRoot(cat.name);
                     setActiveSub(null);
-                  },
-                }))
-            ).map((tile) => (
-              <button
-                key={tile.key}
-                type="button"
-                onClick={tile.onClick}
-                className="flex flex-col items-center gap-1.5 text-center"
-              >
-                <span
-                  className={`flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-24 sm:w-24 ${
-                    tile.active ? "ring-[#C8075F]" : "ring-transparent"
-                  }`}
+                  }}
+                  className="flex w-16 shrink-0 flex-col items-center gap-1.5 text-center sm:w-20"
                 >
-                  {tile.image ? (
-                    <img src={tile.image} alt={tile.name} className="h-full w-full object-cover" />
-                  ) : (
-                    <BoxIcon />
-                  )}
-                </span>
-                <span className={`line-clamp-2 text-[11px] font-medium leading-tight sm:text-xs ${tile.active ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>
-                  {tile.name}
-                </span>
-                <span className="text-[10px] text-slate-400">{tile.count}</span>
-              </button>
-            ))}
+                  <span
+                    className={`flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-16 sm:w-16 ${
+                      active ? "ring-[#C8075F]" : "ring-transparent"
+                    }`}
+                  >
+                    {image && <img src={image} alt={cat.name} className="h-full w-full object-cover" />}
+                  </span>
+                  <span className={`line-clamp-2 text-xs font-medium leading-tight sm:text-sm ${active ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>
+                    {cat.name}
+                  </span>
+                </button>
+              );
+            })}
           </div>
+
+          {/* 소분류: 선택된 대분류가 있을 때만, 같은 대표 아이콘으로 통일해 표시 */}
+          {activeRootCategory && activeRootCategory.children.length > 0 && (
+            <div className="-mx-1 mt-4 flex gap-1 overflow-x-auto border-t border-slate-200 px-1 pb-1 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {activeRootCategory.children.map((sub) => {
+                const active = activeSub === sub.name;
+                const image = rootImage.get(activeRootCategory.name) ?? fallbackImage;
+                return (
+                  <button
+                    key={sub.categoryNo}
+                    type="button"
+                    onClick={() => setActiveSub(active ? null : sub.name)}
+                    className="flex w-16 shrink-0 flex-col items-center gap-1.5 text-center sm:w-20"
+                  >
+                    <span
+                      className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 transition sm:h-14 sm:w-14 ${
+                        active ? "ring-[#C8075F]" : "ring-transparent"
+                      }`}
+                    >
+                      {image && <img src={image} alt={sub.name} className="h-full w-full object-cover" />}
+                    </span>
+                    <span className={`line-clamp-2 text-[11px] font-medium leading-tight sm:text-xs ${active ? "font-bold text-[#C8075F]" : "text-slate-600"}`}>
+                      {sub.name}
+                    </span>
+                    <span className="text-[10px] text-slate-400">{subCounts.get(sub.name) ?? 0}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
 
