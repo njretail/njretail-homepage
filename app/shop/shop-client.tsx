@@ -30,6 +30,11 @@ export default function ShopClient({
   }
   // 상품이 없는 분류(대표 사진이 없는 경우)에 쓸 대체 사진.
   const fallbackImage = products[Math.floor(products.length / 3)]?.image ?? products[0]?.image;
+  // 실제로 판매 중인 상품이 없어 대표 사진을 못 구하는 분류는, 엉뚱한 상품 사진 대신
+  // 사이트에 이미 있는 해당 분류에 맞는 브랜드 이미지를 직접 지정한다.
+  const CATEGORY_IMAGE_OVERRIDE: Record<string, string> = {
+    "아이스크림/빙과": "/brand-icecream.png",
+  };
 
   const trimmedQuery = searchQuery.trim().toLowerCase();
 
@@ -86,7 +91,7 @@ export default function ShopClient({
             </button>
             {categories.map((cat) => {
               const active = activeRoot === cat.name;
-              const image = rootImage.get(cat.name) ?? fallbackImage;
+              const image = CATEGORY_IMAGE_OVERRIDE[cat.name] ?? rootImage.get(cat.name) ?? fallbackImage;
               return (
                 <button
                   key={cat.categoryNo}
@@ -102,7 +107,7 @@ export default function ShopClient({
                       active ? "ring-[#C8075F]" : "ring-transparent"
                     }`}
                   >
-                    {image && <img src={image} alt={cat.name} className="h-full w-full object-cover" />}
+                    {image && <img src={image} alt={cat.name} className="h-full w-full scale-125 object-cover" />}
                   </span>
                   <span className={`line-clamp-2 text-xs font-medium leading-tight sm:text-sm ${active ? "font-bold text-[#C8075F]" : "text-slate-700"}`}>
                     {cat.name}
@@ -130,7 +135,7 @@ export default function ShopClient({
                         active ? "ring-[#C8075F]" : "ring-transparent"
                       }`}
                     >
-                      {image && <img src={image} alt={sub.name} className="h-full w-full object-cover" />}
+                      {image && <img src={image} alt={sub.name} className="h-full w-full scale-125 object-cover" />}
                     </span>
                     <span className={`line-clamp-2 text-[11px] font-medium leading-tight sm:text-xs ${active ? "font-bold text-[#C8075F]" : "text-slate-600"}`}>
                       {sub.name}
