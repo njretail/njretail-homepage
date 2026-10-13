@@ -154,6 +154,10 @@ export default function CheckoutClient() {
           결제 연동 준비 중이라, 지금은 주문 내용만 먼저 접수됩니다. 입력하신 연락처로
           확인 연락을 드려요.
         </p>
+        <p className="mt-2 text-xs leading-relaxed text-slate-400">
+          배송비는 별도로 부과될 수 있으며, 상품 가격은 시세에 따라 변동될 수 있습니다.
+          최종 금액은 확인 연락 시 안내해 드려요.
+        </p>
 
         {state.error && <p className="mt-4 text-sm text-red-500">{state.error}</p>}
 
