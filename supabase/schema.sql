@@ -3,7 +3,7 @@
 -- 로그인 회원 시스템이 없는 사이트라 RLS는 켜두되 공개 정책은 두지 않는다 —
 -- 서버 쪽에서 서비스 롤 키로만 읽고 쓴다(클라이언트에서 직접 접근 불가).
 
-create table public.orders (
+create table if not exists public.orders (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
   name text not null,
@@ -15,7 +15,7 @@ create table public.orders (
   status text not null default 'new' check (status in ('new', 'contacted', 'done'))
 );
 
-create table public.inquiries (
+create table if not exists public.inquiries (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
   name text not null,
