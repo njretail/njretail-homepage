@@ -22,7 +22,7 @@ export default async function ProductDetailPage({
           href="/shop"
           className="sticky top-20 z-30 inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-md hover:border-[#C8075F] hover:text-[#C8075F]"
         >
-          ← 쇼핑하기로 돌아가기
+          ← 취급 품목으로 돌아가기
         </Link>
 
         <div className="mt-6">

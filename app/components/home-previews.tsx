@@ -78,13 +78,13 @@ export function CasesSection() {
 export function ShopSection() {
   return (
     <section className="border-t border-slate-200 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" id="shop-preview">
-      <SectionTitle eyebrow="Shop" title="쇼핑하기" description="무인매장 운영에 필요한 핵심 장비와 운영 패키지를 필요한 시점에 선택하세요." />
+      <SectionTitle eyebrow="Products" title="취급 품목" description="엔제이리테일 무인매장에서 실제로 판매되는 상품 라인업을 소개합니다." />
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {[{ name: "Starter", text: "초보점주를 위한 필수 장비와 기본 셋업" }, { name: "Growth", text: "운영 최적화와 판매 성장을 위한 구성" }, { name: "Scale", text: "다수 매장 운영을 위한 확장형 패키지" }].map((item) => (
           <div key={item.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><h3 className="text-xl font-bold text-slate-900">{item.name}</h3><p className="mt-3 leading-7 text-slate-600">{item.text}</p></div>
         ))}
       </div>
-      <div className="mt-8 text-center"><CTAButton href="/shop" text="쇼핑하기로 이동" variant="secondary" /></div>
+      <div className="mt-8 text-center"><CTAButton href="/shop" text="취급 품목 보기" variant="secondary" /></div>
     </section>
   );
 }

@@ -66,7 +66,7 @@ export default function ContactPage() {
                   <option>운영시스템 문의</option>
                   <option>입고 및 매대진열 대행 신청</option>
                   <option>청소대행 신청</option>
-                  <option>쇼핑하기 관련</option>
+                  <option>취급 품목 관련</option>
                   <option>기타</option>
                 </select>
               </div>

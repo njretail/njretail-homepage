@@ -8,7 +8,7 @@ export const navItems = [
   { href: "/cases", label: "창업매장" },
   { href: "/board", label: "게시판" },
   { href: "/agency", label: "대행 신청" },
-  { href: "/shop", label: "쇼핑하기" },
+  { href: "/shop", label: "취급 품목" },
 ];
 
 export function CTAButton({ href, text, variant = "primary" }: { href: string; text: string; variant?: "primary" | "secondary" | "brand" }) {
