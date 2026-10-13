@@ -1,4 +1,5 @@
 import { CTAButton, Footer, Header } from "../components/site-shell";
+import AgencyForm from "./AgencyForm";
 
 const agencyCategories = [
   {
@@ -45,40 +46,9 @@ export default function AgencyPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#C8075F]">Application</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">대행 서비스 신청서</h2>
             </div>
-            <form className="mt-10 space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>
-                  <label htmlFor="agency-name" className="mb-2 block text-sm font-medium text-slate-700">이름</label>
-                  <input id="agency-name" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="홍길동" />
-                </div>
-                <div>
-                  <label htmlFor="agency-phone" className="mb-2 block text-sm font-medium text-slate-700">연락처</label>
-                  <input id="agency-phone" type="tel" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="010-1234-5678" />
-                </div>
-              </div>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>
-                  <label htmlFor="agency-type" className="mb-2 block text-sm font-medium text-slate-700">신청 서비스</label>
-                  <select id="agency-type" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]">
-                    <option value="">서비스를 선택해 주세요</option>
-                    <option>입고 및 매대진열</option>
-                    <option>청소대행</option>
-                    <option>두 서비스 모두</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="agency-store" className="mb-2 block text-sm font-medium text-slate-700">매장 위치</label>
-                  <input id="agency-store" type="text" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="서울시 성북구" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="agency-message" className="mb-2 block text-sm font-medium text-slate-700">신청 내용</label>
-                <textarea id="agency-message" rows={5} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 outline-none focus:border-[#C8075F]" placeholder="희망 일정과 필요한 업무를 적어 주세요." />
-              </div>
-              <div className="flex justify-center">
-                <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-[#C8075F] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#a8054e]">대행 신청 접수하기</button>
-              </div>
-            </form>
+            <div className="mt-10">
+              <AgencyForm />
+            </div>
           </div>
         </section>
 

@@ -26,6 +26,18 @@ create table if not exists public.inquiries (
   status text not null default 'new' check (status in ('new', 'contacted', 'done'))
 );
 
+create table if not exists public.agency_requests (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  name text not null,
+  phone text not null,
+  service_type text not null,
+  store_location text not null,
+  message text,
+  status text not null default 'new' check (status in ('new', 'contacted', 'done'))
+);
+
 alter table public.orders enable row level security;
 alter table public.inquiries enable row level security;
+alter table public.agency_requests enable row level security;
 -- 공개 정책을 두지 않음 — service_role 키로만 접근(서버 액션에서만 사용).

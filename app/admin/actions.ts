@@ -33,3 +33,14 @@ export async function setInquiryStatus(formData: FormData) {
   await admin.from("inquiries").update({ status }).eq("id", id);
   revalidatePath("/admin");
 }
+
+export async function setAgencyRequestStatus(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  const status = String(formData.get("status") ?? "");
+  if (!id || !["new", "contacted", "done"].includes(status)) return;
+
+  const admin = createAdminClient();
+  await admin.from("agency_requests").update({ status }).eq("id", id);
+  revalidatePath("/admin");
+}
