@@ -19,3 +19,8 @@ export function addItemToCart(product: { name: string; price: string }) {
   localStorage.setItem('nj_cart', JSON.stringify(arr));
   window.dispatchEvent(new CustomEvent('njcart:update'));
 }
+
+export function clearCart() {
+  localStorage.setItem('nj_cart', JSON.stringify([]));
+  window.dispatchEvent(new CustomEvent('njcart:update'));
+}

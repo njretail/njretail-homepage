@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useState, type FormEvent } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { clearCart } from '../../../lib/cart';
+import { submitOrder, type SubmitOrderState } from './actions';
 
 type CartItem = { name: string; price: number; qty: number };
 
@@ -14,6 +16,8 @@ function readCart(): CartItem[] {
   }
 }
 
+const initialState: SubmitOrderState = { error: null, success: false };
+
 export default function CheckoutClient() {
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
@@ -21,9 +25,10 @@ export default function CheckoutClient() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [note, setNote] = useState('');
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [state, formAction, pending] = useActionState(submitOrder, initialState);
 
+  /* eslint-disable react-hooks/set-state-in-effect -- localStorage는 서버 렌더링 때
+     없으므로, 마운트 후에만 장바구니를 읽어 하이드레이션 불일치를 피한다. */
   useEffect(() => {
     setItems(readCart());
     setHydrated(true);
@@ -37,25 +42,26 @@ export default function CheckoutClient() {
       window.removeEventListener('storage', handler as EventListener);
     };
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  useEffect(() => {
+    if (state.success) clearCart();
+  }, [state.success]);
 
   const total = items.reduce((s, it) => s + it.qty * it.price, 0);
 
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (items.length === 0) return;
-    if (!name.trim() || !phone.trim() || !address.trim()) {
-      setError('성함, 연락처, 배송지 주소는 필수로 입력해주세요.');
-      return;
-    }
-    setError(null);
-    setSubmitting(true);
-    try {
-      // 결제(PG) 연동은 준비 중입니다 — 카페24페이먼츠 헤드리스 연동 방식 확인 후 이 부분에서
-      // 실제 결제창을 띄우고, 성공 시 카페24 Admin API로 주문을 생성하도록 연결할 예정입니다.
-      setError('결제 연동을 준비 중입니다. 곧 이용하실 수 있어요. 급하신 경우 "구매 문의"로 연락해주세요.');
-    } finally {
-      setSubmitting(false);
-    }
+  if (state.success) {
+    return (
+      <div className="mt-16 rounded-2xl border border-slate-200 bg-white px-6 py-16 text-center shadow-sm">
+        <p className="text-xl font-bold text-slate-900">주문이 접수되었습니다</p>
+        <p className="mt-2 text-base text-slate-500">
+          입력하신 연락처로 곧 연락드려 결제 및 배송 안내를 도와드릴게요.
+        </p>
+        <Link href="/shop" className="mt-6 inline-flex rounded-xl bg-[#C8075F] px-5 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]">
+          취급 품목으로 돌아가기
+        </Link>
+      </div>
+    );
   }
 
   if (hydrated && items.length === 0) {
@@ -63,14 +69,17 @@ export default function CheckoutClient() {
       <div className="mt-16 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-16 text-center">
         <p className="text-base text-slate-500">장바구니가 비어 있습니다.</p>
         <Link href="/shop" className="mt-6 inline-flex rounded-xl bg-[#C8075F] px-5 py-3 text-sm font-semibold text-white hover:bg-[#a8054e]">
-          쇼핑하러 가기
+          취급 품목으로 가기
         </Link>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-12 grid gap-8 lg:grid-cols-3">
+    <form action={formAction} className="mt-12 grid gap-8 lg:grid-cols-3">
+      <input type="hidden" name="items" value={JSON.stringify(items)} />
+      <input type="hidden" name="total" value={total} />
+
       <div className="space-y-6 lg:col-span-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-bold text-slate-900">주문 상품</h2>
@@ -93,6 +102,7 @@ export default function CheckoutClient() {
             <label className="block text-sm">
               <span className="font-medium text-slate-700">성함 *</span>
               <input
+                name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="mt-1.5 w-full rounded-xl border border-slate-200 px-4 py-2.5 text-slate-900 outline-none focus:border-[#C8075F]"
@@ -102,6 +112,7 @@ export default function CheckoutClient() {
             <label className="block text-sm">
               <span className="font-medium text-slate-700">연락처 *</span>
               <input
+                name="phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="010-0000-0000"
@@ -112,6 +123,7 @@ export default function CheckoutClient() {
             <label className="block text-sm sm:col-span-2">
               <span className="font-medium text-slate-700">배송지 주소 *</span>
               <input
+                name="address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 className="mt-1.5 w-full rounded-xl border border-slate-200 px-4 py-2.5 text-slate-900 outline-none focus:border-[#C8075F]"
@@ -121,6 +133,7 @@ export default function CheckoutClient() {
             <label className="block text-sm sm:col-span-2">
               <span className="font-medium text-slate-700">요청사항</span>
               <textarea
+                name="note"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 rows={3}
@@ -132,20 +145,24 @@ export default function CheckoutClient() {
       </div>
 
       <div className="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-lg font-bold text-slate-900">결제 금액</h2>
+        <h2 className="text-lg font-bold text-slate-900">주문 금액</h2>
         <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
           <span className="text-slate-600">총 상품금액</span>
           <span className="text-xl font-bold text-slate-900">{total.toLocaleString()}원</span>
         </div>
+        <p className="mt-4 text-xs leading-relaxed text-slate-400">
+          결제 연동 준비 중이라, 지금은 주문 내용만 먼저 접수됩니다. 입력하신 연락처로
+          확인 연락을 드려요.
+        </p>
 
-        {error && <p className="mt-4 text-sm text-red-500">{error}</p>}
+        {state.error && <p className="mt-4 text-sm text-red-500">{state.error}</p>}
 
         <button
           type="submit"
-          disabled={submitting}
+          disabled={pending}
           className="mt-6 w-full rounded-xl bg-[#C8075F] px-4 py-3.5 text-base font-semibold text-white hover:bg-[#a8054e] disabled:opacity-60"
         >
-          {submitting ? '처리 중...' : '주문하기'}
+          {pending ? '접수 중...' : '주문 접수하기'}
         </button>
       </div>
     </form>
