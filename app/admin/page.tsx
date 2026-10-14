@@ -40,6 +40,8 @@ type AgencyRequest = {
   store_location: string;
   message: string | null;
   status: "new" | "contacted" | "done";
+  source: "homepage" | "solution";
+  store_name: string | null;
 };
 
 export default async function AdminPage() {

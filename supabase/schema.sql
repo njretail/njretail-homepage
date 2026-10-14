@@ -41,3 +41,14 @@ alter table public.orders enable row level security;
 alter table public.inquiries enable row level security;
 alter table public.agency_requests enable row level security;
 -- 공개 정책을 두지 않음 — service_role 키로만 접근(서버 액션에서만 사용).
+
+-- 무인매장 솔루션(store-solution)에서 점주가 보낸 대행 신청도 같은 테이블로 모은다.
+-- source로 홈페이지/솔루션 접수를 구분하고, 솔루션 접수 건은 매장명과 솔루션 쪽 매장 id를
+-- 함께 남긴다(솔루션 화면에서 "내 신청 내역"을 매장별로 다시 조회할 때 사용).
+alter table public.agency_requests
+  add column if not exists source text not null default 'homepage'
+    check (source in ('homepage', 'solution'));
+alter table public.agency_requests add column if not exists store_name text;
+alter table public.agency_requests add column if not exists solution_store_id text;
+create index if not exists agency_requests_solution_store_idx
+  on public.agency_requests (solution_store_id, created_at desc);

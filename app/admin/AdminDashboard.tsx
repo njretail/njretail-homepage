@@ -34,6 +34,9 @@ type AgencyRequest = {
   store_location: string;
   message: string | null;
   status: "new" | "contacted" | "done";
+  // 홈페이지 폼 접수 / 무인매장 솔루션에서 점주가 보낸 접수
+  source: "homepage" | "solution";
+  store_name: string | null;
 };
 
 function fmtDate(value: string) {
@@ -122,11 +125,35 @@ export default function AdminDashboard({
         statusAction={setAgencyRequestStatus}
         emptyText="접수된 대행 신청이 없습니다."
         csvFilenamePrefix="대행신청내역"
-        csvHeaders={["접수일시", "이름", "연락처", "신청 서비스", "매장 위치", "신청 내용", "상태"]}
-        csvRow={(a) => [fmtDate(a.created_at), a.name, a.phone, a.service_type, a.store_location, a.message ?? "", a.status]}
-        searchFn={(a, q) => a.name.includes(q) || a.phone.includes(q) || a.store_location.includes(q)}
+        csvHeaders={["접수일시", "접수경로", "매장명", "이름", "연락처", "신청 서비스", "매장 위치", "신청 내용", "상태"]}
+        csvRow={(a) => [
+          fmtDate(a.created_at),
+          a.source === "solution" ? "솔루션" : "홈페이지",
+          a.store_name ?? "",
+          a.name,
+          a.phone,
+          a.service_type,
+          a.store_location,
+          a.message ?? "",
+          a.status,
+        ]}
+        searchFn={(a, q) =>
+          a.name.includes(q) || a.phone.includes(q) || a.store_location.includes(q) || (a.store_name ?? "").includes(q)
+        }
         columns={[
           { key: "created_at", label: "접수일시", render: (a) => <span className="text-slate-500">{fmtDate(a.created_at)}</span> },
+          {
+            key: "source",
+            label: "접수경로",
+            render: (a) =>
+              a.source === "solution" ? (
+                <span className="rounded bg-[#FCE7F0] px-2 py-0.5 text-xs font-semibold text-[#C8075F]">
+                  솔루션{a.store_name ? ` · ${a.store_name}` : ""}
+                </span>
+              ) : (
+                <span className="rounded bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-500">홈페이지</span>
+              ),
+          },
           { key: "name", label: "이름", render: (a) => <span className="font-medium text-slate-900">{a.name}</span> },
           { key: "phone", label: "연락처", render: (a) => a.phone },
           { key: "service_type", label: "신청 서비스", render: (a) => a.service_type },
