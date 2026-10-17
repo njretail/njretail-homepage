@@ -45,7 +45,7 @@ export default function StoreGallerySlider({ stores }: { stores: StoreCase[] }) 
                 alt={`${store.name} 다모아 무인매장`}
                 fill
                 sizes="(min-width: 1024px) 25vw, 60vw"
-                className="object-cover object-top"
+                className="object-cover"
               />
             </div>
             <p className="mt-3 text-center text-base font-semibold text-slate-800">{store.name}</p>

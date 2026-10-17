@@ -19,7 +19,7 @@ export const stores: StoreCase[] = [
   },
   {
     name: "다모아마켓 미아동",
-    image: "/store-mia.jpg",
+    image: "/store-mia-wide.jpg",
     category: "편의점",
     location: "서울 강북구 미아동",
     trait: "골목 주거지와 생활 동선이 맞닿은 주거 밀집형 상권",
