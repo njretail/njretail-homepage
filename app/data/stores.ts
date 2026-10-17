@@ -11,6 +11,20 @@ export type StoreCase = {
 
 export const stores: StoreCase[] = [
   {
+    name: "다모아마켓 하계동",
+    image: "/store-hagye.jpg",
+    category: "편의점",
+    location: "서울 노원구 하계동",
+    trait: "주거 밀집 지역의 생활 수요를 기반으로 한 동네 상권",
+  },
+  {
+    name: "다모아마켓 미아동",
+    image: "/store-mia.jpg",
+    category: "편의점",
+    location: "서울 강북구 미아동",
+    trait: "골목 주거지와 생활 동선이 맞닿은 주거 밀집형 상권",
+  },
+  {
     name: "다모아마켓 창동",
     image: "/store-changdong.png",
     category: "편의점",
